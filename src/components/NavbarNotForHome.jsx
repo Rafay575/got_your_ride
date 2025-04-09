@@ -16,10 +16,10 @@ const NavbarNotForHome = () => {
           className="flex 
       gap-8 "
         >
-          {/* <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center">
             <FaPhoneAlt />
             +44 745 392 3024
-          </div> */}
+          </div>
           <NavLink className="flex gap-2 items-center">
             <FaEnvelope className="mt-[1px]" />
             <p className="mt-[-4px]">gotyourride@gmail.com</p>

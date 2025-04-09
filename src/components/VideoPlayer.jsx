@@ -31,14 +31,22 @@ const VideoPlayer = ({ image, video, css }) => {
       document.body.style.overflow = "auto"; // Ensure scrolling is re-enabled
     };
   }, [modalIsOpen]);
+
   return (
     <div className={`relative ${css}`}>
-      <img src={image} className="w-4/5 mx-auto rounded-2xl mt-25" alt="" />
+      {/* Main Image */}
+      <img
+        src={image}
+        className="w-4/5 md:w-3/4  mx-auto rounded-2xl "
+        alt=""
+      />
+
+      {/* Play Icon Image */}
       <img
         src={i9}
         onClick={handlePlay}
-        className="absolute inset-0 mx-auto top-72 w-25"
-        alt=""
+        className="absolute inset-0 mx-auto top-[30%] sm:top-[35%] lg:top-[40%] w-12 sm:w-18 md:w-24 lg:w-30 cursor-pointer"
+        alt="Play Icon"
       />
 
       {/* React Modal for video */}
@@ -48,14 +56,15 @@ const VideoPlayer = ({ image, video, css }) => {
         style={{
           overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.7)",
-            zIndex: 2000, // Set higher z-index to ensure it appears above Swiper.js
+            zIndex: 2000, // Set higher z-index to ensure it appears above other elements
           },
           content: {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: "80%",
-            height: "80%",
+            width: "90%",
+            maxWidth: "900px",
+            height: "90%",
             padding: 0,
             border: "none",
             background: "black",

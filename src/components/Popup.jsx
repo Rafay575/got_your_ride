@@ -14,16 +14,9 @@ import video from "../assets/video.mp4";
 import image1 from "../assets/unsplash.png";
 
 import i6 from "../assets/Group-286.png";
-import i7 from "../assets/clock-icon-01.png";
-import i8 from "../assets/user-icon-01.png";
+
 import i10 from "../assets/solution-bulb-concept-svgrepo-com-1.png";
 
-import image2 from "../assets/image-1.png";
-import image3 from "../assets/image-2.png";
-import image4 from "../assets/image-3.png";
-import image5 from "../assets/image-4.png";
-import image6 from "../assets/image-5.png";
-import image7 from "../assets/image-6.png";
 
 import image8 from "../assets/autumn-season-mountain-fuji-kawaguchiko-lake-japan.png";
 import image9 from "../assets/matsumoto-castle-osaka-japan.png";
@@ -48,6 +41,9 @@ import image29 from "../assets/image_6.png";
 import { CiHeart } from "react-icons/ci";
 import VideoPlayer from "./VideoPlayer";
 import HighIndexComponent from "./HighIndexComponent";
+import DynamicGrid from "./DynamicGrid";
+import ResponsiveComponent from "./ResponsiveComponent";
+import DynamicSwiper from "./DynamicSwiper";
 
 const Popup = () => {
   // Effect to disable/enable body scroll when modal is opened/closed
@@ -59,396 +55,21 @@ const Popup = () => {
       {/* next part */}
       {/* ///////// */}
       {/* title */}
-      <div className="text-center  mb-10 mt-[350px]">
+      <div className="text-center  my-14">
         <p className="text-[#F1582B] ">Let’s Explore the World</p>
-        <h1 className="font-bold text-4xl">
+        <h1 className="font-bold text-2xl lg:text-4xl">
           Top Experiences on the <br />
           Got Your Guide
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-4/5 mx-auto gap-5">
-        <div className=" rounded-2xl shadow-2xl hover:shadow-[var(--custom-property)]">
-          {/* image 2*/}
-          <div className="relative">
-            <img src={image2} alt="" />
-            <div className="absolute inset-0 top-6 ">
-              <div className="flex justify-between items-center">
-                <div className="bg-[#F1582B] px-3 py-2 h-9 rounded-full ml-6 text-white cursor-pointer">
-                  Featured
-                </div>
-                <CiHeart
-                  size={30}
-                  className="bg-white text-[#F1582B] mr-6 rounded-full p-1 cursor-pointer hover:bg-[#F1582B] hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-          {/* text part */}
-          <div className="px-6 pb-6">
-            <div className="flex justify-between py-2 text-[11px] font-semibold">
-              <p className="flex gap-2">
-                <img src={i7} className="w-[13px] h-[13px] mt-[2px]" alt="" />
-                10 Hours
-              </p>
-              <p className="flex gap-2">
-                <img src={i8} className="w-[11px] h-[11px] mt-[2px]" alt="" />
-                1-6 Guest
-              </p>
-            </div>
-            <p className="font-semibold text-xl ">
-              Private Mountain Fuji Sightseeing Tour
-            </p>
-            <p className="pl-4 py-2">Mt. Fuji 5th Station</p>
-            <p className="text-[11px]">
-              From &nbsp;&nbsp;<span className="font-extrabold">$300 </span>
-              <span className="text-[#FF0303] font-semibold">$500</span>
-            </p>
-          </div>
-        </div>
-        <div className=" rounded-2xl shadow-2xl hover:shadow-[var(--custom-property)]">
-          {/* image 3*/}
-          <div className="relative">
-            <img src={image3} alt="" />
-            <div className="absolute inset-0 top-6 ">
-              <div className="flex justify-between items-center">
-                <div className="bg-[#F1582B] px-3 py-2 h-9 rounded-full ml-6 text-white cursor-pointer">
-                  Featured
-                </div>
-                <CiHeart
-                  size={30}
-                  className="bg-white text-[#F1582B] mr-6 rounded-full p-1 cursor-pointer hover:bg-[#F1582B] hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-          {/* text part */}
-          <div className="px-6 pb-6">
-            <div className="flex justify-between py-2 text-[11px] font-semibold">
-              <p className="flex gap-2">
-                <img src={i7} className="w-[13px] h-[13px] mt-[2px]" alt="" />
-                10 Hours
-              </p>
-              <p className="flex gap-2">
-                <img src={i8} className="w-[11px] h-[11px] mt-[2px]" alt="" />
-                1-6 Guest
-              </p>
-            </div>
-            <p className="font-semibold text-xl ">
-              Private Mountain Fuji Sightseeing Tour
-            </p>
-            <p className="pl-4 py-2">Chureito Pagoda</p>
-            <p className="text-[11px]">
-              From &nbsp;&nbsp;<span className="font-extrabold">$300 </span>
-              <span className="text-[#FF0303] font-semibold">$500</span>
-            </p>
-          </div>
-        </div>
-        <div className=" rounded-2xl shadow-2xl hover:shadow-[var(--custom-property)]">
-          {/* image 4*/}
-          <div className="relative">
-            <img src={image4} alt="" />
-            <div className="absolute inset-0 top-6 ">
-              <div className="flex justify-between items-center">
-                <div className="bg-[#F1582B] px-3 py-2 h-9 rounded-full ml-6 text-white cursor-pointer">
-                  Featured
-                </div>
-                <CiHeart
-                  size={30}
-                  className="bg-white text-[#F1582B] mr-6 rounded-full p-1 cursor-pointer hover:bg-[#F1582B] hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-          {/* text part */}
-          <div className="px-6 pb-6">
-            <div className="flex justify-between py-2 text-[11px] font-semibold">
-              <p className="flex gap-2">
-                <img src={i7} className="w-[13px] h-[13px] mt-[2px]" alt="" />
-                10 Hours
-              </p>
-              <p className="flex gap-2">
-                <img src={i8} className="w-[11px] h-[11px] mt-[2px]" alt="" />
-                1-6 Guest
-              </p>
-            </div>
-            <p className="font-semibold text-xl ">
-              Private Mountain Fuji Sightseeing Tour
-            </p>
-            <p className="pl-4 py-2">Laka Kawagochiko </p>
-            <p className="text-[11px]">
-              From &nbsp;&nbsp;<span className="font-extrabold">$300 </span>
-              <span className="text-[#FF0303] font-semibold">$500</span>
-            </p>
-          </div>
-        </div>
-        <div className=" rounded-2xl shadow-2xl hover:shadow-[var(--custom-property)]">
-          {/* image 5*/}
-          <div className="relative">
-            <img src={image5} alt="" />
-            <div className="absolute inset-0 top-6 ">
-              <div className="flex justify-between items-center">
-                <div className="bg-[#F1582B] px-3 py-2 h-9 rounded-full ml-6 text-white cursor-pointer">
-                  Featured
-                </div>
-                <CiHeart
-                  size={30}
-                  className="bg-white text-[#F1582B] mr-6 rounded-full p-1 cursor-pointer hover:bg-[#F1582B] hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-          {/* text part */}
-          <div className="px-6 pb-6">
-            <div className="flex justify-between py-2 text-[11px] font-semibold">
-              <p className="flex gap-2">
-                <img src={i7} className="w-[13px] h-[13px] mt-[2px]" alt="" />
-                10 Hours
-              </p>
-              <p className="flex gap-2">
-                <img src={i8} className="w-[11px] h-[11px] mt-[2px]" alt="" />
-                1-6 Guest
-              </p>
-            </div>
-            <p className="font-semibold text-xl ">
-              Private Mountain Fuji Sightseeing Tour
-            </p>
-            <p className="pl-4 py-2">Osaka Castle</p>
-            <p className="text-[11px]">
-              From &nbsp;&nbsp;<span className="font-extrabold">$300 </span>
-              <span className="text-[#FF0303] font-semibold">$500</span>
-            </p>
-          </div>
-        </div>
-        <div className=" rounded-2xl shadow-2xl hover:shadow-[var(--custom-property)]">
-          {/* image 6*/}
-          <div className="relative">
-            <img src={image6} alt="" />
-            <div className="absolute inset-0 top-6 ">
-              <div className="flex justify-between items-center">
-                <div className="bg-[#F1582B] px-3 py-2 h-9 rounded-full ml-6 text-white cursor-pointer">
-                  Featured
-                </div>
-                <CiHeart
-                  size={30}
-                  className="bg-white text-[#F1582B] mr-6 rounded-full p-1 cursor-pointer hover:bg-[#F1582B] hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-          {/* text part */}
-          <div className="px-6 pb-6">
-            <div className="flex justify-between py-2 text-[11px] font-semibold">
-              <p className="flex gap-2">
-                <img src={i7} className="w-[13px] h-[13px] mt-[2px]" alt="" />
-                10 Hours
-              </p>
-              <p className="flex gap-2">
-                <img src={i8} className="w-[11px] h-[11px] mt-[2px]" alt="" />
-                1-6 Guest
-              </p>
-            </div>
-            <p className="font-semibold text-xl ">
-              Private Mountain Fuji Sightseeing Tour
-            </p>
-            <p className="pl-4 py-2">Shiten noji Tample</p>
-            <p className="text-[11px]">
-              From &nbsp;&nbsp;<span className="font-extrabold">$300 </span>
-              <span className="text-[#FF0303] font-semibold">$500</span>
-            </p>
-          </div>
-        </div>
-        <div className=" rounded-2xl shadow-2xl hover:shadow-[var(--custom-property)]">
-          {/* image 7*/}
-          <div className="relative">
-            <img src={image7} alt="" />
-            <div className="absolute inset-0 top-6 ">
-              <div className="flex justify-between items-center">
-                <div className="bg-[#F1582B] px-3 py-2 h-9 rounded-full ml-6 text-white cursor-pointer">
-                  Featured
-                </div>
-                <CiHeart
-                  size={30}
-                  className="bg-white text-[#F1582B] mr-6 rounded-full p-1 cursor-pointer hover:bg-[#F1582B] hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-          {/* text part */}
-          <div className="px-6 pb-6">
-            <div className="flex justify-between py-2 text-[11px] font-semibold">
-              <p className="flex gap-2">
-                <img src={i7} className="w-[13px] h-[13px] mt-[2px]" alt="" />
-                10 Hours
-              </p>
-              <p className="flex gap-2">
-                <img src={i8} className="w-[11px] h-[11px] mt-[2px]" alt="" />
-                1-6 Guest
-              </p>
-            </div>
-            <p className="font-semibold text-xl ">
-              Private Mountain Fuji Sightseeing Tour
-            </p>
-            <p className="pl-4 py-2">Shensekai</p>
-            <p className="text-[11px]">
-              From &nbsp;&nbsp;<span className="font-extrabold">$300 </span>
-              <span className="text-[#FF0303] font-semibold">$500</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="w-4/5  flex mt-[80px]  items-center mx-auto ">
-        <div className="w-[350px] relative mx-auto ">
-          <img
-            src={image1}
-            className="w-[350px] h-[430px]  rounded-4xl"
-            alt=""
-          />
-          <div className="absolute rounded-2xl bg-[#F1582B] inset-0 w-28 h-28 top-[300px] left-[220px] text-center text-white">
-            <p className="mt-6 font-bold text-4xl">05+</p>
-            <p className="text-[8px] mt-3">YEARS OF EXPERIENCE</p>
-          </div>
-        </div>
-        <div className="w-5/8  ">
-          <div className="ml-14">
-            <p className="text-[#F1582B] ">Let’s Explore the World</p>
-            <h1 className="font-bold text-3xl w-full">
-              We Make Your Travel More Enjoyable
-            </h1>
-            <p className=" mt-5 w-[700px]">
-              Experience the freedom of a flexible schedule and the choice of
-              what you want to do and for how long you wish to do it. Relax in a
-              comfortable ride in modern minivanthat can seat as many as 13
-              passengers. Take in the views of Mount Fuji at your leisure by
-              using the private charter service for the whole duration of your
-              trip to the region.
-            </p>
-            <div className="flex mt-3 gap-29">
-              <h3 className="w-80 font-semibold  flex gap-2 py-3">
-                <img className="w-[48px] h-[48px] -mt-1" src={i6} alt="" />
-                Nationaly wel known <br /> service provider
-              </h3>
-              <h3 className="w-80 font-semibold  flex gap-2 py-3">
-                <img className="w-[48px] h-[48px] -mt-1" src={i10} alt="" />
-                Most popular booking <br /> solution provider
-              </h3>
-            </div>
-            <p className="flex ">
-              <BiChevronsRight className="mt-1 " />
-              Free cancellation: Cancel up to 24 hours in advance for a full
-              refund
-            </p>
-            <p className="flex mt-1 ">
-              <BiChevronsRight className="mt-1" />
-              Hand picked premium Accommodations that guarantee comfort and
-              relaxation.
-            </p>
-            <p className="flex mt-1 pb-9">
-              <BiChevronsRight className="mt-1" />
-              Dedicated 24/7 support team ready to assist you at any moment.
-            </p>
-            <NavLink className="bg-[#F1582B] px-3 py-2 rounded-full mt-7 text-white">
-              Book Now
-            </NavLink>
-          </div>
-        </div>
-      </div>
-      {/* ///////// */}
-      {/* next part */}
-      {/* ///////// */}
-      {/* title */}
-      <div className="text-center mt-40 mb-10">
-        <p className="text-[#F1582B] ">Search place Near You</p>
-        <h1 className="font-bold text-4xl">
-          Know About Our Famous Distination
-        </h1>
-      </div>
-      <div className="w-4/5 mx-auto ">
-        <Swiper
-          spaceBetween={50} // Space between slides
-          slidesPerView={2} // Number of slides visible at once
-          pagination={{ clickable: true }} // Enable pagination (dots)
-        >
-          <SwiperSlide>
-            <div className="relative">
-              <img src={image8} alt="" />
-              <div className="flex absolute bg-white shadow-2xl p-4 px-6 bottom-14 w-11/16 left-18 leading-6 rounded-2xl items-center ">
-                Private Mountain fuji sightseeing tour
-                <HiOutlineArrowUpRight
-                  className="hover:bg-[#F1582B]  p-1 w-[34px] rounded-full hover:text-white bg-white border border-[#f1582b] text-[#f1582b]"
-                  size={30}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative">
-              <img src={image9} alt="" />
-              <div className="flex absolute bg-white shadow-2xl p-4 px-6 bottom-14 w-11/16 left-18 leading-6 rounded-2xl items-center ">
-                Private Mountain fuji sightseeing tour
-                <HiOutlineArrowUpRight
-                  className="hover:bg-[#F1582B]  p-1 w-[34px] rounded-full hover:text-white bg-white border border-[#f1582b] text-[#f1582b]"
-                  size={30}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative">
-              <img src={image10} alt="" />
-              <div className="flex absolute bg-white shadow-2xl p-4 px-6 bottom-14 w-11/16 left-18 leading-6 rounded-2xl items-center ">
-                Private Mountain fuji sightseeing tour
-                <HiOutlineArrowUpRight
-                  className="hover:bg-[#F1582B]  p-1 w-[34px] rounded-full hover:text-white bg-white border border-[#f1582b] text-[#f1582b]"
-                  size={30}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative">
-              <img src={image11} alt="" />
-              <div className="flex absolute bg-white shadow-2xl p-4 px-6 bottom-14 w-11/16 left-18 leading-6 rounded-2xl items-center ">
-                Private Mountain fuji sightseeing tour
-                <HiOutlineArrowUpRight
-                  className="hover:bg-[#F1582B]  p-1 w-[34px] rounded-full hover:text-white bg-white border border-[#f1582b] text-[#f1582b]"
-                  size={30}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative">
-              <img src={image12} alt="" />
-              <div className="flex absolute bg-white shadow-2xl p-4 px-6 bottom-14 w-11/16 left-18 leading-6 rounded-2xl items-center ">
-                Private Mountain fuji sightseeing tour
-                <HiOutlineArrowUpRight
-                  className="hover:bg-[#F1582B]  p-1 w-[34px] rounded-full hover:text-white bg-white border border-[#f1582b] text-[#f1582b]"
-                  size={30}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative">
-              <img src={image12} alt="" />
-              <div className="flex absolute bg-white shadow-2xl p-4 px-6 bottom-14 w-11/16 left-18 leading-6 rounded-2xl items-center ">
-                Private Mountain fuji sightseeing tour
-                <HiOutlineArrowUpRight
-                  className="hover:bg-[#F1582B]  p-1 w-[34px] rounded-full hover:text-white bg-white border border-[#f1582b] text-[#f1582b]"
-                  size={30}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      {/* ///////// */}
-      {/* next part */}
-      {/* ///////// */}
-      {/* title */}
-      <div className="text-center mt-40 mb-10">
+      <DynamicGrid />
+      <ResponsiveComponent />
+      <DynamicSwiper />
+
+    
+      <div className="text-center my-14">
         <p className="text-[#F1582B] ">Reason Why Choose Us</p>
-        <h1 className="font-bold text-4xl">Why Choose Us</h1>
+        <h1 className="font-bold text-2xl lg:text-4xl">Why Choose Us</h1>
       </div>
       <div className="w-4/5 mx-auto">
         <img src={image17} alt="" />
@@ -459,8 +80,19 @@ const Popup = () => {
       <div className=" w-4/5 mx-auto mt-16">
         <Swiper
           spaceBetween={50} // Space between slides
-          slidesPerView={3} // Number of slides visible at once
+       
           pagination={{ clickable: true }} // Enable pagination (dots)
+          breakpoints={{
+            640: {
+              slidesPerView: 1, // 2 slides visible on small screens
+            },
+            1024: {
+              slidesPerView: 2, // 3 slides visible on medium screens
+            },
+            1280: {
+              slidesPerView: 3, // 4 slides visible on large screens
+            },
+          }}
         >
           <SwiperSlide>
             <div className="bg-[#FCE8DF] rounded-2xl pb-7 px-1 flex flex-col items-center">
@@ -549,24 +181,29 @@ const Popup = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      ;{/* ///////// */}
-      {/* next part */}
-      {/* ///////// */}
-      {/* title */}
-      <div className="text-center mt-30 mb-10">
-        <h1 className="font-bold text-4xl">View Famous Site</h1>
+     
+      <div className="text-center my-14">
+        <h1 className="font-bold text-2xl  lg:text-4xl">View Famous Site</h1>
       </div>
       <VideoPlayer image={image} video={video} />
-      {/* ///////// */}
-      {/* next part */}
-      {/* ///////// */}
-      <div className="text-center mt-40 mb-10">
-        <h1 className="font-bold text-4xl">What Our Customers Say</h1>
+     
+      <div className="text-center my-14">
+        <h1 className="font-bold text-2xl lg:text-4xl">What Our Customers Say</h1>
       </div>
       <Swiper
         className="w-4/5 "
-        slidesPerView={4} // Number of slides visible at once
         pagination={{ clickable: true }} // Enable pagination (dots)
+        breakpoints={{
+          640: {
+            slidesPerView: 2, // 2 slides visible on small screens
+          },
+          1024: {
+            slidesPerView: 3, // 3 slides visible on medium screens
+          },
+          1280: {
+            slidesPerView: 4, // 4 slides visible on large screens
+          },
+        }}
       >
         <SwiperSlide>
           <div className="bg-[#D8F4DA] w-[95%] px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
