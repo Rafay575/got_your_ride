@@ -37,7 +37,7 @@ const VideoPlayer = ({ image, video, css }) => {
       {/* Main Image */}
       <img
         src={image}
-        className="w-4/5 md:w-3/4  mx-auto rounded-2xl "
+        className="w-4/5   mx-auto rounded-2xl "
         alt=""
       />
 

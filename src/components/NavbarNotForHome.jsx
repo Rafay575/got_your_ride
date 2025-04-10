@@ -1,71 +1,198 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Got-Your-Ride-Logo-05-1.png";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
 import { IoCaretDownSharp } from "react-icons/io5";
 import SocialIcons from "./SocialIcons";
-import image from "../assets/phone.png";
 
 const NavbarNotForHome = () => {
+  
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Optional: Close the dropdown if clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+
+  
+
   return (
-    <div className="top-0 zee-index w-full text-white bg shadow-md">
-      {/* top side of navbar */}
-      <div className="px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] flex justify-between  py-3 items-center border-b  w-full  bg-[#f1582b] shadow-2xl">
+    <>
+      <div className="top-0 zee-index w-screen">
+        {/* Top bar (visible on md and larger) */}
         <div
-          className="flex 
-      gap-8 "
+          className={`hidden md:flex px-5 sm:px-[7vw] md:px-[8vw] bg-[#f1582b] text-white lg:px-[11vw] justify-between transition-all duration-700 py-3 items-center border-b `}
         >
-          <div className="flex gap-2 items-center">
-            <FaPhoneAlt />
-            +44 745 392 3024
+          <div className="flex gap-8">
+            <div className="flex gap-2 items-center">
+              <FaPhoneAlt />
+              <p className="text-xs font-normal">+44 745 392 3024</p>
+            </div>
+            <div className="flex gap-2 items-center">
+              <FaEnvelope />
+              <p className="text-xs font-normal">gotyourride@gmail.com</p>
+            </div>
           </div>
-          <NavLink className="flex gap-2 items-center">
-            <FaEnvelope className="mt-[1px]" />
-            <p className="mt-[-4px]">gotyourride@gmail.com</p>
-          </NavLink>
-        </div>
-        <div className="flex text-white">
           <SocialIcons />
         </div>
-      </div>
-      {/* bottom side of navbar */}
-      <div className="px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] transition-all duration-700 flex justify-between top-0  items-center w-full bg-white text-black">
-        <NavLink to="/">
-          <img className="ml-[-8px] w-20" src={logo} alt="" />
-        </NavLink>
-        <div className="flex gap-11 ">
+
+        {/* Bottom bar */}
+        <div
+          className={`px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] bg-white text-black shadow-md transition-all duration-700 flex justify-between items-center w-full `}
+        >
+          {/* Logo */}
           <NavLink to="/">
-            <h1>HOME</h1>
+            <img className="ml-[-8px] w-20" src={logo} alt="Logo" />
           </NavLink>
-          <NavLink to="/about">
-            <h1>ABOUT</h1>
-          </NavLink>
-          <NavLink className="group relative">
-            <h1 className="flex items-center">
-              DESTINATIONS <IoCaretDownSharp size={20} />
-            </h1>
-            <div className="group-hover:block hidden absolute pt-2">
-              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">ONE</p>
-                <p className="cursor-pointer hover:text-black">TWO</p>
-                <p className="cursor-pointer hover:text-black">THREE</p>
-              </div>
+
+          {/* Navigation links on md+ OR burger icon on mobile */}
+          <div className="flex items-center gap-5">
+            <div className="hidden lg:flex gap-4">
+              <NavLink to="/" className={" hover:bg-[#f1582b] hover:text-white rounded-sm px-3 py-1.5"} onClick={() => setIsSideMenuOpen(false)}>
+                <h1>HOME</h1>
+              </NavLink>
+              <NavLink to="/about" className={" hover:bg-[#f1582b] hover:text-white rounded-sm px-3 py-1.5"} onClick={() => setIsSideMenuOpen(false)}>
+                <h1>ABOUT</h1>
+              </NavLink>
+              <div className="relative group hover:bg-[#f1582b] hover:text-white rounded-sm px-3 py-1.5 inline-block">
+  <button className="flex items-center   ">
+    DESTINATIONS
+    <IoCaretDownSharp size={20} className="ml-1" />
+  </button>
+  <div className="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
+    <div className="py-2">
+      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+      City Tokyo
+      </a>
+      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+      Mt. Fuji 5th Station
+
+      </a>
+      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+      Hakone Tour
+      </a>
+      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+      Osaka Castle
+      </a>
+    </div>
+  </div>
+</div>
+
+              <NavLink to="/contact" className={" hover:bg-[#f1582b] hover:text-white rounded-sm px-3 py-1.5"} onClick={() => setIsSideMenuOpen(false)}>
+                <h1>CONTACT</h1>
+              </NavLink>
             </div>
-          </NavLink>
-          <NavLink to="/contact">
-            <h1>CONTACT</h1>
-          </NavLink>
-        </div>
-        <div className=" mt-2 ">
-          <div className="flex gap-2">
-            <img src={image} alt="" />
-            <p>+447453923024</p>
+            {/* Burger icon visible on mobile */}
+            <div className={`lg:hidden text-black  `}>
+              <FaBars
+                size={24}
+                className="cursor-pointer "
+                onClick={() => setIsSideMenuOpen(true)}
+              />
+            </div>
+          </div>
+
+          {/* Phone contact on right */}
+          <div className="mt-2 hidden lg:flex ">
+            <div className="flex gap-2 items-center">
+            
+      <a
+        href="tel:+447453923024" 
+        className="flex items-center justify-center w-6 h-6 rounded-full bg-[#f1582b] text-white shadow-lg
+                   hover:bg-[#e54925] transition-colors duration-300"
+      >
+        <FaPhoneAlt className="text-sm" />
+      </a>
+    
+              <p>+447453923024</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Side menu overlay for mobile */}
+      {isSideMenuOpen && (
+        <div
+          className="fixed inset-0  bg-black/90 " style={{ zIndex: 9999 }}
+          onClick={() => setIsSideMenuOpen(false)}
+        >
+          <div
+            className="absolute top-0 right-0 w-3/4 max-w-xs bg-white h-full p-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center">
+              <img className="w-20" src={logo} alt="Logo" />
+              <FaTimes
+                size={24}
+                className="cursor-pointer text-black"
+                onClick={() => setIsSideMenuOpen(false)}
+              />
+            </div>
+            <div className="mt-8 flex flex-col gap-5 text-black">
+              <NavLink to="/" onClick={() => setIsSideMenuOpen(false)}>
+                HOME
+              </NavLink>
+              <NavLink to="/about" onClick={() => setIsSideMenuOpen(false)}>
+                ABOUT
+              </NavLink>
+              {/* Dropdown integrated into the flow */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center  focus:outline-none"
+                >
+                  DESTINATIONS <IoCaretDownSharp size={16} className="ml-1" />
+                </button>
+                {isOpen && (
+                  <div className="mt-2 flex flex-col  transition-all duration-700">
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      City Tokyo
+                    </a>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Mt. Fuji 5th Station
+                    </a>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Hakone Tour
+                    </a>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Osaka Castle
+                    </a>
+                  </div>
+                )}
+              </div>
+              <NavLink to="/contact" onClick={() => setIsSideMenuOpen(false)}>
+                CONTACT
+              </NavLink>
+            </div>
+             
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
 export default NavbarNotForHome;
+

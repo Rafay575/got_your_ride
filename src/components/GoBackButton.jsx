@@ -10,7 +10,7 @@ const GoBackButton = () => {
   };
   return (
     <button onClick={handleNavigate}>
-      <GoArrowLeft className="text-3xl absolute left-20 top-38 hover:text-[#f1582b]" />
+      <GoArrowLeft className="text-3xl absolute left-2 lg:left-20 top-24 lg:top-38 hover:text-[#f1582b]" />
     </button>
   );
 };

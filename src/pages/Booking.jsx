@@ -44,31 +44,35 @@ const Booking = () => {
       <div className="mt-35">
         {/* back button */}
         <GoBackButton />
-
-        {/*  */}
-        <div className="w-4/5 mx-auto mt-5 ">
-          {/* title*/}
+        <div className="w-4/5 mx-auto ">
+          {/* Title Section */}
           <div className="mb-5">
-            <h1 className="font-bold mb-5 text-4xl">Mt. Fuji 5th Station</h1>
-            <p className=" ">
+            <h1 className="font-bold mb-5 text-2xl lg:text-4xl text-center sm:text-left">
+              Mt. Fuji 5th Station
+            </h1>
+            <p className="text-center sm:text-left">
               Japan's Leading GetYourRide Service...Ready In Your One Click
             </p>
           </div>
-          {/* location, share, wishlist */}
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* location */}
-            <div className="flex gap-2 text-[#615C5D]  ">
+
+          {/* Location, Share, Wishlist Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* Location */}
+            <div className="flex gap-2 text-[#615C5D] flex-wrap md:flex-nowrap">
               <NavLink className="group flex gap-2">
                 <SlLocationPin className="mt-[3px] group-hover:text-[#f1582b]" />
                 <p className="group-hover:text-[#f1582b]">
                   Mt. Fuji 5th Station
                 </p>
               </NavLink>
-              <Star />
-              <p>(Reviews)</p>
+              <div className="flex gap-2">
+                <Star />
+                <p>(Reviews)</p>
+              </div>
             </div>
-            {/* share, wishlist */}
-            <div className="flex gap-3 ml-78">
+
+            {/* Share, Wishlist, Cart */}
+            <div className="flex gap-3 justify-start md:justify-end flex-wrap md:flex-nowrap">
               <NavLink className="flex gap-2 group">
                 <FaShareAlt className="mt-1 group-hover:text-[#f1582b]" />
                 <p className="group-hover:text-[#f1582b]">Share</p>
@@ -78,8 +82,8 @@ const Booking = () => {
                 <p className="group-hover:text-[#f1582b]">Add To Wish List</p>
               </NavLink>
               <NavLink className="hover:text-[#f1582b] group flex gap-2">
-                <div className="relative ">
-                  <RiShoppingCartLine className=" text-2xl " />
+                <div className="relative">
+                  <RiShoppingCartLine className="text-2xl" />
                   <p className="absolute inset-0 bg-[#F1582B] rounded-full text-center group-hover:border group-hover:border-[#f1582b] group-hover:bg-white group-hover:text-[#f1582b] text-sm w-4 left-3 text-white -top-[5px] h-4 text-[11px]">
                     99
                   </p>
@@ -88,68 +92,75 @@ const Booking = () => {
               </NavLink>
             </div>
           </div>
-          {/* 4 images in grid */}
-          <div className="grid grid-cols-4 grid-rows-2 gap-2 mt-5">
+
+          {/* Image Grid Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-5">
             <img
               src={i1}
-              className="col-span-2 row-span-2 w-170 h-[621px]"
+              className="col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full"
               alt=""
             />
-            <img src={i2} className="col-span-2 row-span-1 h-76" alt="" />
-            <img src={i3} className="col-span-1 row-span-1 w-full" alt="" />
-            <img src={i4} className="col-span-1 row-span-1 w-full" alt="" />
+            <img
+              src={i2}
+              className="col-span-1 md:col-span-2 row-span-1 h-full"
+              alt=""
+            />
+            <img src={i3} className="col-span-1 w-full h-full" alt="" />
+            <img src={i4} className="col-span-1 w-full h-full" alt="" />
           </div>
-          {/* Duration, People, Language, Type and Price*/}
-          <div className="flex justify-between mt-8">
-            {/* Duration, People, Language, Type */}
-            <div className="flex gap-4">
-              <div className="flex gap-2 ">
-                <img src={i5} className="w-8 h-8 mt-[2px]" alt="" />
-                <div className="leading-4">
-                  <p className="text-[#292929] text-[11px]">Duration </p>
-                  <p>10 Hour</p>
-                </div>
-              </div>
-              <div className="flex gap-2 ">
-                <img src={i6} className="w-8 h-8 mt-[2px]" alt="" />
-                <div className="leading-4">
-                  <p className="text-[#292929] text-[11px]">People </p>
-                  <p>1-6</p>
-                </div>
-              </div>
-              <div className="flex gap-2 ">
-                <img src={i7} className="w-8 h-8 mt-[2px]" alt="" />
-                <div className="leading-4">
-                  <p className="text-[#292929] text-[11px]">Language </p>
-                  <p>English</p>
-                </div>
-              </div>
-              <div className="flex gap-2 ">
-                <img src={i8} className="w-8 h-8 mt-[2px]" alt="" />
-                <div className="leading-4">
-                  <p className="text-[#292929] text-[11px]">Type </p>
-                  <p>Adventure</p>
-                </div>
+
+          {/* Duration, People, Language, Type and Price Section */}
+
+          <div className="grid mt-5 grid-cols-2 sm:grid-cols-4 gap-4 w-full lg:w-3/4">
+            <div className="flex gap-2 w-full">
+              <img src={i5} className="w-8 h-8 mt-[2px]" alt="" />
+              <div className="leading-4">
+                <p className="text-[#292929] text-[11px]">Duration</p>
+                <p>10 Hour</p>
               </div>
             </div>
-            {/* Price */}
-            <p>
-              <span className="text-[11px] text-[#292929] mr-2">From</span>
-              <span className="font-bold">$350</span>/
-              <span className="relative font-semibold">
-                $500{" "}
-                <img src={i9} className="absolute w-30 top-2 left-0" alt="" />
-              </span>
-            </p>
+            <div className="flex gap-2 w-full">
+              <img src={i6} className="w-8 h-8 mt-[2px]" alt="" />
+              <div className="leading-4">
+                <p className="text-[#292929] text-[11px]">People</p>
+                <p>1-6</p>
+              </div>
+            </div>
+            <div className="flex gap-2 w-full">
+              <img src={i7} className="w-8 h-8 mt-[2px]" alt="" />
+              <div className="leading-4">
+                <p className="text-[#292929] text-[11px]">Language</p>
+                <p>English</p>
+              </div>
+            </div>
+            <div className="flex gap-2 w-full">
+              <img src={i8} className="w-8 h-8 mt-[2px]" alt="" />
+              <div className="leading-4">
+                <p className="text-[#292929] text-[11px]">Type</p>
+                <p>Adventure</p>
+              </div>
+            </div>
           </div>
+
+          {/* Price */}
+          <p className="text-left sm:text-right mt-5 sm:mt-5 ">
+            <span className="text-[11px] text-[#292929] mr-2">From</span>
+            <span className="font-bold">$350</span>/
+            <span className="relative font-semibold">
+              $500{" "}
+              <img src={i9} className="absolute w-30 top-2 left-0" alt="" />
+            </span>
+          </p>
+
+          <hr className="mb-8 mt-8 opacity-20" />
         </div>
       </div>
-      <hr className="mb-8 mt-8 opacity-20" />
+
       <div className="flex justify-between w-4/5 mx-auto">
         <div className="w-2/3">
           <div>
             <h1 className="font-bold text-2xl">Description</h1>
-            <p>
+            <p className="leading-[28px] mt-5">
               Embark on an unforgettable journey with Getyourride's private Mt.
               Fuji tour, accompanied by an expert English-speaking driver. As
               you traverse the awe-inspiring landscapes of Japan, immerse
@@ -167,13 +178,13 @@ const Booking = () => {
             <hr className="mt-8 mb-8 opacity-20" />
           </div>
           <div>
-            <h1 className="font-bold text-2xl mb-2">Trip Highlights</h1>
+            <h1 className="font-bold text-2xl mb-5">Trip Highlights</h1>
             <p className="font-semibold">Places covered </p>
             <CheckBox />
             <hr className="mt-8 mb-8 opacity-20" />
           </div>
           <div>
-            <h1 className="font-bold text-2xl mb-2">Include/Exclude</h1>
+            <h1 className="font-bold text-2xl mb-5">Include/Exclude</h1>
             <div className="flex justify-between">
               <div>
                 <div className="flex gap-2  mb-2">
@@ -225,30 +236,38 @@ const Booking = () => {
           </div>
         </div>
         <div className="w-1/3 ml-7 ">
-          <h1 className="text-2xl font-bold mb-3">Book Your Trip</h1>
-          <Dropdown />
-          <hr className="opacity-20 mt-4 mb-4" />
+          <h1 className="text-2xl font-bold  mb-3">Book Your Trip</h1>
+          <div className="mt-5">
+            <Dropdown />
+          </div>
+          <hr className="opacity-20 mt-8 mb-8" />
           <div className="flex  justify-between ">
-            <div>
-              <p className="font-bold mt-2">People:</p>
-              <p>Adult</p>
-              <p>(14+ Years)</p>
-            </div>
-            <div className="w-1/5 mt-[50px]">
-              {/* The select dropdown */}
-              <select className="w-full py-[2px] px-[6px] border-2 border-gray-300 rounded-2xl focus:outline-none focus:border-black">
-                <option value="" disabled>
-                  When (Date)
-                </option>
-                <option value="option1">0</option>
-                <option value="option2">1</option>
-                <option value="option3">2</option>
-              </select>
+            <div className="w-full">
+              <p className="font-bold mb-5 mt-2">People:</p>
+              <div className="flex w-full justify-between items-center">
+                <div>
+                  <p className="text-gray-500 text-sm font-semibold">Adult</p>
+                  <p className="text-gray-500 text-sm font-semibold">
+                    (14+ Years)
+                  </p>
+                </div>
+                <div className="w-[150px]">
+                  {/* The select dropdown */}
+                  <select className="w-full py-[2px] px-[6px] border-2 border-gray-300 rounded-2xl focus:outline-none focus:border-black">
+                    <option value="" disabled>
+                      When (Date)
+                    </option>
+                    <option value="option1">0</option>
+                    <option value="option2">1</option>
+                    <option value="option3">2</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-          <hr className="opacity-20 mt-5 mb-5" />
+          <hr className="opacity-20 mt-8 mb-8" />
           <p className="font-bold">Trip Information</p>
-          <div className="mt-2">
+          <div className="mt-5">
             <div className="flex gap-2  mb-2">
               <img src={tick} alt="" />
               <p className="text-sm">
@@ -275,15 +294,19 @@ const Booking = () => {
               </p>
             </div>
           </div>
-          <div className="bg-[#F1582B] px-6 py-2 rounded-full w-2/3 ml-[114px] text-white">
+          <div className="bg-[#F1582B] px-6 py-2 rounded-full w-full mt-10 text-white">
             <h1 className="text-center">Add to cart</h1>
           </div>
         </div>
       </div>
-      <hr className="mt-8 opacity-20" />
+      <div className="w-4/5 mx-auto ">
+
+      <hr className="mb-8 mt-8 opacity-20" />
+      </div>
+
       <div className="flex w-4/5 mx-auto justify-between mt-10">
         <div className="w-2/8">
-          <h1 className="font-bold">Itinerary</h1>
+          <h1 className="font-bold text-2xl">Itinerary</h1>
           <div className="flex mt-4 gap-2">
             <img src={i15} className="w-6" alt="" />
             <p className="text-[#f1582b] font-bold">Mt. Fuji 5th Station</p>
@@ -374,102 +397,121 @@ const Booking = () => {
       <hr className="mt-8 mb-8 opacity-20" />
       {/* Give Feedback Section*/}
       <Feedback />
-      <Swiper
-        className="w-4/5 mt-5"
-        slidesPerView={4} // Number of slides visible at once
-        pagination={{ clickable: true }} // Enable pagination (dots)
-      >
-        <SwiperSlide>
-          <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-            <img src={i} className="mx-auto w-20" alt="" />
-            <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-            <div className="flex justify-between">
-              <p className="text-sm">booking verified 12-04-2025</p>
-              <Star />
+      <div className="w-4/5 mx-auto">
+        <Swiper
+          spaceBetween={12} // Space between slides
+          breakpoints={{
+            640: {
+              slidesPerView: 1, // 2 slides visible on small screens
+            },
+            768: {
+              slidesPerView: 2, // 3 slides visible on medium screens
+            },
+            1024: {
+              slidesPerView: 3, // 4 slides visible on large screens
+            },
+          }}
+          pagination={{ clickable: true }} // Enable pagination (dots)
+          className="w-full"
+        >
+          <SwiperSlide>
+            <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
+              <img src={i} className="mx-auto w-20" alt="" />
+              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
+              <div className="flex justify-between">
+                <p className="text-sm">booking verified 12-04-2025</p>
+                <Star />
+              </div>
+              <p className="text-[11px] mt-2">
+                Booked a private tour with Driver jerry for a journey from Tokyo
+                to Mount Fuji with my family and it was an exceptional choice.
+                Despite the clouds, the experience was nothing short of
+                fantastic.
+              </p>
             </div>
-            <p className="text-[11px] mt-2">
-              Booked a private tour with Driver jerry for a journey from Tokyo
-              to Mount Fuji with my family and it was an exceptional choice.
-              Despite the clouds, the experience was nothing short of fantastic.
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-            <img src={i} className="mx-auto w-20" alt="" />
-            <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-            <div className="flex justify-between">
-              <p className="text-sm">booking verified 12-04-2025</p>
-              <Star />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
+              <img src={i} className="mx-auto w-20" alt="" />
+              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
+              <div className="flex justify-between">
+                <p className="text-sm">booking verified 12-04-2025</p>
+                <Star />
+              </div>
+              <p className="text-[11px] mt-2">
+                Booked a private tour with Driver jerry for a journey from Tokyo
+                to Mount Fuji with my family and it was an exceptional choice.
+                Despite the clouds, the experience was nothing short of
+                fantastic.
+              </p>
             </div>
-            <p className="text-[11px] mt-2">
-              Booked a private tour with Driver jerry for a journey from Tokyo
-              to Mount Fuji with my family and it was an exceptional choice.
-              Despite the clouds, the experience was nothing short of fantastic.
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-            <img src={i} className="mx-auto w-20" alt="" />
-            <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-            <div className="flex justify-between">
-              <p className="text-sm">booking verified 12-04-2025</p>
-              <Star />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
+              <img src={i} className="mx-auto w-20" alt="" />
+              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
+              <div className="flex justify-between">
+                <p className="text-sm">booking verified 12-04-2025</p>
+                <Star />
+              </div>
+              <p className="text-[11px] mt-2">
+                Booked a private tour with Driver jerry for a journey from Tokyo
+                to Mount Fuji with my family and it was an exceptional choice.
+                Despite the clouds, the experience was nothing short of
+                fantastic.
+              </p>
             </div>
-            <p className="text-[11px] mt-2">
-              Booked a private tour with Driver jerry for a journey from Tokyo
-              to Mount Fuji with my family and it was an exceptional choice.
-              Despite the clouds, the experience was nothing short of fantastic.
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-            <img src={i} className="mx-auto w-20" alt="" />
-            <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-            <div className="flex justify-between">
-              <p className="text-sm">booking verified 12-04-2025</p>
-              <Star />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
+              <img src={i} className="mx-auto w-20" alt="" />
+              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
+              <div className="flex justify-between">
+                <p className="text-sm">booking verified 12-04-2025</p>
+                <Star />
+              </div>
+              <p className="text-[11px] mt-2">
+                Booked a private tour with Driver jerry for a journey from Tokyo
+                to Mount Fuji with my family and it was an exceptional choice.
+                Despite the clouds, the experience was nothing short of
+                fantastic.
+              </p>
             </div>
-            <p className="text-[11px] mt-2">
-              Booked a private tour with Driver jerry for a journey from Tokyo
-              to Mount Fuji with my family and it was an exceptional choice.
-              Despite the clouds, the experience was nothing short of fantastic.
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-            <img src={i} className="mx-auto w-20" alt="" />
-            <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-            <div className="flex justify-between">
-              <p className="text-sm">booking verified 12-04-2025</p>
-              <Star />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
+              <img src={i} className="mx-auto w-20" alt="" />
+              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
+              <div className="flex justify-between">
+                <p className="text-sm">booking verified 12-04-2025</p>
+                <Star />
+              </div>
+              <p className="text-[11px] mt-2">
+                Booked a private tour with Driver jerry for a journey from Tokyo
+                to Mount Fuji with my family and it was an exceptional choice.
+                Despite the clouds, the experience was nothing short of
+                fantastic.
+              </p>
             </div>
-            <p className="text-[11px] mt-2">
-              Booked a private tour with Driver jerry for a journey from Tokyo
-              to Mount Fuji with my family and it was an exceptional choice.
-              Despite the clouds, the experience was nothing short of fantastic.
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-            <img src={i} className="mx-auto w-20" alt="" />
-            <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-            <div className="flex justify-between">
-              <p className="text-sm">booking verified 12-04-2025</p>
-              <Star />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
+              <img src={i} className="mx-auto w-20" alt="" />
+              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
+              <div className="flex justify-between">
+                <p className="text-sm">booking verified 12-04-2025</p>
+                <Star />
+              </div>
+              <p className="text-[11px] mt-2">
+                Booked a private tour with Driver jerry for a journey from Tokyo
+                to Mount Fuji with my family and it was an exceptional choice.
+                Despite the clouds, the experience was nothing short of
+                fantastic.
+              </p>
             </div>
-            <p className="text-[11px] mt-2">
-              Booked a private tour with Driver jerry for a journey from Tokyo
-              to Mount Fuji with my family and it was an exceptional choice.
-              Despite the clouds, the experience was nothing short of fantastic.
-            </p>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </>
   );
 };
