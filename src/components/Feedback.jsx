@@ -6,68 +6,78 @@ const Feedback = () => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => {
-    if (show === true) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow(!show);
   };
+
   return (
-    <div className="w-4/5 mx-auto">
+    <div className="w-full max-w-3xl mx-auto p-5">
       {/* Button */}
       <div
         onClick={handleShow}
-        className={`bg-[#F1582B] w-2/12 px-6 py-2 rounded-full text-white mx-auto mb-5 ${
+        className={`bg-[#F1582B] w-full md:w-1/2 px-6 py-2 rounded-full text-white mx-auto mb-5 ${
           show ? "hidden" : "block"
-        } `}
+        }`}
       >
-        <h1 className="text-center ">Give Feedback</h1>
+        <h1 className="text-center">Give Feedback</h1>
       </div>
 
       {show && (
-        <div>
-          <h1 className="w-2/12 mx-auto text-center mb-5 font-semibold">
+        <div className="w-full ">
+          <h1 className="w-full text-center mb-5 font-semibold text-xl sm:text-2xl">
             Give Us Feedback
           </h1>
-          <div className="flex flex-col gap-5">
-            <div className="flex justify-between">
-              <div className="w-1/2">
-                <p>First Name</p>
-                <input
-                  type="text"
-                  className="border border-black/20 rounded-sm w-155 h-10 "
-                />
-              </div>
-              <div className="w-1/2">
-                <p>Last Name</p>
-                <input
-                  type="text"
-                  className="border border-black/20 rounded-sm w-155 h-10"
-                />
-              </div>
-            </div>
-            <div className="w-full">
-              <p>Email</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+            {/* First Name and Last Name */}
+            <div>
+              <p>First Name</p>
               <input
-                type="email"
-                className="border border-black/20 rounded-sm w-[1254px] h-10 "
+                type="text"
+                className="border border-black/20 rounded-sm w-full h-10 p-2"
+              />
+            </div>
+            <div>
+              <p>Last Name</p>
+              <input
+                type="text"
+                className="border border-black/20 rounded-sm w-full h-10 p-2"
               />
             </div>
 
+            {/* Email Input */}
+            <div className="col-span-1 sm:col-span-2">
+              <p>Email</p>
+              <input
+                type="email"
+                className="border border-black/20 rounded-sm w-full h-10 p-2"
+              />
+            </div>
+
+            {/* Phone Input */}
+            <div className="col-span-1 sm:col-span-2">
+
             <InputPhoneCountryCode />
-            <div>
+            </div>
+
+            {/* Message */}
+            <div className="col-span-1 sm:col-span-2">
               <p>Message</p>
               <textarea
                 placeholder="Type your message here..."
-                className="w-[1254px] p-3 border border-black/20 h-30 rounded-sm focus:ring-blue-500 placeholder:text-gray-400 resize-none"
+                className="w-full p-3 border border-black/20 h-32 rounded-sm focus:ring-blue-500 placeholder:text-gray-400 resize-none"
               />
             </div>
+
+            {/* Rating */}
             <AddRating />
-            <div
-              onClick={handleShow}
-              className="bg-[#F1582B] w-2/12 px-6 py-2 rounded-full text-white mx-auto mb5 mt-5 "
-            >
-              <h1 className="text-center ">Submit</h1>
+
+            {/* Submit Button */}
+            <div className="text-center mt-5 sm:col-span-2">
+              <button
+                onClick={handleShow}
+                className="text-white px-6 py-2 rounded-full bg-[#F1582B]"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>

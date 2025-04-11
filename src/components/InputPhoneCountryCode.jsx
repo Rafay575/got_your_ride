@@ -22,7 +22,7 @@ export function InputPhoneCountryCode() {
   const [country, setCountry] = React.useState(0);
 
   return (
-    <div className="w-[1255px] ">
+    <div className="w-full ">
       <Typography
         variant="small"
         color="blue-gray"

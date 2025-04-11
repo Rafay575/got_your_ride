@@ -187,45 +187,45 @@ const Booking = () => {
             <h1 className="font-bold text-2xl mb-5">Include/Exclude</h1>
             <div className="flex justify-between">
               <div>
-                <div className="flex gap-2  mb-2">
+                <div className="flex gap-2  mb-4">
                   <img src={tick} alt="" />
                   <p className="text-sm">Meet and greet</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={tick} alt="" />
                   <p className="text-sm">English-speaking driver</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={tick} alt="" />
                   <p className="text-sm">Air-conditioned vehicle </p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={tick} alt="" />
                   <p className="text-sm">Kitaguchi-hongu Fuji</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={tick} alt="" />
                   <p className="text-sm">with WiFi when available</p>
                 </div>
               </div>
               <div className="mx-auto">
-                <div className="flex gap-2  mb-2">
+                <div className="flex gap-2  mb-4">
                   <img src={cross} alt="" />
                   <p className="text-sm">Mr fuji 5th station entry ticket</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={cross} alt="" />
                   <p className="text-sm">Food and drinks</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={cross} alt="" />
                   <p className="text-sm">Tour guide</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={cross} alt="" />
                   <p className="text-sm">Ropeway or moterboat ticket</p>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-4">
                   <img src={cross} alt="" />
                   <p className="text-sm">
                     Saiko iyashi no nemb village entry ticket%
@@ -304,16 +304,16 @@ const Booking = () => {
       <hr className="mb-8 mt-8 opacity-20" />
       </div>
 
-      <div className="flex w-4/5 mx-auto justify-between mt-10">
-        <div className="w-2/8">
+      <div className="flex flex-col lg:flex-row w-4/5 mx-auto justify-between mt-10">
+        <div className="w-full mb-5 lg:mb-3 lg:w-2/8">
           <h1 className="font-bold text-2xl">Itinerary</h1>
           <div className="flex mt-4 gap-2">
             <img src={i15} className="w-6" alt="" />
-            <p className="text-[#f1582b] font-bold">Mt. Fuji 5th Station</p>
+            <p className="text-[#f1582b] pl-4 font-bold">Mt. Fuji 5th Station</p>
           </div>
           <div className="flex mt-4 gap-2">
             <img src={i14} className="w-6" alt="" />
-            <p className="font-semibold">starting location</p>
+            <p className="pl-4 font-semibold">starting location</p>
           </div>
           <div className="relative ">
             <img src={i11} className="w-6  pt-6   " alt="" />
@@ -325,63 +325,63 @@ const Booking = () => {
                     className="w-6 h-6 border border-[#f1582b] rounded-full"
                     alt=""
                   />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2 mb-2">
                   <img src={i13} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <img src={i12} className="w-6 h-6" alt="" />
-                  <div>
+                  <div className="ml-4">
                     <p>Mt. Fuji 5th Station</p>
                     <p className="opacity-64 text-[11px]">(75 minutes)</p>
                   </div>
@@ -390,13 +390,21 @@ const Booking = () => {
             </div>
           </div>
         </div>
-        <img src={i10} className="w-6/8 h-[688px]" alt="" />
+        <img src={i10} className="w-6/8 h-auto lg:h-[688px]" alt="" />
       </div>
+      <div className="mx-auto w-4/5">
+
       <hr className="mt-8 mb-8 opacity-20" />
+      </div>
       <ProgressBar />
+      <div className="mx-auto w-4/5">
+
       <hr className="mt-8 mb-8 opacity-20" />
-      {/* Give Feedback Section*/}
+      </div>
+      <div className="w-4/5 mx-auto">
+
       <Feedback />
+      </div>
       <div className="w-4/5 mx-auto">
         <Swiper
           spaceBetween={12} // Space between slides

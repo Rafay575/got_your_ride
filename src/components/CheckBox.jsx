@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa"; // Importing the check icon
 const CheckBox = () => {
   return (
     <div className="mt-2">
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-5">
         <label htmlFor="1" className="cursor-pointer relative">
           <input
             type="checkbox"
@@ -16,7 +16,7 @@ const CheckBox = () => {
         </label>
         <p className="text-sm">jkj</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-3">
         <label htmlFor="1" className="cursor-pointer relative">
           <input
             type="checkbox"
@@ -27,7 +27,7 @@ const CheckBox = () => {
         </label>
         <p className="text-sm">Oshino Hakkai</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-3">
         <label htmlFor="1" className="cursor-pointer relative">
           <input
             type="checkbox"
@@ -38,7 +38,7 @@ const CheckBox = () => {
         </label>
         <p className="text-sm">Oishi Park</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-3">
         <label htmlFor="1" className="cursor-pointer relative">
           <input
             type="checkbox"
@@ -49,7 +49,7 @@ const CheckBox = () => {
         </label>
         <p className="text-sm">Kitaguchi-hongu Fuji</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-3">
         <label htmlFor="1" className="cursor-pointer relative peer">
           <input
             type="checkbox"
