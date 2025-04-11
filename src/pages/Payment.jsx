@@ -1,6 +1,6 @@
 import React from 'react'
 import BookingForm from "../components/BookingForm";
-const PaymentPage = () => {
+const Payment = () => {
   return (
     <div>
         <BookingForm />
@@ -8,4 +8,4 @@ const PaymentPage = () => {
   )
 }
 
-export default PaymentPage
+export default Payment

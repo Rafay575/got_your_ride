@@ -10,6 +10,8 @@ import Booking from "./pages/Booking";
 import NavbarNotForHome from "./components/NavbarNotForHome";
 import Footer from "./components/Footer";
 import PaymentPage from "./pages/PaymentPage";
+import CartPage from "./pages/CartPage";
+
 const App = () => {
   const location = useLocation();
   return (
@@ -17,6 +19,7 @@ const App = () => {
       {location.pathname === "/" ? <HomeNavbar /> : <NavbarNotForHome />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/sign-in" element={<SignIn />} />

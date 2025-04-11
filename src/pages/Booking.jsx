@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Core Swiper styles
 import "swiper/css/navigation"; // Navigation styles
 import "swiper/css/pagination"; // Pagination styles
-
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import i from "../assets/unkown.png";
 import i1 from "../assets/87.png";
 import i2 from "../assets/50.png";
@@ -37,8 +37,24 @@ import Dropdown from "../components/Dropdown";
 import ProgressBar from "../components/ProgressBar";
 import Feedback from "../components/Feedback";
 import GoBackButton from "../components/GoBackButton";
+const IncludedItems = [
+  "Meet and greet",
+  "English-speaking driver",
+  "Air-conditioned vehicle",
+  "Kitaguchi-hongu Fuji",
+  "with WiFi when available"
+];
 
+const ExcludedItems = [
+  "Mr fuji 5th station entry ticket",
+  "Food and drinks",
+  "Tour guide",
+  "Ropeway or motorboat ticket",
+  "Saiko iyashi no nemb village entry ticket"
+];
 const Booking = () => {
+  const [date, setDate] = useState("");
+
   return (
     <>
       <div className="mt-35">
@@ -73,14 +89,7 @@ const Booking = () => {
 
             {/* Share, Wishlist, Cart */}
             <div className="flex gap-3 justify-start md:justify-end flex-wrap md:flex-nowrap">
-              <NavLink className="flex gap-2 group">
-                <FaShareAlt className="mt-1 group-hover:text-[#f1582b]" />
-                <p className="group-hover:text-[#f1582b]">Share</p>
-              </NavLink>
-              <NavLink className="flex gap-2 group">
-                <IoIosHeartEmpty className="mt-[2px] text-xl group-hover:text-[#f1582b]" />
-                <p className="group-hover:text-[#f1582b]">Add To Wish List</p>
-              </NavLink>
+             
               <NavLink className="hover:text-[#f1582b] group flex gap-2">
                 <div className="relative">
                   <RiShoppingCartLine className="text-2xl" />
@@ -156,8 +165,8 @@ const Booking = () => {
         </div>
       </div>
 
-      <div className="flex justify-between w-4/5 mx-auto">
-        <div className="w-2/3">
+      <div className="flex flex-col md:flex-row justify-between w-4/5 mx-auto">
+        <div className="w-full md:w-2/3">
           <div>
             <h1 className="font-bold text-2xl">Description</h1>
             <p className="leading-[28px] mt-5">
@@ -183,62 +192,37 @@ const Booking = () => {
             <CheckBox />
             <hr className="mt-8 mb-8 opacity-20" />
           </div>
-          <div>
-            <h1 className="font-bold text-2xl mb-5">Include/Exclude</h1>
-            <div className="flex justify-between">
-              <div>
-                <div className="flex gap-2  mb-4">
-                  <img src={tick} alt="" />
-                  <p className="text-sm">Meet and greet</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={tick} alt="" />
-                  <p className="text-sm">English-speaking driver</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={tick} alt="" />
-                  <p className="text-sm">Air-conditioned vehicle </p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={tick} alt="" />
-                  <p className="text-sm">Kitaguchi-hongu Fuji</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={tick} alt="" />
-                  <p className="text-sm">with WiFi when available</p>
-                </div>
-              </div>
-              <div className="mx-auto">
-                <div className="flex gap-2  mb-4">
-                  <img src={cross} alt="" />
-                  <p className="text-sm">Mr fuji 5th station entry ticket</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={cross} alt="" />
-                  <p className="text-sm">Food and drinks</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={cross} alt="" />
-                  <p className="text-sm">Tour guide</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={cross} alt="" />
-                  <p className="text-sm">Ropeway or moterboat ticket</p>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <img src={cross} alt="" />
-                  <p className="text-sm">
-                    Saiko iyashi no nemb village entry ticket%
-                  </p>
-                </div>
-              </div>
+          <div className="px-4 py-6">
+      <h1 className="font-bold text-2xl mb-5">Include/Exclude</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Included */}
+        <div>
+          {IncludedItems.map((item, index) => (
+            <div key={index} className="flex  items-center gap-2 mb-3">
+              <FaCheckCircle className="w-5 h-5 bg-white text-[#F1582B] " />
+              <p className="text-sm">{item}</p>
             </div>
-          </div>
+          ))}
         </div>
-        <div className="w-1/3 ml-7 ">
+
+        {/* Excluded */}
+        <div>
+          {ExcludedItems.map((item, index) => (
+            <div key={index} className="flex items-center gap-2 mb-3">
+              <FaTimesCircle className="w-5 h-5 text-gray-200 bg-gray-400 rounded-full" />
+              <p className="text-sm">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+        </div>
+        <div className="w-full md:w-1/3 md:ml-7 ">
           <h1 className="text-2xl font-bold  mb-3">Book Your Trip</h1>
           <div className="mt-5">
-            <Dropdown />
+            <Dropdown  value={date}
+        onChange={(e) => setDate(e.target.value)}
+        placeholder="Select a date"/>
           </div>
           <hr className="opacity-20 mt-8 mb-8" />
           <div className="flex  justify-between ">
@@ -305,9 +289,9 @@ const Booking = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row w-4/5 mx-auto justify-between mt-10">
-        <div className="w-full mb-5 lg:mb-3 lg:w-2/8">
+        <div className="w-full text-center mb-5 lg:mb-3 lg:w-2/8">
           <h1 className="font-bold text-2xl">Itinerary</h1>
-          <div className="flex mt-4 gap-2">
+          <div className="flex mt-4 text-center gap-2">
             <img src={i15} className="w-6" alt="" />
             <p className="text-[#f1582b] pl-4 font-bold">Mt. Fuji 5th Station</p>
           </div>
@@ -390,7 +374,7 @@ const Booking = () => {
             </div>
           </div>
         </div>
-        <img src={i10} className="w-6/8 h-auto lg:h-[688px]" alt="" />
+        <img src={i10} className="w-full md:w-6/8 h-auto lg:h-[688px]" alt="" />
       </div>
       <div className="mx-auto w-4/5">
 

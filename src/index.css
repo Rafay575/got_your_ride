@@ -29,3 +29,8 @@ body {
 :root {
   --custom-property: 0 40px 80px -20px rgba(0, 0, 0, 0.8); /* Larger shadow than shadow-2xl */
 }
+@layer components {
+  .input {
+    @apply w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none;
+  }
+}
