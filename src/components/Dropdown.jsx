@@ -1,23 +1,24 @@
-
-
-import React from "react";
+"use client"
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
 import { HiCalendar } from "react-icons/hi";
+import "react-datepicker/dist/react-datepicker.css";
 
-const Dropdown = ({ placeholder = "Select date", value, onChange }) => {
+const Dropdown = ({ placeholder = "Select date" }) => {
+  const [selectedDate, setSelectedDate] = useState(null);
+
   return (
-    <div className="relative max-w-sm">
-      {/* Icon */}
+    <div className="relative w-full">
+      {/* Calendar Icon */}
       <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-        <HiCalendar className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+        <HiCalendar className="w-4 h-4 text-gray-500 " />
       </div>
-
-      {/* Input */}
-      <input
-        type="text"
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      {/* React DatePicker */}
+      <DatePicker
+        selected={selectedDate}
+        onChange={(date) => setSelectedDate(date)}
+        placeholderText={placeholder}
+        className="bg-gray-200 border border-gray-300 text-gray-900 outline-none text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full ps-10 p-2.5  "
       />
     </div>
   );

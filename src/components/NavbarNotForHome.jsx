@@ -5,7 +5,7 @@ import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
 import { IoCaretDownSharp } from "react-icons/io5";
 import SocialIcons from "./SocialIcons";
-
+import { Link } from "react-router-dom";
 const NavbarNotForHome = () => {
   
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -70,22 +70,33 @@ const NavbarNotForHome = () => {
     <IoCaretDownSharp size={20} className="ml-1" />
   </button>
   <div className="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
-    <div className="py-2">
-      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-      City Tokyo
-      </a>
-      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-      Mt. Fuji 5th Station
-
-      </a>
-      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-      Hakone Tour
-      </a>
-      <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-      Osaka Castle
-      </a>
+      <div className="py-2">
+        <Link
+          to="/booking/1"
+          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+        >
+          City Tokyo
+        </Link>
+        <Link
+          to="/booking/2"
+          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+        >
+          Mt. Fuji 5th Station
+        </Link>
+        <Link
+          to="/booking/3"
+          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+        >
+          Hakone Tour
+        </Link>
+        <Link
+          to="/booking/4"
+          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+        >
+          Osaka Castle
+        </Link>
+      </div>
     </div>
-  </div>
 </div>
 
               <NavLink to="/contact" className={" hover:bg-[#f1582b] hover:text-white rounded-sm px-3 py-1.5"} onClick={() => setIsSideMenuOpen(false)}>

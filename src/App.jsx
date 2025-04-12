@@ -6,11 +6,12 @@ import About from "./pages/About";
 import HomeNavbar from "./components/HomeNavbar";
 import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
-import Booking from "./pages/Booking";
+import Main from "./pages/Main";
 import NavbarNotForHome from "./components/NavbarNotForHome";
 import Footer from "./components/Footer";
 import PaymentPage from "./pages/PaymentPage";
 import CartPage from "./pages/CartPage";
+
 
 const App = () => {
   const location = useLocation();
@@ -24,7 +25,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking/:placeId" element={<Main />} />
         <Route path="/payment" element={<PaymentPage />} />
       </Routes>
       <Footer />

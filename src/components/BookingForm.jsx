@@ -1,7 +1,5 @@
 import React from "react";
-import { FaCcVisa, FaCcMastercard } from "react-icons/fa";
-import { FiInfo } from "react-icons/fi";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 import { FaStar, FaInfoCircle } from "react-icons/fa";
 const BookingForm = () => {
   return (
