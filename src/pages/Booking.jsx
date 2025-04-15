@@ -1,34 +1,19 @@
 import React,{useState} from "react";
-import { IoIosHeartEmpty } from "react-icons/io";
-import { RiShoppingCartLine } from "react-icons/ri";
+
 import { NavLink } from "react-router-dom";
-import { GoArrowLeft } from "react-icons/go";
+
 import { SlLocationPin } from "react-icons/sl";
-import { FaShareAlt } from "react-icons/fa";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Core Swiper styles
 import "swiper/css/navigation"; // Navigation styles
 import "swiper/css/pagination"; // Pagination styles
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import i from "../assets/unkown.png";
-import i1 from "../assets/87.png";
-import i2 from "../assets/50.png";
-import i3 from "../assets/shade-ysUOK8yPnt0-unsplash.png";
-import i4 from "../assets/rui-hao-lim-VajtrJauWDQ-unsplash.png";
-import i5 from "../assets/Group_427_1.png";
-import i6 from "../assets/Group_427_2.png";
-import i7 from "../assets/Group_427_3.png";
-import i8 from "../assets/Group_427_4.png";
-import i9 from "../assets/orange-line.png";
-import i10 from "../assets/image_1.png";
-import i11 from "../assets/image_2.png";
-import i12 from "../assets/Group_1.png";
-import i13 from "../assets/Group_2.png";
-import i14 from "../assets/Group_3.png";
-import i15 from "../assets/Group_4.png";
 
+import {  useNavigate } from "react-router-dom";
 import tick from "../assets/tick.png";
-import cross from "../assets/cross.png";
+
 
 import Star from "../components/Star";
 
@@ -40,9 +25,40 @@ import GoBackButton from "../components/GoBackButton";
 
 
 
-const Booking = ({tripData,bookingData,itineraryData,place}) => {
+const Booking = ({ tripData, bookingData, itineraryData, place }) => {
+  // States for the form inputs
   const [date, setDate] = useState("");
+  const [adults, setAdults] = useState(1);
+  // Note: if "place" is a number the user needs to input, you can also capture it.
+  const [placeNumber, setPlaceNumber] = useState(place);
+  
+  const handleDecrease = () => {
+    setAdults((prev) => (prev > 1 ? prev - 1 : prev));
+  };
+
+  // Handler to increase the adult count
+  const handleIncrease = () => {
+    setAdults((prev) => prev + 1);
+  };
+  const navigate = useNavigate();
+
+  // Destructure bookingData for easier use
   const { title, subtitle, location, reviews, images, details, price } = bookingData;
+
+  // Handler for redirecting to payment page
+  const handleProceedToPayment = () => {
+    // Construct the payload from form states
+    const bookingInfo = {
+      date,
+      adults,
+      placeNumber,
+      title,
+      price
+      // You can add more data if needed here.
+    };
+    // Redirect to /payment page with state
+    navigate("/payment", { state: bookingInfo });
+  };
   return (
     <>
       <div className="mt-35">
@@ -164,7 +180,9 @@ const Booking = ({tripData,bookingData,itineraryData,place}) => {
         {/* Date Dropdown */}
         <div className="mt-5">
           <Dropdown
-            placeholder={tripData.booking.dropdownPlaceholder}
+          selectedDate={date}
+          setSelectedDate={setDate}
+           
           />
         </div>
         <hr className="opacity-20 mt-8 mb-8" />
@@ -185,21 +203,30 @@ const Booking = ({tripData,bookingData,itineraryData,place}) => {
                 </p>
               </div>
               <div className="w-[180px]">
-              <div className="flex items-center border-gray-100">
-            <span className="cursor-pointer rounded-l bg-gray-200 py-1 h-8 px-5 duration-100 hover:bg-orange-500 hover:text-white">
-              -
-            </span>
-            <input
-              className="h-8 w-20 border-x pl-9 border-gray-300 bg-gray-200 text-xs outline-none"
-              type="number"
-              value="2"
-              min="1"
-              readOnly
-            />
-            <span className="cursor-pointer rounded-r bg-gray-200 py-1 h-8 px-5 duration-100 hover:bg-orange-500 hover:text-white">
-              +
-            </span>
-          </div>
+              <div className="flex items-center border border-gray-100">
+          {/* Decrement button */}
+          <span
+            onClick={handleDecrease}
+            className="cursor-pointer rounded-l bg-gray-200 py-1 h-8 px-5 duration-100 hover:bg-orange-500 hover:text-white"
+          >
+            -
+          </span>
+          {/* Adult input field */}
+          <input
+            className="h-8 w-20 border-x pl-5 border-gray-300 bg-gray-200 text-xs text-center outline-none"
+            type="number"
+            value={adults}
+            min="1"
+            readOnly
+          />
+          {/* Increment button */}
+          <span
+            onClick={handleIncrease}
+            className="cursor-pointer rounded-r bg-gray-200 py-1 h-8 px-5 duration-100 hover:bg-orange-500 hover:text-white"
+          >
+            +
+          </span>
+        </div>
               </div>
             </div>
           </div>
@@ -220,7 +247,7 @@ const Booking = ({tripData,bookingData,itineraryData,place}) => {
         </div>
 
         {/* Add to Cart Button */}
-        <div className="bg-[#F1582B] px-6 py-2 rounded-full w-full mt-10 text-white">
+        <div className="bg-[#F1582B] px-6 py-2 rounded-full w-full mt-10 text-white"  onClick={handleProceedToPayment}>
           <h1 className="text-center">{tripData.booking.buttonText}</h1>
         </div>
       </div>

@@ -38,7 +38,7 @@ const placesData = [
       ],
       price: {
         fromLabel: "From",
-        primary: "$350",
+        primary: "350",
         secondary: "$500",
         secondaryIcon: i9
       }
@@ -138,7 +138,7 @@ Contact Us at +96896918676`
       ],
       price: {
         fromLabel: "From",
-        primary: "$400",
+        primary: "400",
         secondary: "$550",
         secondaryIcon: i9
       }
@@ -228,7 +228,7 @@ Contact Us at +96896918676`
       ],
       price: {
         fromLabel: "From",
-        primary: "$300",
+        primary: "300",
         secondary: "$450",
         secondaryIcon: i9
       }
@@ -317,7 +317,7 @@ Contact Us at +96896918676`
       ],
       price: {
         fromLabel: "From",
-        primary: "$500",
+        primary: "500",
         secondary: "$700",
         secondaryIcon: i9
       }
