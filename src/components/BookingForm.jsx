@@ -24,9 +24,7 @@ const BookingForm = ({ bookingInfo }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Calculate the total price (primary price * number of adults)
-    const totalPrice =
-      parseInt(bookingInfo.price.primary, 10) * bookingInfo.adults;
+ 
 
     // Prepare the payload including bookingInfo data (including placeNumber)
     const payload = {
@@ -43,7 +41,7 @@ const BookingForm = ({ bookingInfo }) => {
       bookingDate: bookingInfo.date, // Ensure this is a valid date string/ISO
       adults: bookingInfo.adults,
       placeNumber: bookingInfo.placeNumber,
-      totalPrice,
+      totalPrice: bookingInfo.price,
     };
 
     try {

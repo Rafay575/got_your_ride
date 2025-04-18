@@ -18,10 +18,10 @@ import i15 from "../assets/Group_4.png";
 // For brevity, only Place 1 is fully filled out; replicate or modify values for Place 2,3,4.
 const placesData = [
   {
-    id: 1,
+    id: 2,
     bookingData: {
       title: "Mt. Fuji 5th Station",
-      subtitle: "Japan's Leading GetYourRide Service...Ready In Your One Click",
+      subtitle: "Experience Japan's Premier GetYourRide Service – Ready at Your Fingertips with Just One Click!",
       location: "Mt. Fuji 5th Station",
       reviews: "(Reviews)",
       images: [
@@ -46,8 +46,7 @@ const placesData = [
     tripData: {
       description: {
         title: "Description",
-        text: `Embark on an unforgettable journey with Getyourride's private Mt. Fuji tour, accompanied by an expert English-speaking driver. 
-Contact Us at +96896918676`
+        text: `Embark on an unforgettable journey with Getyourride's private Mt. Fuji tour, accompanied by an expert English-speaking driver. As you traverse the awe-inspiring landscapes of Japan, immerse yourself in the rich cultural tapestry woven around the iconic Mt. Fuji. Your knowledgeable drivers will unveil the hidden gems and historical anecdotes of the region, ensuring each moment is steeped in discovery and wonder. From serene lakeshores to charming villages nestled against the majestic backdrop of Mt. Fuji, every stop promises breathtaking vistas and unparalleled photo opportunities. Whether you're a seasoned adventurer or a first-time visitor, this exclusive tour offers a personalized and enriching experience, leaving you with cherished memories of Japan's most celebrated natural wonder. Contact Us at +96896918676`
       },
       tripHighlights: {
         title: "Trip Highlights",
@@ -118,7 +117,7 @@ Contact Us at +96896918676`
     }
   },
   {
-    id: 2,
+    id: 1,
     bookingData: {
       title: "Place 2 Title",
       subtitle: "Subtitle for place 2",

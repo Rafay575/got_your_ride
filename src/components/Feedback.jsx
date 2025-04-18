@@ -1,12 +1,81 @@
 import React, { useState } from "react";
 import { InputPhoneCountryCode } from "./InputPhoneCountryCode";
 import AddRating from "../components/AddRating";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Feedback = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+    rating: 0,
+  });
   const [show, setShow] = useState(false);
+  const handlePhoneChange = (phone) => {
+    setFormData((prevData) => ({ ...prevData, phone }));
+  };
 
+ 
   const handleShow = () => {
     setShow(!show);
+  };
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleRatingChange = (rating) => {
+    setFormData((prevData) => ({ ...prevData, rating }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    // Validate form data
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.message || formData.rating === 0) {
+      toast.error("All fields are required!");
+      return;
+    }
+
+    setIsLoading(true); // Set loading to true during submission
+
+    // Send form data to the backend API
+    try {
+      const response = await fetch("http://localhost:5000/api/feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast.success(data.message);
+        // Reset form after successful submission
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+          rating: 0,
+        });
+      } else {
+        toast.error(data.error || "Something went wrong");
+      }
+    } catch (error) {
+      toast.error("Failed to submit the feedback");
+    } finally {
+      setIsLoading(false); // Reset loading state after submission
+    }
   };
 
   return (
@@ -22,7 +91,7 @@ const Feedback = () => {
       </div>
 
       {show && (
-        <div className="w-full ">
+        <div className="w-full">
           <h1 className="w-full text-center mb-5 font-semibold text-xl sm:text-2xl">
             Give Us Feedback
           </h1>
@@ -32,6 +101,9 @@ const Feedback = () => {
               <p>First Name</p>
               <input
                 type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 className="border border-black/20 rounded-sm w-full h-10 p-2"
               />
             </div>
@@ -39,6 +111,9 @@ const Feedback = () => {
               <p>Last Name</p>
               <input
                 type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 className="border border-black/20 rounded-sm w-full h-10 p-2"
               />
             </div>
@@ -48,40 +123,47 @@ const Feedback = () => {
               <p>Email</p>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="border border-black/20 rounded-sm w-full h-10 p-2"
               />
             </div>
 
             {/* Phone Input */}
             <div className="col-span-1 sm:col-span-2">
-
-            <InputPhoneCountryCode />
+            <InputPhoneCountryCode onPhoneChange={handlePhoneChange} />
             </div>
 
             {/* Message */}
             <div className="col-span-1 sm:col-span-2">
               <p>Message</p>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Type your message here..."
                 className="w-full p-3 border border-black/20 h-32 rounded-sm focus:ring-blue-500 placeholder:text-gray-400 resize-none"
               />
             </div>
 
             {/* Rating */}
-            <AddRating />
+            <AddRating rating={formData.rating} onChange={handleRatingChange} />
 
             {/* Submit Button */}
             <div className="text-center mt-5 sm:col-span-2">
               <button
-                onClick={handleShow}
+                onClick={handleSubmit}
                 className="text-white px-6 py-2 rounded-full bg-[#F1582B]"
+                disabled={isLoading}
               >
-                Submit
+                {isLoading ? "Submitting..." : "Submit"}
               </button>
             </div>
           </div>
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 };

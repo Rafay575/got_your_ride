@@ -10,16 +10,27 @@
 .ze-index {
   z-index: 50;
 }
-
+@font-face {
+  font-family: 'Matter Regular'; /* You can name it whatever you like */
+  src: url('./assets/fonts/Matter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@layer base {
+  /* Apply the custom font to the html and body so all children inherit it */
+  html, body {
+    font-family: 'Matter', sans-serif;
+  }
+}  
 .montserrat-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Matter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 700; /* Bold weight */
   font-style: normal;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Matter', sans-serif;
 }
 .ron {
   border-top-left-radius: 40px;

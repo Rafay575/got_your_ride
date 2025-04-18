@@ -12,7 +12,7 @@ const BookingCard = ({ bookingInfo }) => {
     day: "numeric",
     year: "numeric"
   });
-  const plusOneDate = new Date(bookingDate);
+  const plusOneDate = new Date();
   plusOneDate.setDate(plusOneDate.getDate() + 1);
   // Format the time (e.g., "10:00 AM")
   const formattedPlusOneDate = plusOneDate.toLocaleDateString("en-US", {
@@ -64,7 +64,7 @@ const BookingCard = ({ bookingInfo }) => {
       <div className="mt-4 p-4 bg-[#ddd] pt-2 flex justify-between items-center">
         <span className="text-sm font-semibold">Total</span>
         <span className="text-base font-semibold text-gray-800">
-          ${parseInt(bookingInfo.price.primary) * bookingInfo.adults}
+          ${bookingInfo.price}
         </span>
       </div>
     </div>
