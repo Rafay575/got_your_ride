@@ -46,7 +46,7 @@ const ResponsiveComponent = () => {
           whileHover={{ rotate: 3 }}
           transition={{ type: "spring", stiffness: 260 }}
         >
-          <p className="mt-6 font-bold text-4xl">05+</p>
+          <p className="mt-6 font-bold text-4xl">20+</p>
           <p className="text-[8px] mt-3">YEARS OF EXPERIENCE</p>
         </motion.div>
       </motion.div>
