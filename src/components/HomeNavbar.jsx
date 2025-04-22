@@ -90,7 +90,7 @@ const HomeNavbar = () => {
           to="/booking/1"
           className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
         >
-          City Tokyo
+         Tokyo City Tour 
         </Link>
         <Link
           to="/booking/2"
@@ -102,13 +102,13 @@ const HomeNavbar = () => {
           to="/booking/3"
           className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
         >
-          Hakone Tour
+          Nagano Tour 
         </Link>
         <Link
           to="/booking/4"
           className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
         >
-          Osaka Castle
+           Nikko Tour
         </Link>
       </div>
     </div>
@@ -181,31 +181,31 @@ const HomeNavbar = () => {
                 </button>
                 {isOpen && (
                   <div className="mt-2 flex flex-col  transition-all duration-700">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      City Tokyo
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Mt. Fuji 5th Station
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Hakone Tour
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Osaka Castle
-                    </a>
-                  </div>
+                                            <Link
+                                              to="/booking/1"
+                                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                             Tokyo City Tour 
+                                            </Link>
+                                            <Link
+                                              to="/booking/2"
+                                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                              Mt. Fuji 5th Station
+                                            </Link>
+                                            <Link
+                                              to="/booking/3"
+                                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                              Nagano Tour 
+                                            </Link>
+                                            <Link
+                                              to="/booking/4"
+                                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                               Nikko Tour
+                                            </Link>
+                                          </div>
                 )}
               </div>
               <NavLink to="/contact" onClick={() => setIsSideMenuOpen(false)}>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
-
+import bgImage from "../assets/image_1.png";
 import { SlLocationPin } from "react-icons/sl";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; // Core Swiper styles
-import "swiper/css/navigation"; // Navigation styles
-import "swiper/css/pagination"; // Pagination styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import i from "../assets/unkown.png";
 
@@ -21,7 +21,8 @@ import Dropdown from "../components/Dropdown";
 import ProgressBar from "../components/ProgressBar";
 import Feedback from "../components/Feedback";
 import GoBackButton from "../components/GoBackButton";
-
+import ItineraryTimeline from "../components/ItineraryTimeline";
+import img from "../assets/image_1.png"
 const Booking = ({ tripData, bookingData, itineraryData, place }) => {
   const [date, setDate] = useState("");
   const [adults, setAdults] = useState(1);
@@ -202,8 +203,34 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
           <h1 className="text-2xl font-bold mb-3">{tripData.booking.title}</h1>
 
           {/* Date Dropdown */}
-          <div className="mt-5">
+          <div className="mt-5 flex justify-between">
             <Dropdown selectedDate={date} setSelectedDate={setDate} />
+            <div className="w-2/5">
+                  <div className="flex items-center border border-none">
+                    {/* Decrement button */}
+                    <span
+                      onClick={handleDecrease}
+                      className="cursor-pointer rounded-l-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
+                    >
+                      -
+                    </span>
+                    {/* Adult input field */}
+                    <input
+                      className="h-10 w-20 border-x pl-3 flex items-center justify-center p-0 border-gray-300 bg-gray-200 text-xs text-center outline-none"
+                      type="number"
+                      value={adults}
+                      min="1"
+                      readOnly
+                    />
+                    {/* Increment button */}
+                    <span
+                      onClick={handleIncrease}
+                      className="cursor-pointer rounded-r-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
+                    >
+                      +
+                    </span>
+                  </div>
+                </div>
           </div>
           <hr className="opacity-20 mt-8 mb-8" />
 
@@ -215,39 +242,16 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
               </p>
               <div className="flex w-full justify-between items-center">
                 <div>
+
                   <p className="text-gray-500 text-sm font-semibold">
-                    {tripData.booking.people.category}
+                  
+                   1 - 6 {tripData.booking.people.category}  per car
                   </p>
                   <p className="text-gray-500 text-sm font-semibold">
                     {tripData.booking.people.subtext}
                   </p>
                 </div>
-                <div className="w-[180px]">
-                  <div className="flex items-center border border-gray-100">
-                    {/* Decrement button */}
-                    <span
-                      onClick={handleDecrease}
-                      className="cursor-pointer rounded-l bg-gray-200 py-1 h-8 px-5 duration-100 hover:bg-orange-500 hover:text-white"
-                    >
-                      -
-                    </span>
-                    {/* Adult input field */}
-                    <input
-                      className="h-8 w-20 border-x pl-5 border-gray-300 bg-gray-200 text-xs text-center outline-none"
-                      type="number"
-                      value={adults}
-                      min="1"
-                      readOnly
-                    />
-                    {/* Increment button */}
-                    <span
-                      onClick={handleIncrease}
-                      className="cursor-pointer rounded-r bg-gray-200 py-1 h-8 px-5 duration-100 hover:bg-orange-500 hover:text-white"
-                    >
-                      +
-                    </span>
-                  </div>
-                </div>
+               
               </div>
               <div className="w-full flex items-center mt-5 justify-between">
                 <p className="text-sm text-gray-600">{`Total Price: $${totalPrice}`}</p>
@@ -284,65 +288,25 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
           </div>
         </div>
       </div>
-      <div className="w-4/5 mx-auto ">
-        <hr className="mb-8 mt-8 opacity-20" />
-      </div>
+     
 
-      <div className="flex flex-col lg:flex-row w-4/5 mx-auto justify-between mt-10">
-        {/* Left Column */}
-        <div className="w-full text-center mb-5 lg:mb-3 lg:w-2/8">
-          {/* Section Title */}
-          <h1 className="font-bold text-2xl">
-            {itineraryData.leftColumn.title}
-          </h1>
-          {/* Header Items */}
-          {itineraryData.leftColumn.headerItems.map((item, idx) => (
-            <div key={idx} className="flex mt-4 gap-2 text-center">
-              <img src={item.icon} className="w-6" alt="" />
-              <p className={item.textClass}>{item.text}</p>
-            </div>
-          ))}
-          {/* Stops Section */}
-          <div className="relative mt-4">
-            {/* Background icon (can be seen as a visual indicator behind the stops list) */}
-            <img
-              src={itineraryData.leftColumn.stopsBackground}
-              className="w-6 pt-6"
-              alt=""
-            />
-            <div className="absolute inset-0">
-              <div className="flex flex-col gap-6 mt-4">
-                {itineraryData.leftColumn.stops.map((stop, index) => (
-                  <div key={index} className="flex gap-2 mt-2">
-                    <img
-                      src={stop.icon}
-                      className="w-6 h-6 border border-[#f1582b] rounded-full"
-                      alt=""
-                    />
-                    <div className="ml-4">
-                      <p>{stop.title}</p>
-                      <p className="opacity-64 text-[11px]">{stop.duration}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+      <div className="mx-auto w-4/5">
+        <hr className="mt-8 mb-8 opacity-20" />
+        <div className="flex ">
+          <div>
+           
+            <ItineraryTimeline dummyItems={itineraryData} />
+          </div>
+          <div>
+            <img src={img} alt="" />
           </div>
         </div>
-        {/* Right Column */}
-        <img
-          src={itineraryData.rightImage}
-          className="w-full md:w-6/8 h-auto lg:h-[688px]"
-          alt=""
-        />
       </div>
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
+        
       </div>
       <ProgressBar />
-      <div className="mx-auto w-4/5">
-        <hr className="mt-8 mb-8 opacity-20" />
-      </div>
       <div className="w-4/5 mx-auto">
         <Feedback />
       </div>

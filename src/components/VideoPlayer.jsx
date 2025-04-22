@@ -1,63 +1,138 @@
-import React from "react";
-import i9 from "../assets/Group-108.png";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import Modal from "react-modal";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-// Set the app element for accessibility (modal component)
 Modal.setAppElement("#root");
 
-const VideoPlayer = ({ image, video, css }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false); // Modal open state
+export default function VideoPlayer({ image, video, css = "" }) {
+  const [open, setOpen] = useState(false);
 
-  const handlePlay = () => {
-    setModalIsOpen(true); // Open the modal
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false); // Close the modal
-  };
-
-  // Effect to disable/enable body scroll when modal is opened/closed
+  /* lock scroll when modal is open */
   useEffect(() => {
-    if (modalIsOpen) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
-    } else {
-      document.body.style.overflow = "auto"; // Re-enable scrolling
-    }
-
-    // Clean up the effect when the component is unmounted
-    return () => {
-      document.body.style.overflow = "auto"; // Ensure scrolling is re-enabled
-    };
-  }, [modalIsOpen]);
+    document.body.style.overflow = open ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [open]);
 
   return (
     <div className={`relative ${css}`}>
-      {/* Main Image */}
-      <img
+      {/* hero image fade‑up once */}
+      <motion.img
         src={image}
-        className="w-4/5   mx-auto rounded-2xl "
         alt=""
+        className="mx-auto w-4/5 lg:max-w-5xl rounded-2xl"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       />
 
-      {/* Play Icon Image */}
-      <img
-        src={i9}
-        onClick={handlePlay}
-        className="absolute inset-0 mx-auto top-[30%] sm:top-[35%] lg:top-[40%] w-12 sm:w-18 md:w-24 lg:w-30 cursor-pointer"
-        alt="Play Icon"
-      />
+      {/* Play button + SVG ripples */}
+      <button
+        onClick={() => setOpen(true)}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        {/* -------------- SVG RIPPLES -------------- */}
+        <svg
+          className="absolute h-32 w-32 overflow-visible pointer-events-none"
+          viewBox="0 0 120 120"
+        >
+          {/* Ring 1 */}
+          <circle
+            cx="60"
+            cy="60"
+            r="25"
+            stroke="#F1582B"
+            strokeWidth="6"
+            fill="none"
+          >
+            <animate
+              attributeName="r"
+              from="25"
+              to="60"
+              dur="2s"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              from="0.9"
+              to="0"
+              dur="2s"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+          </circle>
 
-      {/* React Modal for video */}
+          {/* Ring 2 (stagger 0.66 s) */}
+          <circle
+            cx="60"
+            cy="60"
+            r="25"
+            stroke="#F1582B"
+            strokeWidth="6"
+            fill="none"
+          >
+            <animate
+              attributeName="r"
+              from="25"
+              to="60"
+              dur="2s"
+              begin=".66s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              from="0.9"
+              to="0"
+              dur="2s"
+              begin=".66s"
+              repeatCount="indefinite"
+            />
+          </circle>
+
+          {/* Ring 3 (stagger 1.33 s) */}
+          <circle
+            cx="60"
+            cy="60"
+            r="25"
+            stroke="#F1582B"
+            strokeWidth="6"
+            fill="none"
+          >
+            <animate
+              attributeName="r"
+              from="25"
+              to="60"
+              dur="2s"
+              begin="1.33s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              from="0.9"
+              to="0"
+              dur="2s"
+              begin="1.33s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </svg>
+
+        {/* -------------- PLAY PILL -------------- */}
+        <span className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-[#F1582B] shadow-lg hover:scale-105 transition-transform">
+          <svg viewBox="0 0 24 24" className="h-10 w-10 fill-white">
+            <polygon points="6,4 20,12 6,20" />
+          </svg>
+        </span>
+      </button>
+
+      {/* -------------- MODAL -------------- */}
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
+        isOpen={open}
+        onRequestClose={() => setOpen(false)}
         style={{
-          overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            zIndex: 2000, // Set higher z-index to ensure it appears above other elements
-          },
+          overlay: { backgroundColor: "rgba(0,0,0,0.7)", zIndex: 2000 },
           content: {
             top: "50%",
             left: "50%",
@@ -74,18 +149,8 @@ const VideoPlayer = ({ image, video, css }) => {
           },
         }}
       >
-        <div className="relative w-full h-full">
-          <ReactPlayer
-            url={video} // Video URL
-            playing={true}
-            controls={true}
-            width="100%"
-            height="100%"
-          />
-        </div>
+        <ReactPlayer url={video} playing controls width="100%" height="100%" />
       </Modal>
     </div>
   );
-};
-
-export default VideoPlayer;
+}

@@ -12,14 +12,14 @@ const Dropdown = ({ selectedDate, setSelectedDate }) => {
     setSelectedDate(defaultDate);
   },[])
   return (
-    <div className="relative w-full">
+    <div className="relative w-2/5 rounded-full">
       {/* Calendar Icon */}
       <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
         <HiCalendar className="w-4 h-4 text-gray-500" />
       </div>
       {/* React DatePicker with Time Picker enabled */}
       <DatePicker
-        selected={selectedDate }
+        selected={selectedDate}
         onChange={(date) => setSelectedDate(date)}
         placeholderText="Select a date & time"
         showTimeSelect
@@ -27,7 +27,7 @@ const Dropdown = ({ selectedDate, setSelectedDate }) => {
         timeIntervals={60} // Time selection at one-hour intervals.
         timeCaption="Time"
         dateFormat="MMMM d, yyyy h:mm aa"
-        className="bg-gray-200 border border-gray-300 text-gray-900 outline-none text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full ps-10 p-2.5"
+        className="bg-gray-200 border border-gray-300 text-gray-900 outline-none text-xs focus:ring-2 focus:ring-orange-500 focus:border-orange-500 block w-full rounded-full pl-10 pr-4 py-2.5 hover:bg-gray-300 transition duration-200 ease-in-out"
         minDate={new Date()} // Disallow selecting previous dates.
       />
     </div>

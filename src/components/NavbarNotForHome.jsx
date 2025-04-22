@@ -70,32 +70,32 @@ const NavbarNotForHome = () => {
     <IoCaretDownSharp size={20} className="ml-1" />
   </button>
   <div className="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
-      <div className="py-2">
-        <Link
-          to="/booking/1"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
-          City Tokyo
-        </Link>
-        <Link
-          to="/booking/2"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
-          Mt. Fuji 5th Station
-        </Link>
-        <Link
-          to="/booking/3"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
-          Hakone Tour
-        </Link>
-        <Link
-          to="/booking/4"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
-          Osaka Castle
-        </Link>
-      </div>
+     <div className="py-2">
+           <Link
+             to="/booking/1"
+             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+           >
+            Tokyo City Tour 
+           </Link>
+           <Link
+             to="/booking/2"
+             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+           >
+             Mt. Fuji 5th Station
+           </Link>
+           <Link
+             to="/booking/3"
+             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+           >
+             Nagano Tour 
+           </Link>
+           <Link
+             to="/booking/4"
+             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+           >
+              Nikko Tour
+           </Link>
+         </div>
     </div>
 </div>
 
@@ -165,32 +165,34 @@ const NavbarNotForHome = () => {
                   DESTINATIONS <IoCaretDownSharp size={16} className="ml-1" />
                 </button>
                 {isOpen && (
-                  <div className="mt-2 flex flex-col  transition-all duration-700">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      City Tokyo
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Mt. Fuji 5th Station
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Hakone Tour
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Osaka Castle
-                    </a>
-                  </div>
+                  
+                    <div className="mt-2 flex flex-col  transition-all duration-700">
+                          <Link
+                            to="/booking/1"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          >
+                           Tokyo City Tour 
+                          </Link>
+                          <Link
+                            to="/booking/2"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          >
+                            Mt. Fuji 5th Station
+                          </Link>
+                          <Link
+                            to="/booking/3"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          >
+                            Nagano Tour 
+                          </Link>
+                          <Link
+                            to="/booking/4"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          >
+                             Nikko Tour
+                          </Link>
+                        </div>
+                  
                 )}
               </div>
               <NavLink to="/contact" onClick={() => setIsSideMenuOpen(false)}>
