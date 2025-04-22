@@ -97,7 +97,7 @@ const Contact = () => {
           >
             <img src={i3} className="w-20 mb-4" alt="Address" />
             <p className="text-center font-semibold">Address</p>
-            <p className="text-center text-sm">2-chrome-3-5 Wakaba Shinjuku City, Tokyo 160-0011</p>
+            <p className="text-center text-sm">2-chrome-3-5 Wakaba<br/> Shinjuku City, Tokyo 160-0011</p>
           </motion.div>
 
           <motion.div

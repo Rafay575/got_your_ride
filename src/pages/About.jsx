@@ -50,14 +50,14 @@ const About = () => {
       {/* First Info Box */}
       <div className="text-center w-full lg:w-[45%]">
         <img src={i3} className="w-16 sm:w-20 mx-auto" alt="Service Provider" />
-        <p className="font-semibold mt-2">Nationally well known service provider</p>
-        <p className="text-sm mt-2">Welcome to our tourism ecosystem, we are here for you</p>
+        <p className="font-semibold mt-2">A Trusted Leader in Transportation Services </p>
+      
       </div>
       {/* Second Info Box */}
       <div className="text-center w-full lg:w-[45%]">
         <img src={i2} className="w-12 sm:w-15 mx-auto" alt="Booking Solution" />
-        <p className="font-semibold mt-2">Most popular booking solution provider</p>
-        <p className="text-sm mt-2">Welcome to our tourism ecosystem, we are here for you</p>
+        <p className="font-semibold mt-2">
+        Your Ultimate Ride for Every Journey</p>
       </div>
     </div>
    

@@ -6,12 +6,9 @@ import "swiper/css"; // Core Swiper styles
 import "swiper/css/navigation"; // Navigation styles
 import "swiper/css/pagination"; // Pagination styles
 
-import Star from "./Star";
-import { NavLink } from "react-router-dom";
 import image from "../assets/image.png";
 import video from "../assets/video.mp4";
 
-import { CiHeart } from "react-icons/ci";
 import VideoPlayer from "./VideoPlayer";
 import HighIndexComponent from "./HighIndexComponent";
 import DynamicGrid from "./DynamicGrid";
@@ -19,6 +16,7 @@ import ResponsiveComponent from "./ResponsiveComponent";
 import DynamicSwiper from "./DynamicSwiper";
 import WhyChooseUs from "./WhyChooseUs";
 import Testimonials from "./Testimonials";
+
 
 const Popup = () => {
   // Effect to disable/enable body scroll when modal is opened/closed
@@ -40,7 +38,7 @@ const Popup = () => {
       <DynamicGrid />
       <ResponsiveComponent />
       <DynamicSwiper />
-
+     
 
     <WhyChooseUs />
     
