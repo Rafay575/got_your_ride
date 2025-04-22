@@ -60,7 +60,7 @@ const DynamicGrid = () => {
       {data.map((item, idx) => (
         <motion.div
           key={item.id}
-          className="group rounded-2xl shadow-2xl bg-white cursor-pointer"
+          className="group rounded-2xl shadow-lg bg-white cursor-pointer"
           /* --- SCROLL‑IN VIEW --- */
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ const DynamicGrid = () => {
             </div>
           </div>
 
-          <div className="px-6 relative  pb-2">
+          <div className="px-6 relative h-full pb-2">
             <div className="flex justify-between py-2 text-[11px] font-semibold">
               <p className="flex items-center gap-2">
                 <img src={i7} alt="" className="w-[13px] h-[13px]" />

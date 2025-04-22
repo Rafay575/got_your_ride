@@ -16,14 +16,14 @@ const HighIndexComponent = () => {
     icon: i1,
     title: "MOST POPULAR DESTINATIONS",
     description:
-      "Explore the worldwide destinations which are the most preferred by people, including amazing natural beauties as well as lively urban scenery.",
-    locations: ["Mount Fuji", "Tokyo"],
+      "Explore the worldwide destinations which are the most preferred by people, including amazing natural beauties as well as lively urban scenery.Japan’s cities, like Tokyo, Nagano  and Nikko , offer a unique contrast. Tokyo, a global hub of innovation and energy, dazzles with its neon-lit skyline, bustling streets, and world-class shopping. ",
+  
     image: i5,
     buttonText: "Book Now",
   };
 
   return (
-    <div className="bg-white rounded-tl-[75px] rounded-br-[75px] relative mt-[-50px] mx-auto px-5 xl:pl-18 py-5 pr-4 w-4/5 md:w-[95%] xl:w-4/5 md:h-6/12 border border-white flex flex-col lg:flex-row items-center justify-between shadow-lg" style={{ zIndex: 10 }}>
+    <div className="bg-white rounded-tl-[75px] rounded-br-[75px] relative mt-[-50px] mx-auto px-5  py-5 pr-4 w-4/5 md:w-[95%] xl:w-4/5 lg:px-10 md:h-6/12 border border-white flex flex-col lg:flex-row items-center justify-between shadow-lg" style={{ zIndex: 10 }}>
       {/* Static List with entrance and hover animation */}
       <div className="flex flex-col gap-4 py-3 text-center w-full lg:w-1/4 xl:w-2/4">
         {[
@@ -59,24 +59,9 @@ const HighIndexComponent = () => {
           alt={selected.title}
         />
         <div className="text-center md:text-left">
-          <h3 className="font-bold mt-2 text-[#f1582b] animate-pulse">{selected.title}</h3>
-          <p className="mb-2 mt-5">{selected.description}</p>
-          {selected.locations.map((loc, i) => (
-            <p key={i} className="flex items-center">
-              <BiChevronsRight className="mr-1" /> {loc}
-            </p>
-          ))}
-          <div className="mt-6">
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 100, duration: 0.5 }}
-            >
-              <NavLink className="bg-[#F1582B] px-4 py-2 rounded-full text-white inline-block animate-bounce">
-                {selected.buttonText}
-              </NavLink>
-            </motion.div>
-          </div>
+          <h3 className="font-bold mt-2 text-[#f1582b] ">{selected.title}</h3>
+          <p className="mb-2 mt-5 break-words  text-sm text-justify hyphens-auto">{selected.description}</p>
+         
         </div>
       </motion.div>
     </div>

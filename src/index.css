@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 .zee-index {
@@ -19,18 +18,18 @@
 @layer base {
   /* Apply the custom font to the html and body so all children inherit it */
   html, body {
-    font-family: 'Matter', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 }  
 .montserrat-title {
-  font-family: 'Matter', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700; /* Bold weight */
   font-style: normal;
 }
 
 body {
-  font-family: 'Matter', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .ron {
   border-top-left-radius: 40px;

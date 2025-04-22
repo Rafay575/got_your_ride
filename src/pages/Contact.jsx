@@ -97,7 +97,7 @@ const Contact = () => {
           >
             <img src={i3} className="w-20 mb-4" alt="Address" />
             <p className="text-center font-semibold">Address</p>
-            <p className="text-center text-sm">Nice Day Hotel, Japan</p>
+            <p className="text-center text-sm">2-chrome-3-5 Wakaba Shinjuku City, Tokyo 160-0011</p>
           </motion.div>
 
           <motion.div
@@ -119,7 +119,7 @@ const Contact = () => {
           >
             <img src={i4} className="w-20 mb-4" alt="Email" />
             <p className="text-center font-semibold">Email Address</p>
-            <p className="text-center text-sm">gotyourride@gmail.com</p>
+            <p className="text-center text-sm">info@gotyourride.com</p>
           </motion.div>
         </div>
       </motion.div>
@@ -134,12 +134,8 @@ const Contact = () => {
         {/* Description */}
         <div className="w-full mb-8 lg:mb-0 sm:pr-5">
           <h1 className="text-3xl font-bold text-[#333] mb-1">Get In Touch</h1>
-          <p className="text-gray-600 text-lg mb-5">Contact Us for Any Help</p>
-          <p className="text-gray-500 text-justify">
-            We offer carefully curated destinations and tours that capture the true essence of the location,
-            ensuring you experience unforgettable moments. Our attraction passes save you more than buying
-            individual tickets.
-          </p>
+ 
+        
         </div>
 
         {/* Contact Form */}
@@ -149,10 +145,8 @@ const Contact = () => {
           whileInView={{ y:0,opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          <h1 className="font-bold text-2xl text-[#333]">Fill Up The Form</h1>
-          <p className="text-sm text-gray-600">
-            Enter your details to receive confirmation and updates about your booking.
-          </p>
+    
+       
           <form onSubmit={handleSubmit} className="mt-6">
             <div className="flex mb-6">
               <IoPersonOutline className="w-16 h-16 text-[#F1582B] hidden lg:block" />

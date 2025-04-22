@@ -13,9 +13,7 @@ const SocialIcons = () => {
       <div className="w-6 h-6 flex items-center justify-center rounded-full bg-pink-100 text-orange-500 text-sm hover:opacity-80 cursor-pointer transition">
         <FaInstagram />
       </div>
-      <div className="w-6 h-6 flex items-center justify-center rounded-full bg-pink-100 text-orange-500 text-sm hover:opacity-80 cursor-pointer transition">
-        <FaYoutube />
-      </div>
+      
     </div>
   );
 };

@@ -36,16 +36,15 @@ const About = () => {
       <div className="w-4/5 mx-auto flex flex-col-reverse lg:flex-row gap-4 lg:gap-20">
   {/* Main Section */}
   <div className="w-full lg:w-3/5  relative">
-    <h1 className=" text-2xl text-center sm:text-3xl lg:text-4xl font-bold leading-[55px] mb-4">
+    <h1 className=" text-2xl text-center sm:text-3xl lg:text-4xl font-bold leading-[55px] mb-2">
       We Make Your Travel More  
-      <span className="mt-4 lg:block"> Enjoyable</span>
+      <span className="mt-1 lg:block"> Enjoyable</span>
     </h1>
     <p className=" mx-auto mt-4  sm:text-lg  leading-[32px] mb-4">
-      Experience the freedom of a flexible schedule and the choice of what
-      you want to do and for how long you wish to do it. Relax in a comfortable
-      ride in modern minivan that can seat as many as 13 passengers. Take in the
-      views of Mount Fuji at your leisure by using the private charter service
-      for the whole duration of your trip to the region.
+    At GetYourRide, we are dedicated to providing affordable and comfortable transportation services across Japan. Our goal is to offer you the freedom and flexibility to explore the country at your own pace. Whether you're experiencing the vibrant energy of the cities or enjoying the tranquility of the countryside, our private charter service ensures a relaxing and enjoyable journey.
+    </p>
+    <p className=" mx-auto mt-4  sm:text-lg  leading-[32px] mb-4">
+    With a focus on comfort, convenience, and personalized service, we allow you to choose your destinations and the duration of your ride, ensuring that your travel experience is tailored to your needs. Let us be a part of your journey through Japan, where relaxation and adventure meet.
     </p>
     <div className="flex flex-col lg:flex-row border border-black/20 gap-4 lg:gap-8 p-6 rounded-xl relative w-full lg:w-4/5  ">
       {/* First Info Box */}
@@ -56,7 +55,7 @@ const About = () => {
       </div>
       {/* Second Info Box */}
       <div className="text-center w-full lg:w-[45%]">
-        <img src={i2} className="w-16 sm:w-20 mx-auto" alt="Booking Solution" />
+        <img src={i2} className="w-12 sm:w-15 mx-auto" alt="Booking Solution" />
         <p className="font-semibold mt-2">Most popular booking solution provider</p>
         <p className="text-sm mt-2">Welcome to our tourism ecosystem, we are here for you</p>
       </div>

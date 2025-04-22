@@ -14,7 +14,7 @@ export default function ItineraryTimeline({dummyItems}) {
   
           return (
             <li key={idx} className="relative pb-8 pl-8">
-              {/* — vertical line except on last */}
+              
               {!isLast && (
                 <div
                   className={`absolute top-0 bottom-0 border-r-2 ${
@@ -33,12 +33,7 @@ export default function ItineraryTimeline({dummyItems}) {
                     : "bg-white border-2 border-[#f1582b]"
                 }`}
               >
-                {/*
-                  clone the icon element and inject a className:
-                  - white on colored bg
-                  - orange on white bg
-                  plus preserve w/h sizing
-                */}
+               
                 {React.cloneElement(item.icon, {
                   className: `${isColoredDot ? "text-white" : "text-[#f1582b]"} w-4 h-4`
                 })}

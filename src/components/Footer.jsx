@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex flex-col">
 
           <span>Location</span>
-            <p className="text-muted font-[400] text-[12px]" >gotyourride@gmail.com </p>
+            <p className="text-muted font-[400] text-[12px]" >2-chrome-3-5 Wakaba Shinjuku City, Tokyo 160-0011 </p>
           </div>
         </NavLink>
 
@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="flex flex-col">
 
           <span>Email</span>
-            <p className="text-muted font-[400] text-[12px]">gotyourride@gmail.com </p>
+            <p className="text-muted font-[400] text-[12px]">info@gotyourride.com </p>
           </div>
         </NavLink>
 

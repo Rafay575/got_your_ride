@@ -8,12 +8,6 @@ import i6 from "../assets/Group_427_2.png";
 import i7 from "../assets/Group_427_3.png";
 import i8 from "../assets/Group_427_4.png";
 import i9 from "../assets/orange-line.png";
-import i10 from "../assets/image_1.png";
-import i11 from "../assets/image_2.png";
-import i12 from "../assets/Group_1.png";
-import i13 from "../assets/Group_2.png";
-import i14 from "../assets/Group_3.png";
-import i15 from "../assets/Group_4.png";
 
 import nagano1 from "../assets/nagano-1.png";
 import nagano2 from "../assets/nagano-2.png";
