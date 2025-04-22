@@ -24,6 +24,7 @@ import nikko2 from "../assets/nikko-2.png";
 import nikko3 from "../assets/nikko-3.png";
 import nikko4 from "../assets/nikko-4.png";
 import { FaCar } from "react-icons/fa";
+import { sub } from "framer-motion/client";
 // For brevity, only Place 1 is fully filled out; replicate or modify values for Place 2,3,4.
 const placesData = [
   {
@@ -40,7 +41,7 @@ const placesData = [
         { src: i4, classes: "col-span-1 w-full h-full" }
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: '10 Hour' },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" }
@@ -94,128 +95,66 @@ const placesData = [
         },
         tripInfo: [
           { label: "Location", value: "Mt. Fuji 5th Station" },
-          { label: "Service", value: "car + driver" },
-          { label: "Duration", value: "10 Hours" },
+          { label: "Service", value: "transport + driver" },
+          { label: "Duration", value: '10 Hour' },
           { label: "People", value: "1-6" }
         ],
         buttonText: "Add to cart"
       }
     },
-    itineraryData:  [
+    itineraryData: [
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "13 pickup location options:",
-        subtitle:
-          "Fujikawaguchiko, Itabashi City, Urayasu, Kanagawa, Bunkyo City, Ichikawa…",
+        icon: <FaCar />,
+        title: "13 Pickup Location Options:",
+        subtitle: "Bunkyo City, Fujikawaguchiko, Itabashi",
       },
-      {
-        type: "in-transit",
-        icon: <FaCar/>,
-        title: "Car",
-        duration: "(2 hours)",
-      },
+      
       {
         type: "in-activity",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Chureito Pagoda",
-        subtitle: "Visit, Sightseeing, Walk, Scenic views on the way (45 minutes)",
+        subtitle: "Visit, Sightseeing, Walk, Scenic Views On The Way",
         meta: "Optional, Extra fee",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Mt. Fuji 5th Station",
-            subtitle: "Visit, Sightseeing (45 minutes)",
-            meta: "Optional, Extra fee",
-          },
-        ],
+       
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oshino Hakkai",
-        subtitle: "Visit, Sightseeing, Safety briefing (45 minutes)",
+        icon: <FaCar />,
+        title: "Oshino Hakka",
+        subtitle: "Visit, Sightseeing, Safety Briefing",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Kitaguchi‑hongu Fuji Sengen Shrine",
-        subtitle: "Break time, Photo stop… (40 minutes)",
+        icon: <FaCar />,
+        title: "Kitaguchi-Hongu Fuji Sengen Shrine",
+        subtitle: "Break Time, Photo Stop, Cable Car Ride, Scenic Views On The Way",
+     
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Lake Kawaguchi",
-        subtitle: "Visit, Sightseeing, Safety briefing (105 minutes)",
+        subtitle: "Visit, Sightseeing, Safety Briefing",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Mt. Kachi Kachi Ropeway",
-        subtitle: "Visit, Sightseeing, Walk, Scenic drive… (45 minutes)",
+        subtitle: "Visit, Sightseeing, Walk, Scenic Drive, Scenic Views On The Way",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Oishi Park",
-        subtitle: "Break time, Photo stop, Free time (30 minutes)",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Saiko Iyashi-no‑Sato Nenba",
-            subtitle: "Visit, Sightseeing (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Ashi",
-            subtitle: "Visit, Sightseeing (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Ropeway",
-            subtitle: "Break time, Visit, Sightseeing (1 min)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Aokigahara Forest",
-            subtitle: "Pass by, Scenic views",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Yamanaka",
-            subtitle: "Visit, Self‑guided tour (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Open‑Air Museum",
-            subtitle: "Visit, Sightseeing, Walk (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Fugaku Wind Cave",
-            subtitle: "Break time, Free time (30 minutes)",
-            meta: "Optional",
-          },
-        ],
-      },
-      {
-        type: "in-transit",
-        icon: <FaCar/>,
-        title: "Car",
-        duration: "(2 hours)",
+        subtitle: "Break Time, Photo Stop, Free Time",
+      
       },
       {
         type: "no-line",
-        icon: <FaCar/>,
-        title: "13 drop‑off locations:",
-        subtitle:
-          "Fujikawaguchiko, Kanagawa, Bunkyo City, Itabashi City, Urayasu…",
+        icon: <FaCar />,
+        title: "13 Drop-Off Locations:",
+        subtitle: "Tokyo 23 wards, Ichikawa, Shinbashi, Sumida City",
       },
     ]
    
@@ -235,7 +174,7 @@ const placesData = [
        
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: '10 Hour' },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" }
@@ -284,9 +223,9 @@ const placesData = [
           ]
         },
         tripInfo: [
-          { label: "Location", value: "Place 2 Location" },
-          { label: "Service", value: "Guide & Transport" },
-          { label: "Duration", value: "8 Hours" },
+          { label: "Location", value: "Tokyo City Tour" },
+          { label: "Service", value: "transport + driver" },
+          { label: "Duration", value: '10 Hour' },
           { label: "People", value: "1-6" }
         ],
         buttonText: "Add to cart"
@@ -427,7 +366,7 @@ const placesData = [
        
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: '10 Hour' },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" }
@@ -476,9 +415,9 @@ const placesData = [
           ]
         },
         tripInfo: [
-          { label: "Location", value: "Place 3 Location" },
-          { label: "Service", value: "Guide & Transport" },
-          { label: "Duration", value: "6 Hours" },
+          { label: "Location", value: "Nagano Tour" },
+          { label: "Service", value: "transport + driver" },
+          { label: "Duration", value: '10 Hour' },
           { label: "People", value: "1-6" }
         ],
         buttonText: "Add to cart"
@@ -487,118 +426,63 @@ const placesData = [
     itineraryData:  [
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "13 pickup location options:",
-        subtitle:
-          "Fujikawaguchiko, Itabashi City, Urayasu, Kanagawa, Bunkyo City, Ichikawa…",
+        icon: <FaCar />,
+        title: "13 Pickup Location Options:",
+        subtitle: "You Will Get Picked Up",
       },
       {
         type: "in-transit",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Car",
-        duration: "(2 hours)",
+        subtitle: "(2 Hours)",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Chureito Pagoda",
-        subtitle: "Visit, Sightseeing, Walk, Scenic views on the way (45 minutes)",
-        meta: "Optional, Extra fee",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Mt. Fuji 5th Station",
-            subtitle: "Visit, Sightseeing (45 minutes)",
-            meta: "Optional, Extra fee",
-          },
-        ],
+        icon: <FaCar />,
+        title: "Zenko Ji Temple",
+        subtitle: "See Details And Photo",
+        duration: "(2 Hours)",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oshino Hakkai",
-        subtitle: "Visit, Sightseeing, Safety briefing (45 minutes)",
+        icon: <FaCar />,
+        title: "Nishimon Yoshinoya",
+        subtitle: "See Details And Photo",
+        duration: "60 Minutes",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Kitaguchi‑hongu Fuji Sengen Shrine",
-        subtitle: "Break time, Photo stop… (40 minutes)",
+        icon: <FaCar />,
+        title: "Jegokudani Snow Monkey Park",
+        subtitle: "See Details And Photo",
+        duration: "3 Hours",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Lake Kawaguchi",
-        subtitle: "Visit, Sightseeing, Safety briefing (105 minutes)",
+        icon: <FaCar />,
+        title: "Dazaifu Monzen Machi",
+        subtitle: "See Details And Photo",
+        duration: "3 Hours",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Mt. Kachi Kachi Ropeway",
-        subtitle: "Visit, Sightseeing, Walk, Scenic drive… (45 minutes)",
+        icon: <FaCar />,
+        title: "Obuse Onsen Kannon-No-Yu",
+        subtitle: "See Details And Photo",
+        duration: "3 Hours",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oishi Park",
-        subtitle: "Break time, Photo stop, Free time (30 minutes)",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Saiko Iyashi-no‑Sato Nenba",
-            subtitle: "Visit, Sightseeing (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Ashi",
-            subtitle: "Visit, Sightseeing (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Ropeway",
-            subtitle: "Break time, Visit, Sightseeing (1 min)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Aokigahara Forest",
-            subtitle: "Pass by, Scenic views",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Yamanaka",
-            subtitle: "Visit, Self‑guided tour (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Open‑Air Museum",
-            subtitle: "Visit, Sightseeing, Walk (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Fugaku Wind Cave",
-            subtitle: "Break time, Free time (30 minutes)",
-            meta: "Optional",
-          },
-        ],
+        icon: <FaCar />,
+        title: "Obuse Onsen Kannon-No-Yu",
+        subtitle: "See Details And Photo",
+        duration: "3 Hours",
       },
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "Car",
-        duration: "(2 hours)",
-      },
-      {
-        type: "no-line",
-        icon: <FaCar/>,
-        title: "13 drop‑off locations:",
-        subtitle:
-          "Fujikawaguchiko, Kanagawa, Bunkyo City, Itabashi City, Urayasu…",
+        icon: <FaCar />,
+        title: "You Will Return To The Starting Point",
+        subtitle: "",
       },
     ]
    
@@ -618,7 +502,7 @@ const placesData = [
        
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: '10 Hour' },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" }
@@ -670,9 +554,9 @@ const placesData = [
           ]
         },
         tripInfo: [
-          { label: "Location", value: "Place 4 Location" },
-          { label: "Service", value: "Luxury Experience" },
-          { label: "Duration", value: "12 Hours" },
+          { label: "Location", value: "Nikko Tour" },
+          { label: "Service", value: "transport + driver" },
+          { label: "Duration", value: '10 Hour' },
           { label: "People", value: "1-6" }
         ],
         buttonText: "Add to cart"

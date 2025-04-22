@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <p className="text-[#F1582B]">Reason Why Choose Us</p>
+     
         <h1 className="font-bold text-2xl lg:text-4xl">Why Choose Us</h1>
       </motion.div>
 

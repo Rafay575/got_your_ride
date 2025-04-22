@@ -60,7 +60,7 @@ const HighIndexComponent = () => {
         />
         <div className="text-center md:text-left">
           <h3 className="font-bold mt-2 text-[#f1582b] ">{selected.title}</h3>
-          <p className="mb-2 mt-5 break-words  text-sm text-justify hyphens-auto">{selected.description}</p>
+          <p className="mb-2 mt-5 break-words  text-sm  hyphens-auto">{selected.description}</p>
          
         </div>
       </motion.div>

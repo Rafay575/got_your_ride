@@ -23,6 +23,8 @@ import Feedback from "../components/Feedback";
 import GoBackButton from "../components/GoBackButton";
 import ItineraryTimeline from "../components/ItineraryTimeline";
 import img from "../assets/image_1.png"
+import CustomDatePicker from "../components/CustomDatePicker";
+import DatePickerInput from "../components/DatePickerInput";
 const Booking = ({ tripData, bookingData, itineraryData, place }) => {
   const [date, setDate] = useState("");
   const [adults, setAdults] = useState(1);
@@ -70,12 +72,11 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
 
   const { title, subtitle, location, reviews, images, details, price } =
     bookingData;
-
   return (
     <>
       <div className="mt-35">
         {/* back button */}
-        <GoBackButton />
+      
         <div className="w-4/5 mx-auto">
           {/* Title Section */}
           <div className="mb-5">
@@ -88,12 +89,12 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
           {/* Location, Share, Wishlist Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* Location */}
-            <div className="flex gap-2 text-[#615C5D] flex-wrap md:flex-nowrap">
-              <NavLink className="group flex gap-2">
+            <div className="flex gap-0 text-[#615C5D] flex-wrap md:flex-nowrap">
+              <NavLink className="group flex ">
                 <SlLocationPin className="mt-[3px] group-hover:text-[#f1582b]" />
                 <p className="group-hover:text-[#f1582b]">{location}</p>
               </NavLink>
-              <div className="flex gap-2">
+              <div className="flex gap-0">
                 <Star />
                 <p>{reviews}</p>
               </div>
@@ -203,18 +204,18 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
           <h1 className="text-2xl font-bold mb-3">{tripData.booking.title}</h1>
 
           {/* Date Dropdown */}
-          <div className="mt-5 flex justify-between">
-            <Dropdown selectedDate={date} setSelectedDate={setDate} />
-            <div className="w-2/5">
+          <div className="mt-5 flex gap-2">
+            <Dropdown  />
+         
+            <DatePickerInput selectedDate={date} setSelectedDate={setDate}/>
+            {/* <div className="w-2/5">
                   <div className="flex items-center border border-none">
-                    {/* Decrement button */}
                     <span
                       onClick={handleDecrease}
                       className="cursor-pointer rounded-l-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
                     >
                       -
                     </span>
-                    {/* Adult input field */}
                     <input
                       className="h-10 w-20 border-x pl-3 flex items-center justify-center p-0 border-gray-300 bg-gray-200 text-xs text-center outline-none"
                       type="number"
@@ -222,7 +223,6 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
                       min="1"
                       readOnly
                     />
-                    {/* Increment button */}
                     <span
                       onClick={handleIncrease}
                       className="cursor-pointer rounded-r-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
@@ -230,7 +230,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
                       +
                     </span>
                   </div>
-                </div>
+                </div> */}
           </div>
           <hr className="opacity-20 mt-8 mb-8" />
 
@@ -247,9 +247,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
                   
                    1 - 6 {tripData.booking.people.category}  per car
                   </p>
-                  <p className="text-gray-500 text-sm font-semibold">
-                    {tripData.booking.people.subtext}
-                  </p>
+               
                 </div>
                
               </div>
@@ -292,15 +290,15 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
 
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
-        <div className="flex ">
-          <div>
-           
-            <ItineraryTimeline dummyItems={itineraryData} />
-          </div>
-          <div>
-            <img src={img} alt="" />
-          </div>
-        </div>
+        <div className="flex">
+  <div className="h-full flex-grow">
+    <ItineraryTimeline dummyItems={itineraryData} />
+  </div>
+  <div className="max-h-[700px] flex-grow">
+    <img src={img} alt="" className="object-cover w-full h-full" />
+  </div>
+</div>
+
       </div>
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
@@ -310,121 +308,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
       <div className="w-4/5 mx-auto">
         <Feedback />
       </div>
-      <div className="w-4/5 mx-auto">
-        <Swiper
-          spaceBetween={12} // Space between slides
-          breakpoints={{
-            640: {
-              slidesPerView: 1, // 2 slides visible on small screens
-            },
-            768: {
-              slidesPerView: 2, // 3 slides visible on medium screens
-            },
-            1024: {
-              slidesPerView: 3, // 4 slides visible on large screens
-            },
-          }}
-          pagination={{ clickable: true }} // Enable pagination (dots)
-          className="w-full"
-        >
-          <SwiperSlide>
-            <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-              <img src={i} className="mx-auto w-20" alt="" />
-              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-              <div className="flex justify-between">
-                <p className="text-sm">booking verified 12-04-2025</p>
-                <Star />
-              </div>
-              <p className="text-[11px] mt-2">
-                Booked a private tour with Driver jerry for a journey from Tokyo
-                to Mount Fuji with my family and it was an exceptional choice.
-                Despite the clouds, the experience was nothing short of
-                fantastic.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-              <img src={i} className="mx-auto w-20" alt="" />
-              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-              <div className="flex justify-between">
-                <p className="text-sm">booking verified 12-04-2025</p>
-                <Star />
-              </div>
-              <p className="text-[11px] mt-2">
-                Booked a private tour with Driver jerry for a journey from Tokyo
-                to Mount Fuji with my family and it was an exceptional choice.
-                Despite the clouds, the experience was nothing short of
-                fantastic.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-              <img src={i} className="mx-auto w-20" alt="" />
-              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-              <div className="flex justify-between">
-                <p className="text-sm">booking verified 12-04-2025</p>
-                <Star />
-              </div>
-              <p className="text-[11px] mt-2">
-                Booked a private tour with Driver jerry for a journey from Tokyo
-                to Mount Fuji with my family and it was an exceptional choice.
-                Despite the clouds, the experience was nothing short of
-                fantastic.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-              <img src={i} className="mx-auto w-20" alt="" />
-              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-              <div className="flex justify-between">
-                <p className="text-sm">booking verified 12-04-2025</p>
-                <Star />
-              </div>
-              <p className="text-[11px] mt-2">
-                Booked a private tour with Driver jerry for a journey from Tokyo
-                to Mount Fuji with my family and it was an exceptional choice.
-                Despite the clouds, the experience was nothing short of
-                fantastic.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-[#EAF9EB] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-              <img src={i} className="mx-auto w-20" alt="" />
-              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-              <div className="flex justify-between">
-                <p className="text-sm">booking verified 12-04-2025</p>
-                <Star />
-              </div>
-              <p className="text-[11px] mt-2">
-                Booked a private tour with Driver jerry for a journey from Tokyo
-                to Mount Fuji with my family and it was an exceptional choice.
-                Despite the clouds, the experience was nothing short of
-                fantastic.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-[#F9E9E9] w-[95%] h-70 px-3 py-5 rounded-2xl mb-30 mx-auto shadow-md">
-              <img src={i} className="mx-auto w-20" alt="" />
-              <p className="text-sm font-bold mb-2 mt-2">Mr John</p>
-              <div className="flex justify-between">
-                <p className="text-sm">booking verified 12-04-2025</p>
-                <Star />
-              </div>
-              <p className="text-[11px] mt-2">
-                Booked a private tour with Driver jerry for a journey from Tokyo
-                to Mount Fuji with my family and it was an exceptional choice.
-                Despite the clouds, the experience was nothing short of
-                fantastic.
-              </p>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
+      
     </>
   );
 };

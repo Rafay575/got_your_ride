@@ -1,36 +1,69 @@
 "use client"
-import React, { useEffect } from "react";
-import DatePicker from "react-datepicker";
-import { HiCalendar } from "react-icons/hi";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from "react";
+import { HiUser } from "react-icons/hi"; // For participants icon
 
-const Dropdown = ({ selectedDate, setSelectedDate }) => {
-  // Create a default date one week from now if selectedDate is not provided.
-  const defaultDate = new Date();
-  defaultDate.setDate(defaultDate.getDate() + 7);
-  useEffect(() => {
-    setSelectedDate(defaultDate);
-  },[])
+const Dropdown = () => {
+  const [adults, setAdults] = useState(1);
+  const [isAdultDropdownOpen, setAdultDropdownOpen] = useState(false);
+  
+  const handleIncrease = () => {
+    setAdults(adults + 1);
+  };
+
+  const handleDecrease = () => {
+    if (adults > 1) {
+      setAdults(adults - 1);
+    }
+  };
+
+ 
   return (
-    <div className="relative w-2/5 rounded-full">
-      {/* Calendar Icon */}
-      <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-        <HiCalendar className="w-4 h-4 text-gray-500" />
+  
+      <div className="relative w-2/5">
+        <button
+          onClick={() => setAdultDropdownOpen(!isAdultDropdownOpen)}
+          className="flex items-center w-full space-x-2 bg-white border border-gray-300 text-gray-900 rounded-full py-2 px-4 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          <HiUser className="text-gray-500" />
+          <span className="flex items-center justify-between w-full"> <span> Adult x {adults} </span>  <svg
+          className="w-4 h-4 text-gray-500"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z" />
+        </svg> </span>
+        </button>
+
+        {/* Participants Counter Dropdown */}
+        {isAdultDropdownOpen && (
+          <div className="absolute top-12 left-0 z-10 bg-white w-60 rounded-lg shadow-lg p-4 border border-gray-300">
+            <div className="flex items-center justify-between space-x-2">
+              <span
+                onClick={handleDecrease}
+                className="cursor-pointer rounded-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
+              >
+                -
+              </span>
+              <input
+                className="h-10 w-12 pl-4 text-center border-none bg-gray-100  text-gray-700"
+                type="number"
+                value={adults}
+                min="1"
+                readOnly
+              />
+              <span
+                onClick={handleIncrease}
+                className="cursor-pointer rounded-full border-gray-500 bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
+              >
+                +
+              </span>
+            </div>
+          </div>
+        )}
       </div>
-      {/* React DatePicker with Time Picker enabled */}
-      <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        placeholderText="Select a date & time"
-        showTimeSelect
-        timeFormat="HH:mm"
-        timeIntervals={60} // Time selection at one-hour intervals.
-        timeCaption="Time"
-        dateFormat="MMMM d, yyyy h:mm aa"
-        className="bg-gray-200 border border-gray-300 text-gray-900 outline-none text-xs focus:ring-2 focus:ring-orange-500 focus:border-orange-500 block w-full rounded-full pl-10 pr-4 py-2.5 hover:bg-gray-300 transition duration-200 ease-in-out"
-        minDate={new Date()} // Disallow selecting previous dates.
-      />
-    </div>
+
   );
 };
 

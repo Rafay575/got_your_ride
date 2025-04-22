@@ -133,7 +133,7 @@ const Contact = () => {
       >
         {/* Description */}
         <div className="w-full mb-8 lg:mb-0 sm:pr-5">
-          <h1 className="text-3xl font-bold text-[#333] mb-1">Get In Touch</h1>
+          <h1 className="text-3xl font-bold text-[#333] text-center mb-1">Get In Touch</h1>
  
         
         </div>
@@ -193,7 +193,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-[#F1582B] w-1/4 px-6 py-2 rounded-full text-white mx-auto mt-8 cursor-pointer">
+            <div className="bg-[#F1582B] w-40 px-6 py-2 rounded-full text-white mx-auto mt-8 cursor-pointer">
               <button type="submit" className="w-full text-center font-semibold">
                 {isLoading ? (
                   <span>Loading...</span> // Show Loading text when submitting

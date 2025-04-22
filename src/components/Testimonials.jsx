@@ -29,7 +29,7 @@ export const testimonials1 = [
     id: 1,
     photo: image21,
     name: "James Carter",
-    country: "United Kingdom",
+    country: "UK",
     review:
       "Got Your Ride handled everything flawlessly – flights, JR passes, even pocket‑Wi‑Fi. I just showed up and enjoyed Japan.",
     bg: "bg-[#D8F4DA]",
@@ -38,7 +38,7 @@ export const testimonials1 = [
     id: 2,
     photo: image22,
     name: "Michael Johnson",
-    country: "United Kingdom",
+    country: "USA",
     review:
       "Smooth booking and great local tips. Their Osaka food tour was a highlight. Highly recommended!",
     bg: "bg-[#FFE2CE]",
@@ -47,7 +47,7 @@ export const testimonials1 = [
     id: 3,
     photo: image23,
     name: "Daniel Wright",
-    country: "United Kingdom",
+    country: "UK",
     review:
       "From airport pickup to Mt Fuji day‑trip, Got Your Ride nailed the timing. I’ll book with them again next spring.",
     bg: "bg-[#F1D4D4]",
@@ -56,7 +56,7 @@ export const testimonials1 = [
     id: 4,
     photo: image27,
     name: "Jonathan Harris",
-    country: "United Kingdom",
+    country: "Australia",
     review:
       "Booking was effortless and their support team answered every question within minutes. Five‑star service.",
     bg: "bg-[#D9D9D9]",
@@ -65,7 +65,7 @@ export const testimonials1 = [
     id: 5,
     photo: image28,
     name: "Oliver Brooks",
-    country: "United Kingdom",
+    country: "Japan",
     review:
       "Loved the Kyoto cultural package. Guides were punctual, friendly, and spoke perfect English.",
     bg: "bg-[#D8F4DA]",
@@ -74,7 +74,7 @@ export const testimonials1 = [
     id: 6,
     photo: image29,
     name: "William Scott",
-    country: "United Kingdom",
+    country: "Germany",
     review:
       "Got Your Ride took the stress out of planning. Hotels were spot‑on and within budget. 6 stars if I could.",
     bg: "bg-[#FFE2CE]",
