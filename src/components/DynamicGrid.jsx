@@ -17,8 +17,8 @@ const data = [
     image: image2,
     title: "Tokyo City Tour",
     subtitle: "Feel the pulse of Japan’s electric capital",
-    price: "$475",
-    originalPrice: "$600",
+    price: "$380",
+    originalPrice: "$500",
     duration: "10 Hours",
     guests: "1‑6 Guests",
   },
@@ -27,8 +27,8 @@ const data = [
     image: image3,
     title: "Mt. Fuji 5th Station",
     subtitle: "Touch the clouds and awaken your spirit",
-    price: "$475",
-    originalPrice: "$600",
+    price: "$408",
+    originalPrice: "$533",
     duration: "10 Hours",
     guests: "1‑6 Guests",
   },
@@ -37,8 +37,8 @@ const data = [
     image: image4,
     title: "Nagano Tour",
     subtitle: "Find serenity where mountains meet mystic temples",
-    price: "$475",
-    originalPrice: "$600",
+    price: "$447",
+    originalPrice: "$562",
     duration: "10 Hours",
     guests: "1‑6 Guests",
   },
@@ -47,8 +47,8 @@ const data = [
     image: image5,
     title: "Nikko Tour",
     subtitle: "Journey into nature’s grandeur and timeless shrines",
-    price: "$475",
-    originalPrice: "$600",
+    price: "$423",
+    originalPrice: "$550",
     duration: "10 Hours",
     guests: "1‑6 Guests",
   },
@@ -95,7 +95,7 @@ const DynamicGrid = () => {
             </div>
           </div>
 
-          <div className="px-6 relative h-full pb-2">
+          <div className="px-6 relative  pb-2">
             <div className="flex justify-between py-2 text-[11px] font-semibold">
               <p className="flex items-center gap-2">
                 <img src={i7} alt="" className="w-[13px] h-[13px]" />
