@@ -6,7 +6,7 @@ import React from "react";
 export default function ItineraryTimeline({dummyItems}) {
     console.log(dummyItems)
     return (
-      <ul className="relative ml-12">
+      <ul className="relative md:ml-12">
          <h2 className="font-bold text-2xl mb-5">Itinerary</h2>
         {dummyItems.map((item, idx) => {
           const isLast = idx === dummyItems.length - 1;

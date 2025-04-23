@@ -25,7 +25,7 @@ import ItineraryTimeline from "../components/ItineraryTimeline";
 import img from "../assets/image_1.png"
 import CustomDatePicker from "../components/CustomDatePicker";
 import DatePickerInput from "../components/DatePickerInput";
-const Booking = ({ tripData, bookingData, itineraryData, place }) => {
+const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
   const [date, setDate] = useState("");
   const [adults, setAdults] = useState(1);
   const [placeNumber, setPlaceNumber] = useState(place);
@@ -75,8 +75,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
   return (
     <>
       <div className="mt-35">
-        {/* back button */}
-      
+  
         <div className="w-4/5 mx-auto">
           {/* Title Section */}
           <div className="mb-5">
@@ -167,7 +166,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
             </h1>
             <p className="font-semibold">{tripData.tripHighlights.subTitle}</p>
             {/* Render the CheckBox component; you can pass data if needed */}
-            <CheckBox />
+            <CheckBox options={options} />
             <hr className="mt-8 mb-8 opacity-20" />
           </div>
 
@@ -290,14 +289,14 @@ const Booking = ({ tripData, bookingData, itineraryData, place }) => {
 
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
-        <div className="flex">
-  <div className="h-full flex-grow">
-    <ItineraryTimeline dummyItems={itineraryData} />
-  </div>
-  <div className="max-h-[700px] flex-grow">
-    <img src={img} alt="" className="object-cover w-full h-full" />
-  </div>
-</div>
+        <div className="flex flex-col md:flex-row">
+          <div className="h-full flex-grow">
+            <ItineraryTimeline dummyItems={itineraryData} />
+          </div>
+          <div className="max-h-[700px] flex-grow">
+            <img src={img} alt="" className="object-cover w-full h-full" />
+          </div>
+        </div>
 
       </div>
       <div className="mx-auto w-4/5">

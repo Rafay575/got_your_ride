@@ -24,8 +24,6 @@ import nikko2 from "../assets/nikko-2.png";
 import nikko3 from "../assets/nikko-3.png";
 import nikko4 from "../assets/nikko-4.png";
 import { FaCar } from "react-icons/fa";
-import { sub } from "framer-motion/client";
-// For brevity, only Place 1 is fully filled out; replicate or modify values for Place 2,3,4.
 const placesData = [
   {
     id: 2,
@@ -35,32 +33,39 @@ const placesData = [
       location: "Mt. Fuji 5th Station",
       reviews: "(Reviews)",
       images: [
-        { src: i1, classes: "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
-        { src: i2, classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full" },
+        {
+          src: i1,
+          classes:
+            "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full",
+        },
+        {
+          src: i2,
+          classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full",
+        },
         { src: i3, classes: "col-span-1 w-full h-full" },
-        { src: i4, classes: "col-span-1 w-full h-full" }
+        { src: i4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: '10 Hour' },
+        { icon: i5, label: "Duration", value: "10 Hour" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
-        { icon: i8, label: "Type", value: "Adventure" }
+        { icon: i8, label: "Type", value: "Adventure" },
       ],
       price: {
         fromLabel: "From",
         primary: "475",
         secondary: "$600",
-        secondaryIcon: i9
-      }
+        secondaryIcon: i9,
+      },
     },
     tripData: {
       description: {
         title: "Description",
-        text: `Witness the majesty of Mt. Fuji with GotYourRide, your trusted companion for an awe‑inspiring alpine adventure! Ascend to the famous 5th Station for panoramic vistas, wander the blossom‑lined shores of Lake Kawaguchi, and capture the iconic Chureito Pagoda framing Fuji’s perfect cone. Wander through ancient lava caves at Aokigahara, soak in Hakone’s open‑air onsens, and cruise across Lake Ashi beneath drifting clouds. Savor silky Hōtō noodles in quaint Fujiyoshida eateries, sip local sake at hidden breweries, and top the day with a sunset cruise that paints Fuji in blazing crimson. From private transfers and multilingual guides to fully tailored itineraries, our comfortable rides and 24 / 7 concierge ensure every moment around Japan’s sacred peak is seamless, scenic, and unforgettable. Book now and experience Mt. Fuji like never before with GotYourRide!`
+        text: `Embark on a private day trip with Mount Fuji Discoveries, where you’ll explore the breathtaking beauty and cultural richness surrounding Japan’s iconic peak. Begin with panoramic views at *Chureito Pagoda, followed by a visit to the serene village of **Oshino Hakkai, home to crystal-clear ponds and traditional thatched-roof houses. Continue to the sacred **Kitaguchi Hongu Fuji Sengen Shrine* nestled in a tranquil cedar forest, and enjoy the stunning reflections of Mount Fuji at *Lake Kawaguchiko. For those seeking more adventure, optional activities include the **Hakone Ropeway* for aerial views of volcanic landscapes or a *Lake Ashi cruise* to glide across its calm waters. This customizable journey offers a perfect blend of nature, culture, and excitement, tailored to your preferences.`,
       },
       tripHighlights: {
         title: "Trip Highlights",
-        subTitle: "Places covered"
+        subTitle: "Places covered",
       },
       includeExclude: {
         title: "Include/Exclude",
@@ -69,15 +74,18 @@ const placesData = [
           "English-speaking driver",
           "Air-conditioned vehicle",
           "Kitaguchi-hongu Fuji",
-          "with WiFi when available"
+          "with WiFi when available",
+          "Hotel pickup and drop-off",
+          "Driver ",
+          "Air-conditioned transportation",
+          "Driver",
+          "Guide",
         ],
         excludedItems: [
-          "Mr. Fuji 5th station entry ticket",
+          "Mt. Fuji 5th Station entry ticket",
           "Food and drinks",
-          "Tour guide",
-          "Ropeway or motorboat ticket",
-          "Saiko iyashi no nemb village entry ticket"
-        ]
+          "Ropeway or motorboat ticket",
+        ],
       },
       booking: {
         title: "Book Your Trip",
@@ -90,17 +98,17 @@ const placesData = [
           options: [
             { value: "option1", label: "0" },
             { value: "option2", label: "1" },
-            { value: "option3", label: "2" }
-          ]
+            { value: "option3", label: "2" },
+          ],
         },
         tripInfo: [
           { label: "Location", value: "Mt. Fuji 5th Station" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: '10 Hour' },
-          { label: "People", value: "1-6" }
+          { label: "Duration", value: "10 Hour" },
+          { label: "People", value: "1-6" },
         ],
-        buttonText: "Add to cart"
-      }
+        buttonText: "Book Now",
+      },
     },
     itineraryData: [
       {
@@ -109,14 +117,13 @@ const placesData = [
         title: "13 Pickup Location Options:",
         subtitle: "Bunkyo City, Fujikawaguchiko, Itabashi",
       },
-      
+
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Chureito Pagoda",
         subtitle: "Visit, Sightseeing, Walk, Scenic Views On The Way",
         meta: "Optional, Extra fee",
-       
       },
       {
         type: "in-activity",
@@ -128,8 +135,8 @@ const placesData = [
         type: "in-activity",
         icon: <FaCar />,
         title: "Kitaguchi-Hongu Fuji Sengen Shrine",
-        subtitle: "Break Time, Photo Stop, Cable Car Ride, Scenic Views On The Way",
-     
+        subtitle:
+          "Break Time, Photo Stop, Cable Car Ride, Scenic Views On The Way",
       },
       {
         type: "in-activity",
@@ -141,14 +148,14 @@ const placesData = [
         type: "in-activity",
         icon: <FaCar />,
         title: "Mt. Kachi Kachi Ropeway",
-        subtitle: "Visit, Sightseeing, Walk, Scenic Drive, Scenic Views On The Way",
+        subtitle:
+          "Visit, Sightseeing, Walk, Scenic Drive, Scenic Views On The Way",
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Oishi Park",
         subtitle: "Break Time, Photo Stop, Free Time",
-      
       },
       {
         type: "no-line",
@@ -156,57 +163,90 @@ const placesData = [
         title: "13 Drop-Off Locations:",
         subtitle: "Tokyo 23 wards, Ichikawa, Shinbashi, Sumida City",
       },
-    ]
-   
+    ],
+    options: [
+      { id: "a", label: "Chureito Pagoda" },
+      { id: "b", label: "Mt. Fuji 5th Station" },
+      { id: "c", label: "Oshino Hakkai" },
+      { id: "d", label: "Kitaguchi-hongu Fuji Sengen Shrine" },
+      { id: "e", label: "Lake Kawaguchi" },
+      { id: "f", label: "Mt. Kachi Kachi Ropeway" },
+      { id: "g", label: "Oishi Park" },
+      { id: "h", label: "Saiko Iyashi-no-Sato Nenba" },
+      { id: "i", label: "Lake Ashi (Optional)" },
+      { id: "j", label: "Hakone Ropeway (Optional)" },
+      { id: "k", label: "Aokigahara Forest (Optional)" },
+      { id: "l", label: "Lake Yamanaka (Optional)" },
+      { id: "m", label: "The Hakone Open-Air Museum (Optional)" },
+      { id: "n", label: "Fugaku Wind Cave (Optional)" },
+    ],
   },
   {
     id: 1,
     bookingData: {
       title: " Tokyo City Tour ",
-      subtitle: "Tokyo is Japan’s buzzing capital—where ancient temples meet futuristic skyscrapers.",
+      subtitle:
+        "Tokyo is Japan’s buzzing capital—where ancient temples meet futuristic skyscrapers.",
       location: "Tokyo City Tour",
       reviews: "(Reviews)",
       images: [
-        { src: tokyo1, classes: "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
-        { src: tokyo2, classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full" },
+        {
+          src: tokyo1,
+          classes:
+            "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full",
+        },
+        {
+          src: tokyo2,
+          classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full",
+        },
         { src: tokyo3, classes: "col-span-1 w-full h-full" },
-        { src: tokyo4, classes: "col-span-1 w-full h-full" }
-       
+        { src: tokyo4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: '10 Hour' },
+        { icon: i5, label: "Duration", value: "10 Hour" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
-        { icon: i8, label: "Type", value: "Adventure" }
+        { icon: i8, label: "Type", value: "Adventure" },
       ],
       price: {
         fromLabel: "From",
         primary: "475",
         secondary: "$600",
-        secondaryIcon: i9
-      }
+        secondaryIcon: i9,
+      },
     },
     tripData: {
       description: {
         title: "Description",
-        text: `Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experience the bustling Shibuya Crossing, serene Meiji Shrine, and the historic Senso-ji Temple. Dive into the vibrant streets of Akihabara and savor fresh delicacies at Tsukiji Outer Market. Enjoy breathtaking views from Tokyo Tower and the futuristic attractions of Odaiba. Our customized tours and comfortable rides ensure an unforgettable journey through Japan’s dynamic capital. Book now and explore Tokyo like never before with GotYourRide!`
+        text: `
+Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experience the bustling Shibuya Crossing, serene Meiji Shrine, and the historic Senso-ji Temple. Dive into the vibrant streets of Akihabara and savor fresh delicacies at Tsukiji Outer Market. Enjoy breathtaking views from Tokyo Tower and the futuristic attractions of Odaiba. Our customized tours and comfortable rides ensure an unforgettable journey through Japan’s dynamic capital. Book now and explore Tokyo like never before with GotYourRide!`,
       },
       tripHighlights: {
         title: "Trip Highlights",
-        subTitle: "Must See Spots"
+        subTitle: "Must See Spots",
       },
       includeExclude: {
         title: "Include/Exclude",
         includedItems: [
-          "Guided tour",
-          "Cultural show",
-          "Local dining experience"
+        
+          "Meet and Greet",
+
+"English-Speaking Driver",
+
+"Air-Conditioned Vehicle",
+
+"With WiFi When Available",
         ],
-        excludedItems: [
-          "Lunch",
-          "Personal expenses",
-          "Gratuities"
-        ]
+     
+        excludedItems: [  " Market Purchase Expense",
+
+          "Food and Drinks",
+          
+          "Tour Guide",
+          
+          "Ropeway or Motorboat Ticket",
+          
+          "Any Sort of Entry Ticket"],
       },
       booking: {
         title: "Book Your Trip",
@@ -219,187 +259,142 @@ const placesData = [
           options: [
             { value: "option1", label: "0" },
             { value: "option2", label: "1" },
-            { value: "option3", label: "2" }
-          ]
+            { value: "option3", label: "2" },
+          ],
         },
         tripInfo: [
           { label: "Location", value: "Tokyo City Tour" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: '10 Hour' },
-          { label: "People", value: "1-6" }
+          { label: "Duration", value: "10 Hour" },
+          { label: "People", value: "1-6" },
         ],
-        buttonText: "Add to cart"
-      }
+        buttonText: "Book Now",
+      },
     },
-    itineraryData:  [
+    itineraryData: [
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "13 pickup location options:",
-        subtitle:
-          "Fujikawaguchiko, Itabashi City, Urayasu, Kanagawa, Bunkyo City, Ichikawa…",
+        icon: <FaCar />,
+        title: "Starting Location:",
+        subtitle: "You Will Get Picked Up",
       },
       {
         type: "in-transit",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Car",
-        duration: "(2 hours)",
+        subtitle: "(2 Hours)",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Chureito Pagoda",
-        subtitle: "Visit, Sightseeing, Walk, Scenic views on the way (45 minutes)",
-        meta: "Optional, Extra fee",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Mt. Fuji 5th Station",
-            subtitle: "Visit, Sightseeing (45 minutes)",
-            meta: "Optional, Extra fee",
-          },
-        ],
+        icon: <FaCar />,
+        title: "Tsukiji Outer Market",
+        subtitle: "Visit, Sightseeing, Walk, Scenic Views On The Way",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oshino Hakkai",
-        subtitle: "Visit, Sightseeing, Safety briefing (45 minutes)",
+        icon: <FaCar />,
+        title: "Sensoji Temple",
+        subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Kitaguchi‑hongu Fuji Sengen Shrine",
-        subtitle: "Break time, Photo stop… (40 minutes)",
+        icon: <FaCar />,
+        title: "Imperial Palace",
+        subtitle: "Visit, Sightseeing, Walk, Scenic Views On The Way",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Lake Kawaguchi",
-        subtitle: "Visit, Sightseeing, Safety briefing (105 minutes)",
+        icon: <FaCar />,
+        title: "Tokyo Skytree",
+        subtitle: "Visit, Sightseeing, Scenic Views",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Mt. Kachi Kachi Ropeway",
-        subtitle: "Visit, Sightseeing, Walk, Scenic drive… (45 minutes)",
+        icon: <FaCar />,
+        title: "Ginza",
+        subtitle: "Shopping, Sightseeing, Free Time",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oishi Park",
-        subtitle: "Break time, Photo stop, Free time (30 minutes)",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Saiko Iyashi-no‑Sato Nenba",
-            subtitle: "Visit, Sightseeing (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Ashi",
-            subtitle: "Visit, Sightseeing (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Ropeway",
-            subtitle: "Break time, Visit, Sightseeing (1 min)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Aokigahara Forest",
-            subtitle: "Pass by, Scenic views",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Yamanaka",
-            subtitle: "Visit, Self‑guided tour (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Open‑Air Museum",
-            subtitle: "Visit, Sightseeing, Walk (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Fugaku Wind Cave",
-            subtitle: "Break time, Free time (30 minutes)",
-            meta: "Optional",
-          },
-        ],
+        icon: <FaCar />,
+        title: "Hakuhinkan Toy Park",
+        subtitle: "Visit, Entertainment, Shopping",
       },
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "Car",
-        duration: "(2 hours)",
+        icon: <FaCar />,
+        title: "You Will Return To The Starting Point",
+        subtitle: "End of the tour",
       },
-      {
-        type: "no-line",
-        icon: <FaCar/>,
-        title: "13 drop‑off locations:",
-        subtitle:
-          "Fujikawaguchiko, Kanagawa, Bunkyo City, Itabashi City, Urayasu…",
-      },
-    ]
-   
+    ],
+    options: [
+      { id: "a", label: "Tsukiji Outer Market" },
+      { id: "b", label: "Sensō-ji Temple" },
+      { id: "c", label: "Tokyo Skytree" },
+      { id: "d", label: "Tokyo Tower" },
+      { id: "e", label: "Ginza" },
+    ],
   },
   // Similarly define for id: 3 and id: 4 with their respective data.
   {
     id: 3,
     bookingData: {
       title: "Nagano Tour ",
-      subtitle: "From Tokyo to Nagano: A journey from vibrant cityscapes to serene mountain escapes.",
+      subtitle:
+        "From Tokyo to Nagano: A journey from vibrant cityscapes to serene mountain escapes.",
       location: "Nagano Tour",
       reviews: "(Reviews)",
       images: [
-        { src: nagano1, classes: "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
-        { src: nagano2, classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full" },
+        {
+          src: nagano1,
+          classes:
+            "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full",
+        },
+        {
+          src: nagano2,
+          classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full",
+        },
         { src: nagano3, classes: "col-span-1 w-full h-full" },
-        { src: nagano4, classes: "col-span-1 w-full h-full" }
-       
+        { src: nagano4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: '10 Hour' },
+        { icon: i5, label: "Duration", value: "10 Hour" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
-        { icon: i8, label: "Type", value: "Adventure" }
+        { icon: i8, label: "Type", value: "Adventure" },
       ],
       price: {
         fromLabel: "From",
         primary: "475",
         secondary: "$600",
-        secondaryIcon: i9
-      }
+        secondaryIcon: i9,
+      },
     },
     tripData: {
       description: {
         title: "Description",
-        text: `On this full-day journey, see the great sights close to Nagano - a historic temple, a sake tasting, and snow monkeys. See the Snow Monkey Park to learn more about snow monkeys in their natural environment. Discover Zenko-ji, one of the oldest Buddhist temples in Japan.taste a restaurant close to Nagano and have a typical Japanese meal.`
+        text: `On this full-day journey, see the great sights close to Nagano - a historic temple, a sake tasting, and snow monkeys. See the Snow Monkey Park to learn more about snow monkeys in their natural environment. Discover Zenko-ji, one of the oldest Buddhist temples in Japan.taste a restaurant close to Nagano and have a typical Japanese meal.`,
       },
       tripHighlights: {
         title: "Trip Highlights",
-        subTitle: "Noteworthy Spots"
+        subTitle: "Places covered",
       },
       includeExclude: {
         title: "Include/Exclude",
         includedItems: [
-          "Local guide",
-          "Transport",
-          "Snacks"
+          "Air-Conditioned Vehicle",
+          "English & Hindi Speaking Guide",
+          "Private Transportation",
+          "All Tolls & Taxes",
+          "Bottled Water",
         ],
         excludedItems: [
-          "Entrance fees",
-          "Meals",
-          "Tips"
-        ]
+          "Lunch",
+          "Entry Tickets Less Than $10",
+          "Enter/Admission - Jigokudani Snow Monkey Park Less Than $10",
+        ],
       },
+
       booking: {
         title: "Book Your Trip",
         dropdownPlaceholder: "Select a date",
@@ -411,19 +406,19 @@ const placesData = [
           options: [
             { value: "option1", label: "0" },
             { value: "option2", label: "1" },
-            { value: "option3", label: "2" }
-          ]
+            { value: "option3", label: "2" },
+          ],
         },
         tripInfo: [
           { label: "Location", value: "Nagano Tour" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: '10 Hour' },
-          { label: "People", value: "1-6" }
+          { label: "Duration", value: "10 Hour" },
+          { label: "People", value: "1-6" },
         ],
-        buttonText: "Add to cart"
-      }
+        buttonText: "Book Now",
+      },
     },
-    itineraryData:  [
+    itineraryData: [
       {
         type: "in-transit",
         icon: <FaCar />,
@@ -484,60 +479,72 @@ const placesData = [
         title: "You Will Return To The Starting Point",
         subtitle: "",
       },
-    ]
-   
+    ],
+    options: [
+      { id: "f", label: "Zenko-ji Temple (Nagano)" },
+      { id: "g", label: "Nishimon Yoshinoya (Nagano)" },
+      { id: "h", label: "Jigokudani Snow Monkey Park (Yamanouchi)" },
+      { id: "i", label: "Dazaifu Monzen Machi (Fukuoka)" },
+      { id: "j", label: "Obuse Onsen Kannon-no-yu (Nagano)" },
+      { id: "k", label: "Oshino Hakkai (Yamanashi)" },
+      { id: "l", label: "Kitaguchi-hongu Fuji Sengen Shrine (Yamanashi)" },
+    ],
   },
   {
     id: 4,
     bookingData: {
       title: "Nikko Tour",
-      subtitle: "Nikko blends spiritual heritage with breathtaking nature, just a few hours from Tokyo.",
+      subtitle:
+        "Nikko blends spiritual heritage with breathtaking nature, just a few hours from Tokyo.",
       location: "Nikko Tour",
       reviews: "(Reviews)",
       images: [
-        { src: nikko1, classes: "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
-        { src: nikko2, classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full" },
+        {
+          src: nikko1,
+          classes:
+            "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full",
+        },
+        {
+          src: nikko2,
+          classes: "col-span-1 md:col-span-2 row-span-1 w-full h-full",
+        },
         { src: nikko3, classes: "col-span-1 w-full h-full" },
-        { src: nikko4, classes: "col-span-1 w-full h-full" }
-       
+        { src: nikko4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: '10 Hour' },
+        { icon: i5, label: "Duration", value: "10 Hour" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
-        { icon: i8, label: "Type", value: "Adventure" }
+        { icon: i8, label: "Type", value: "Adventure" },
       ],
       price: {
         fromLabel: "From",
         primary: "475",
         secondary: "$600",
-        secondaryIcon: i9
-      }
+        secondaryIcon: i9,
+      },
     },
     tripData: {
       description: {
         title: "Description",
-        text: `rewrite more short and unique: Pickup at your hotel or location of choice within Tokyo's 23 wards (Chuo, Chiyoda, Minato, Shibuya, Shinjuku, Toshima, Taito, Meguro, Bunkyo, Shinagawa, Nakano, Setagaya, Suginami, Ota, Kita, Arakawa, Sumida, Koto, Itabashi, Nerima, Edogawa, Katsushika, Adachi) and outside of tokyo 23 wards you have to pay extra charges it will depend on area from 5000 yen to 20000 yen. • Please add the local supplier, Travel on Peak, on WhatsApp at 0096896918676 to ensure smooth communication with the driver/guide on the day of the tour • In case of emergency call 0096896918676 on WhatsApp Please wait in the hotel lobby 10 minutes before your scheduled pickup time. Drivers will wait no longer than 60 minutes after the scheduled pickup time. Sometimes drivers could be late due to traffic conditions on highways in tokyo.`
+        text: `Chat with your driver as you travel, and customize an itinerary focused on the Nikko sights you want to see. Tailor stops to suit your unique interests with this private experience.Start with pickup from your accommodation in the 23 Wards of Tokyo. Relax in a comfortable car as you journey through the picturesque Japanese countryside, with your private driver handling traffic and navigation. Stay connected with onboard Wi-Fi.Travel into the mountains north of Tokyo to the charming city of Nikko in Tochigi Prefecture. Enjoy free time to visit the Toshogu Shrine, exploring its 42 structures, including a stunning five-story pagoda. Experience why this area is considered a national treasure.Stop at a local restaurant where you can purchase a traditional lunch. Get recommendations on where to enjoy authentic yuba gozen (tofu skin set meal). Admire the beauty of Kegon Falls, where water cascades off a cliff into a lush landscape. `,
       },
       tripHighlights: {
         title: "Trip Highlights",
-        subTitle: "Must-See Attractions"
+        subTitle: "Places covered",
       },
       includeExclude: {
         title: "Include/Exclude",
         includedItems: [
-          "Meet and greet",
-          "English‑speaking driver",
-          "Air‑conditioned vehicle",
-          "Wi‑Fi when available"
+          "English-speaking driver",
+          "Airconditioned transportation",
+          "Wi-fi in the vehicle",
         ],
         excludedItems: [
-          "Market purchase expense",
-          "Food and drinks",
-          "Tour guide",
-          "Ropeway or motorboat ticket",
-          "Any sort of entry ticket"
-        ]
+          " Food and drinks",
+          "Guide",
+          "Toshogu shrine entry ticket",
+        ],
       },
       booking: {
         title: "Book Your Trip",
@@ -550,137 +557,200 @@ const placesData = [
           options: [
             { value: "option1", label: "0" },
             { value: "option2", label: "1" },
-            { value: "option3", label: "2" }
-          ]
+            { value: "option3", label: "2" },
+          ],
         },
         tripInfo: [
           { label: "Location", value: "Nikko Tour" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: '10 Hour' },
-          { label: "People", value: "1-6" }
+          { label: "Duration", value: "10 Hour" },
+          { label: "People", value: "1-6" },
         ],
-        buttonText: "Add to cart"
-      }
+        buttonText: "Book Now",
+      },
     },
-    itineraryData:  [
+    itineraryData: [
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "13 pickup location options:",
-        subtitle:
-          "Fujikawaguchiko, Itabashi City, Urayasu, Kanagawa, Bunkyo City, Ichikawa…",
+        icon: <FaCar />,
+        title: "Starting Location:",
+        subtitle: "You Will Get Picked Up",
       },
       {
         type: "in-transit",
-        icon: <FaCar/>,
+        icon: <FaCar />,
         title: "Car",
-        duration: "(2 hours)",
+        subtitle: "(2 Hours)",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Chureito Pagoda",
-        subtitle: "Visit, Sightseeing, Walk, Scenic views on the way (45 minutes)",
-        meta: "Optional, Extra fee",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Mt. Fuji 5th Station",
-            subtitle: "Visit, Sightseeing (45 minutes)",
-            meta: "Optional, Extra fee",
-          },
-        ],
+        icon: <FaCar />,
+        title: "Zenko Ji Temple",
+        subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oshino Hakkai",
-        subtitle: "Visit, Sightseeing, Safety briefing (45 minutes)",
+        icon: <FaCar />,
+        title: "Nishimon Yoshinoya",
+        subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Kitaguchi‑hongu Fuji Sengen Shrine",
-        subtitle: "Break time, Photo stop… (40 minutes)",
+        icon: <FaCar />,
+        title: "Jegokudani Snow Monkey Park",
+        subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Lake Kawaguchi",
-        subtitle: "Visit, Sightseeing, Safety briefing (105 minutes)",
+        icon: <FaCar />,
+        title: "Dazaifo Monzen Machi",
+        subtitle: "Visit, Sightseeing, Walk",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Mt. Kachi Kachi Ropeway",
-        subtitle: "Visit, Sightseeing, Walk, Scenic drive… (45 minutes)",
+        icon: <FaCar />,
+        title: "Obuse Onsen Kannon-No-Yu",
+        subtitle: "Visit, Sightseeing, Relaxation",
       },
       {
         type: "in-activity",
-        icon: <FaCar/>,
-        title: "Oishi Park",
-        subtitle: "Break time, Photo stop, Free time (30 minutes)",
-        subitems: [
-          {
-            icon: <FaCar/>,
-            title: "Saiko Iyashi-no‑Sato Nenba",
-            subtitle: "Visit, Sightseeing (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Ashi",
-            subtitle: "Visit, Sightseeing (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Ropeway",
-            subtitle: "Break time, Visit, Sightseeing (1 min)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Aokigahara Forest",
-            subtitle: "Pass by, Scenic views",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Lake Yamanaka",
-            subtitle: "Visit, Self‑guided tour (30 minutes)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Hakone Open‑Air Museum",
-            subtitle: "Visit, Sightseeing, Walk (1 hour)",
-            meta: "Optional",
-          },
-          {
-            icon: <FaCar/>,
-            title: "Fugaku Wind Cave",
-            subtitle: "Break time, Free time (30 minutes)",
-            meta: "Optional",
-          },
-        ],
+        icon: <FaCar />,
+        title: "Obuse Onsen Kannon-No-Yu",
+        subtitle: "Visit, Sightseeing, Relaxation",
       },
       {
         type: "in-transit",
-        icon: <FaCar/>,
-        title: "Car",
-        duration: "(2 hours)",
+        icon: <FaCar />,
+        title: "You Will Return To The Starting Point",
+        subtitle: "End of the tour",
       },
-      {
-        type: "no-line",
-        icon: <FaCar/>,
-        title: "13 drop‑off locations:",
-        subtitle:
-          "Fujikawaguchiko, Kanagawa, Bunkyo City, Itabashi City, Urayasu…",
-      },
-    ]
-   
-  }
+    ],
+    options: [
+      { id: "m", label: "Nikko Toshogu" },
+      { id: "n", label: "Shinkyo Bridge" },
+      { id: "o", label: "Kegon Falls" },
+      { id: "p", label: "Nikko Futarasan Jinja" },
+      { id: "q", label: "Tobu World Square" },
+    ],
+  },
 ];
 
 export default placesData;
+
+// itineraryData:  [
+//   {
+//     type: "in-transit",
+//     icon: <FaCar/>,
+//     title: "13 pickup location options:",
+//     subtitle:
+//       "Fujikawaguchiko, Itabashi City, Urayasu, Kanagawa, Bunkyo City, Ichikawa…",
+//   },
+//   {
+//     type: "in-transit",
+//     icon: <FaCar/>,
+//     title: "Car",
+//     duration: "(2 hours)",
+//   },
+//   {
+//     type: "in-activity",
+//     icon: <FaCar/>,
+//     title: "Chureito Pagoda",
+//     subtitle: "Visit, Sightseeing, Walk, Scenic views on the way (45 minutes)",
+//     meta: "Optional, Extra fee",
+//     subitems: [
+//       {
+//         icon: <FaCar/>,
+//         title: "Mt. Fuji 5th Station",
+//         subtitle: "Visit, Sightseeing (45 minutes)",
+//         meta: "Optional, Extra fee",
+//       },
+//     ],
+//   },
+//   {
+//     type: "in-activity",
+//     icon: <FaCar/>,
+//     title: "Oshino Hakkai",
+//     subtitle: "Visit, Sightseeing, Safety briefing (45 minutes)",
+//   },
+//   {
+//     type: "in-activity",
+//     icon: <FaCar/>,
+//     title: "Kitaguchi‑hongu Fuji Sengen Shrine",
+//     subtitle: "Break time, Photo stop… (40 minutes)",
+//   },
+//   {
+//     type: "in-activity",
+//     icon: <FaCar/>,
+//     title: "Lake Kawaguchi",
+//     subtitle: "Visit, Sightseeing, Safety briefing (105 minutes)",
+//   },
+//   {
+//     type: "in-activity",
+//     icon: <FaCar/>,
+//     title: "Mt. Kachi Kachi Ropeway",
+//     subtitle: "Visit, Sightseeing, Walk, Scenic drive… (45 minutes)",
+//   },
+//   {
+//     type: "in-activity",
+//     icon: <FaCar/>,
+//     title: "Oishi Park",
+//     subtitle: "Break time, Photo stop, Free time (30 minutes)",
+//     subitems: [
+//       {
+//         icon: <FaCar/>,
+//         title: "Saiko Iyashi-no‑Sato Nenba",
+//         subtitle: "Visit, Sightseeing (1 hour)",
+//         meta: "Optional",
+//       },
+//       {
+//         icon: <FaCar/>,
+//         title: "Lake Ashi",
+//         subtitle: "Visit, Sightseeing (30 minutes)",
+//         meta: "Optional",
+//       },
+//       {
+//         icon: <FaCar/>,
+//         title: "Hakone Ropeway",
+//         subtitle: "Break time, Visit, Sightseeing (1 min)",
+//         meta: "Optional",
+//       },
+//       {
+//         icon: <FaCar/>,
+//         title: "Aokigahara Forest",
+//         subtitle: "Pass by, Scenic views",
+//         meta: "Optional",
+//       },
+//       {
+//         icon: <FaCar/>,
+//         title: "Lake Yamanaka",
+//         subtitle: "Visit, Self‑guided tour (30 minutes)",
+//         meta: "Optional",
+//       },
+//       {
+//         icon: <FaCar/>,
+//         title: "Hakone Open‑Air Museum",
+//         subtitle: "Visit, Sightseeing, Walk (1 hour)",
+//         meta: "Optional",
+//       },
+//       {
+//         icon: <FaCar/>,
+//         title: "Fugaku Wind Cave",
+//         subtitle: "Break time, Free time (30 minutes)",
+//         meta: "Optional",
+//       },
+//     ],
+//   },
+//   {
+//     type: "in-transit",
+//     icon: <FaCar/>,
+//     title: "Car",
+//     duration: "(2 hours)",
+//   },
+//   {
+//     type: "no-line",
+//     icon: <FaCar/>,
+//     title: "13 drop‑off locations:",
+//     subtitle:
+//       "Fujikawaguchiko, Kanagawa, Bunkyo City, Itabashi City, Urayasu…",
+//   },
+// ]

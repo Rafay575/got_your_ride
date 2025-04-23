@@ -167,30 +167,30 @@ const NavbarNotForHome = () => {
                 {isOpen && (
                   
                     <div className="mt-2 flex flex-col  transition-all duration-700">
-                          <Link
-                            to="/booking/1"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                          >
-                           Tokyo City Tour 
-                          </Link>
-                          <Link
-                            to="/booking/2"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                          >
-                            Mt. Fuji 5th Station
-                          </Link>
-                          <Link
-                            to="/booking/3"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                          >
-                            Nagano Tour 
-                          </Link>
-                          <Link
-                            to="/booking/4"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                          >
-                             Nikko Tour
-                          </Link>
+                                             <NavLink onClick={() => setIsSideMenuOpen(false)}
+                                               to="/booking/1"
+                                               className="block px-4  py-2 text-gray-700 hover:bg-gray-100"
+                                             >
+                                               Tokyo City Tour
+                                             </NavLink>
+                                             <NavLink onClick={() => setIsSideMenuOpen(false)}
+                                               to="/booking/2"
+                                               className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                             >
+                                               Mt. Fuji 5th Station
+                                             </NavLink>
+                                             <NavLink onClick={() => setIsSideMenuOpen(false)}
+                                               to="/booking/3"
+                                               className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                             >
+                                               Nagano Tour 
+                                             </NavLink>
+                                             <NavLink onClick={() => setIsSideMenuOpen(false)}
+                                               to="/booking/4"
+                                               className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                             >
+                                               Nikko Tour
+                                             </NavLink>
                         </div>
                   
                 )}

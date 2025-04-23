@@ -2,16 +2,9 @@ import React from "react";
 import { FaCheck } from "react-icons/fa";
 
 // Array of options for the checkboxes
-const options = [
-  { id: "a", label: "jkj" },
-  { id: "b", label: "Oshino Hakkai" },
-  { id: "c", label: "Oishi Park" },
-  { id: "d", label: "Kitaguchi-hongu Fuji" },
-  // For this option, we want the check icon to appear only when checked:
-  { id: "e", label: "Sengen Shrine" }
-];
 
-const CheckBox = () => {
+
+const CheckBox = ({options}) => {
   return (
     <div className="mt-2">
       {options.map((option) => (
