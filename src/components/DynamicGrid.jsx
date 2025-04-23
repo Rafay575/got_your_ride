@@ -10,6 +10,7 @@ import image2 from "../assets/image-1.png";
 import image3 from "../assets/image-2.png";
 import image4 from "../assets/image-3.png";
 import image5 from "../assets/image-4.png";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -55,13 +56,14 @@ const data = [
 ];
 
 const DynamicGrid = () => {
+  const navigate = useNavigate();
   return (
     <div className="mx-auto w-4/5 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
       {data.map((item, idx) => (
         <motion.div
           key={item.id}
           className="group rounded-2xl shadow-lg bg-white cursor-pointer"
-          /* --- SCROLL‑IN VIEW --- */
+          onClick={() => navigate(`/booking/${item.id}`)}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: idx * 0.08 }}

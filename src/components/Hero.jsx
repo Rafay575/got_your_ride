@@ -8,9 +8,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Import images (they are fetched in this component)
-import image1 from "../assets/fuji-mountain-1.png";
-import image2 from "../assets/alex-knight-Ys-DBJeX0nE-unsplash.png";
-import image3 from "../assets/curren-podlesny-V7MplrFOU4E-unsplash.png";
+import image1 from "../assets/hero/1.png";
+import image2 from "../assets/hero/2.png";
+import image3 from "../assets/hero/3.jpg";
+import image4 from "../assets/hero/4.jpg";
+import image5 from "../assets/hero/5.jpg";
+import image6 from "../assets/hero/6.jpg";
+import image7 from "../assets/hero/7.jpg";
 
 // Custom arrow components for navigation
 const NextArrow = (props) => {
@@ -43,7 +47,7 @@ const PrevArrow = (props) => {
 
 const Hero = () => {
   // Array of slide images
-  const slides = [image1, image2, image3];
+  const slides = [image1, image2, image3,image4, image5, image6,image7];
 
   // Keep track of the current slide to trigger text animation
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -102,7 +106,7 @@ const Hero = () => {
       </Slider>
 
       {/* Dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
       {/* Overlay text content */}
       <motion.div
@@ -135,12 +139,7 @@ const Hero = () => {
           >
             BOOK NOW
           </NavLink>
-          <NavLink
-            to="#"
-            className="border border-white text-white text-xs md:text-base px-6 py-2 rounded-full hover:bg-white hover:text-[#F1582B] transition-colors duration-300"
-          >
-            MORE INFO
-          </NavLink>
+        
         </motion.div>
       </motion.div>
     </div>
