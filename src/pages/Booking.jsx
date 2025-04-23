@@ -171,7 +171,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
           </div>
 
           {/* Include/Exclude Section */}
-          <div className="px-4 py-6">
+          <div className=" py-6">
             <h1 className="font-bold text-2xl mb-5">
               {tripData.includeExclude.title}
             </h1>
@@ -179,8 +179,11 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
               {/* Included */}
               <div>
                 {tripData.includeExclude.includedItems.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 mb-3">
+                  <div key={index} className="flex items-start gap-2 mb-3">
+                    <div>
+
                     <FaCheckCircle className="w-5 h-5 bg-white text-[#F1582B]" />
+                    </div>
                     <p className="text-sm">{item}</p>
                   </div>
                 ))}
@@ -188,8 +191,11 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
               {/* Excluded */}
               <div>
                 {tripData.includeExclude.excludedItems.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 mb-3">
+                  <div key={index} className="flex items-start gap-2 mb-3">
+                    <div>
+
                     <FaTimesCircle className="w-5 h-5 text-gray-200 bg-gray-400 rounded-full" />
+                    </div>
                     <p className="text-sm">{item}</p>
                   </div>
                 ))}

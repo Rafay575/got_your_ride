@@ -278,7 +278,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         type: "in-transit",
         icon: <FaCar />,
         title: "Car",
-        subtitle: "(2 Hours)",
+        subtitle: "",
       },
       {
         type: "in-activity",
@@ -425,55 +425,49 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         type: "in-transit",
         icon: <FaCar />,
         title: "Car",
-        subtitle: "(2 Hours)",
+       
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Zenko Ji Temple",
-        subtitle: "See Details And Photo",
-        duration: "(2 Hours)",
+        
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Nishimon Yoshinoya",
-        subtitle: "See Details And Photo",
-        duration: "60 Minutes",
+       
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Jegokudani Snow Monkey Park",
-        subtitle: "See Details And Photo",
-        duration: "3 Hours",
+       
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Dazaifu Monzen Machi",
-        subtitle: "See Details And Photo",
-        duration: "3 Hours",
+       
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Obuse Onsen Kannon-No-Yu",
-        subtitle: "See Details And Photo",
-        duration: "3 Hours",
+      
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Obuse Onsen Kannon-No-Yu",
-        subtitle: "See Details And Photo",
-        duration: "3 Hours",
+       
       },
       {
         type: "in-transit",
         icon: <FaCar />,
         title: "You Will Return To The Starting Point",
-        subtitle: "",
+       
       },
     ],
     options: [
@@ -576,7 +570,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         type: "in-transit",
         icon: <FaCar />,
         title: "Car",
-        subtitle: "(2 Hours)",
+        subtitle: "",
       },
       {
         type: "in-activity",
@@ -645,7 +639,7 @@ export default placesData;
 //     type: "in-transit",
 //     icon: <FaCar/>,
 //     title: "Car",
-//     duration: "(2 hours)",
+//     duration: "",
 //   },
 //   {
 //     type: "in-activity",
@@ -740,7 +734,7 @@ export default placesData;
 //     type: "in-transit",
 //     icon: <FaCar/>,
 //     title: "Car",
-//     duration: "(2 hours)",
+//     duration: "",
 //   },
 //   {
 //     type: "no-line",
