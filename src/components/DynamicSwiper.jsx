@@ -5,12 +5,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation"; // You can keep this import if you plan to use navigation
 
-import image8 from "../assets/famous/1.webp";
-import image9 from "../assets/famous/2.webp";
-import image10 from "../assets/famous/3.webp";
-import image11 from "../assets/famous/4.webp";
-import image12 from "../assets/famous/5.webp";
-import image13 from "../assets/famous/6.webp";
+import image8 from "../assets/famous/1.png";
+import image9 from "../assets/famous/2.png";
+import image10 from "../assets/famous/3.png";
+import image11 from "../assets/famous/4.png";
+import image12 from "../assets/famous/5.png";
+import image13 from "../assets/famous/6.png";
 
 // Slide data
 const slides = [
