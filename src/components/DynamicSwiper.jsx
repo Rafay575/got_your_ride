@@ -69,6 +69,8 @@ const DynamicSwiper = () => {
 
   return (
     <div className="w-4/5 mx-auto relative">
+      
+      <h1 className="font-bold text-2xl lg:text-4xl">Know About Our Famous De stination </h1>
       <Swiper
         ref={swiperRef}
         spaceBetween={20}
