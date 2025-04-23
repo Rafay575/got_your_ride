@@ -425,48 +425,56 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         type: "in-transit",
         icon: <FaCar />,
         title: "Car",
+        subtitle: "Visit, Sightseeing",
        
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Zenko Ji Temple",
+        subtitle: "Visit, Sightseeing",
         
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Nishimon Yoshinoya",
+        subtitle: "Visit, Sightseeing",
        
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Jegokudani Snow Monkey Park",
+        subtitle: "Visit, Sightseeing",
        
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Dazaifu Monzen Machi",
+        subtitle: "Visit, Sightseeing",
        
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Obuse Onsen Kannon-No-Yu",
+        subtitle: "Visit, Sightseeing",
       
       },
       {
         type: "in-activity",
         icon: <FaCar />,
         title: "Obuse Onsen Kannon-No-Yu",
+        subtitle: "Visit, Sightseeing",
        
       },
       {
         type: "in-transit",
         icon: <FaCar />,
         title: "You Will Return To The Starting Point",
+        subtitle: "End of the tour",
        
       },
     ],
