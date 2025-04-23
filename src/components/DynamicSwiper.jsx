@@ -84,7 +84,7 @@ const DynamicSwiper = () => {
               viewport={{ once: true }}
             >
            
-      <h1 className="font-bold text-2xl lg:text-4xl">Know About Our Famous De stination </h1>
+      <h1 className="font-bold text-2xl lg:text-4xl">Know About Our Famous Destination </h1>
             </motion.div>
       <Swiper
         ref={swiperRef}
