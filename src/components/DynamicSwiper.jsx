@@ -69,8 +69,16 @@ const DynamicSwiper = () => {
 
   return (
     <div className="w-4/5 mx-auto relative">
-      
+        <motion.div
+              className="text-center my-14"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+           
       <h1 className="font-bold text-2xl lg:text-4xl">Know About Our Famous De stination </h1>
+            </motion.div>
       <Swiper
         ref={swiperRef}
         spaceBetween={20}
