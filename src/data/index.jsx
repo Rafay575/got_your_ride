@@ -53,8 +53,8 @@ const placesData = [
       ],
       price: {
         fromLabel: "From",
-        primary: "475",
-        secondary: "$600",
+        primary: "408",
+        secondary: "$533",
         secondaryIcon: i9,
       },
     },
@@ -210,8 +210,8 @@ const placesData = [
       ],
       price: {
         fromLabel: "From",
-        primary: "475",
-        secondary: "$600",
+        primary: "380",
+        secondary: "$500",
         secondaryIcon: i9,
       },
     },
@@ -365,8 +365,8 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
       ],
       price: {
         fromLabel: "From",
-        primary: "475",
-        secondary: "$600",
+        primary: "477",
+        secondary: "$562",
         secondaryIcon: i9,
       },
     },
@@ -519,8 +519,8 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
       ],
       price: {
         fromLabel: "From",
-        primary: "475",
-        secondary: "$600",
+        primary: "423",
+        secondary: "$550",
         secondaryIcon: i9,
       },
     },
