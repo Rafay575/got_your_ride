@@ -171,7 +171,7 @@ const HomeNavbar = () => {
       {/* Side menu overlay for mobile */}
       {isSideMenuOpen && (
         <div
-          className="fixed inset-0  bg-black/90 "
+          className="fixed inset-0  bg-black/100 "
           style={{ zIndex: 9999 }}
           onClick={() => setIsSideMenuOpen(false)}
         >
