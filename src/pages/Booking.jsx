@@ -203,7 +203,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
           <h1 className="text-2xl font-bold mb-3">{tripData.booking.title}</h1>
 
           {/* Date Dropdown */}
-          <div className="mt-5 flex gap-2">
+          <div className="mt-5 flex flex-col md:flex-row gap-2">
             <Dropdown  />
          
             <DatePickerInput selectedDate={date} setSelectedDate={setDate}/>

@@ -61,7 +61,7 @@ const placesData = [
     tripData: {
       description: {
         title: "Description",
-        text: `Embark on a private day trip with Mount Fuji Discoveries, where you’ll explore the breathtaking beauty and cultural richness surrounding Japan’s iconic peak. Begin with panoramic views at *Chureito Pagoda, followed by a visit to the serene village of **Oshino Hakkai, home to crystal-clear ponds and traditional thatched-roof houses. Continue to the sacred **Kitaguchi Hongu Fuji Sengen Shrine* nestled in a tranquil cedar forest, and enjoy the stunning reflections of Mount Fuji at *Lake Kawaguchiko. For those seeking more adventure, optional activities include the **Hakone Ropeway* for aerial views of volcanic landscapes or a *Lake Ashi cruise* to glide across its calm waters. This customizable journey offers a perfect blend of nature, culture, and excitement, tailored to your preferences.`,
+        text: `Embark on a private day trip with Mount Fuji Discoveries, where you’ll explore the breathtaking beauty and cultural richness surrounding Japan’s iconic peak. Begin with panoramic views at Chureito Pagoda, followed by a visit to the serene village of Oshino Hakkai, home to crystal-clear ponds and traditional thatched-roof houses. Continue to the sacred Kitaguchi Hongu Fuji Sengen Shrine nestled in a tranquil cedar forest, and enjoy the stunning reflections of Mount Fuji at Lake Kawaguchiko. For those seeking more adventure, optional activities include the Hakone Ropeway for aerial views of volcanic landscapes or a Lake Ashi cruise to glide across its calm waters. This customizable journey offers a perfect blend of nature, culture, and excitement, tailored to your preferences.`,
       },
       tripHighlights: {
         title: "Trip Highlights",
@@ -70,13 +70,9 @@ const placesData = [
       includeExclude: {
         title: "Include/Exclude",
         includedItems: [
-          "Meet and greet",
-          "English-speaking driver",
-          "Air-conditioned vehicle",
-          "Kitaguchi-hongu Fuji",
-          "with WiFi when available",
+         
           "Hotel pickup and drop-off",
-          "Driver ",
+        
           "Air-conditioned transportation",
           "Driver",
           "Guide",

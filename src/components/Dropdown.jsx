@@ -19,7 +19,7 @@ const Dropdown = () => {
  
   return (
   
-      <div className="relative w-2/5">
+      <div className="relative w-full md:w-2/5">
         <button
           onClick={() => setAdultDropdownOpen(!isAdultDropdownOpen)}
           className="flex items-center w-full space-x-2 bg-white border border-gray-300 text-gray-900 rounded-full py-2 px-4 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500"

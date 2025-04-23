@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const DatePickerInput = ({ selectedDate, setSelectedDate }) => {
   return (
-    <div className="relative w-2/5 ">
+    <div className="relative w-full  md:w-2/5 ">
       {/* Icon inside the input */}
       <div className="absolute inset-y-0 left-0  flex items-center pl-3.5 pointer-events-none">
         <svg
