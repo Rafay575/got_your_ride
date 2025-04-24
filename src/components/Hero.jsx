@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -13,6 +13,12 @@ import image2 from "../assets/hero/2.png";
 import image5 from "../assets/hero/5.jpg";
 import image6 from "../assets/hero/5.png";
 import image7 from "../assets/hero/7.jpg";
+
+import imagem1 from "../assets/hero/m1.png";
+import imagem2 from "../assets/hero/m2.png";
+import imagem3 from "../assets/hero/m3.png";
+import imagem4 from "../assets/hero/m4.png";
+import imagem5 from "../assets/hero/m5.png";
 
 // Custom arrow components for navigation
 const NextArrow = (props) => {
@@ -44,32 +50,31 @@ const PrevArrow = (props) => {
 };
 
 const Hero = () => {
-  // Array of slide images
-  const slides = [image1, image2, image5, image7, image6];
+  const [isMobile, setIsMobile] = useState(false); // State to track screen size
 
   // Array of slide texts corresponding to each image
   const slideTexts = [
     {
       h1: "A MESMERIZING SUNSET OVER MT.FUJI, JAPAN",
-      p: "As the sky transitions from vibrant orange to soft pink, the majestic mountain stands proud, reflecting the colors of the fading day."
+      p: "As the sky transitions from vibrant orange to soft pink, the majestic mountain stands proud, reflecting the colors of the fading day.",
     },
     {
       h1: "An ancient hush settles over Zenko‑ji as dusk descends",
-      p: "The timbered halls glow softly in lantern light echoing with centuries of prayer while pilgrims tread the stone approach in quiet reverence, wrapped in the temple’s timeless serenity."
+      p: "The timbered halls glow softly in lantern light echoing with centuries of prayer while pilgrims tread the stone approach in quiet reverence, wrapped in the temple’s timeless serenity.",
     },
     {
       h1: "A dazzling evening in Tokyo paints the skyline with neon brilliance",
-      p: "Towering skyscrapers, age‑old temples and bustling streets weave together in a vibrant tapestry that pulses with energy and wonder"
+      p: "Towering skyscrapers, age‑old temples and bustling streets weave together in a vibrant tapestry that pulses with energy and wonder.",
     },
     {
-      h1: "Nikkō Tōshogū shines with gilded carvings beneath towering cedars",
-      p: "Ornate beams and mythical motifs catch afternoon light, while incense swirls and chants fill the sacred forest, celebrating both opulence and deep spirituality."
+      h1: "Nikkō Tōshogū shines with gilded carvings beneath towering cedars",
+      p: "Ornate beams and mythical motifs catch afternoon light, while incense swirls and chants fill the sacred forest, celebrating both opulence and deep spirituality.",
     },
     {
-      h1: "Matsumoto-jō’s black lacquer and white walls mirror in the moat.",
-      p: "Soaring gables and moon-viewing tower stand guard over the Alps, a poetic blend of strength and elegance frozen in twilight."
-    },
-  ];
+      h1: "Matsumoto-jō’s black lacquer and white walls mirror in the moat",
+      p: "Soaring gables and moon-viewing tower stand guard over the Alps, a poetic blend of strength and elegance frozen in twilight.",
+    },
+  ];
 
   // Keep track of the current slide to trigger text animation
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -86,6 +91,26 @@ const Hero = () => {
     prevArrow: <PrevArrow />,
     afterChange: (index) => setCurrentSlide(index), // Set current slide after change
   };
+
+  // Use effect to detect screen size
+  useEffect(() => {
+    // Function to check if the screen width is mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Set to true if width is less than 768px (mobile size)
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check size on mount
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Array of slide images
+  const slides = isMobile
+  ? [imagem1, imagem2, imagem3, imagem4,imagem5] // Desktop images
+  : [image1, image2, image5, image6,image7] // Mobile images
 
   // Framer Motion variants for staggered text animation
   const containerVariants = {
@@ -121,7 +146,7 @@ const Hero = () => {
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide})` }}
               variants={itemVariants1}
-              transition={{ duration: 1 ,delay: 0.4}} // Duration for background transition
+              transition={{ duration: 1, delay: 0.4 }} // Duration for background transition
             ></motion.div>
           </div>
         ))}
@@ -138,22 +163,13 @@ const Hero = () => {
         animate="visible"
         className="absolute top-[40%] transform px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] md:w-4/5 text-white"
       >
-        <motion.h1
-          variants={itemVariants1}
-          className="text-2xl capitalize md:text-3xl font-bold"
-        >
+        <motion.h1 variants={itemVariants1} className="text-2xl capitalize md:text-3xl font-bold">
           {slideTexts[currentSlide].h1}
         </motion.h1>
-        <motion.p
-          variants={itemVariants2}
-          className="mt-4 text-sm md:text-lg"
-        >
+        <motion.p variants={itemVariants2} className="mt-4 text-sm md:text-lg">
           {slideTexts[currentSlide].p}
         </motion.p>
-        <motion.div
-          variants={itemVariants3}
-          className="mt-10 flex gap-4"
-        >
+        <motion.div variants={itemVariants3} className="mt-10 flex gap-4">
           <NavLink
             to="#"
             className="bg-[#F1582B] text-white text-xs md:text-base px-6 py-2 rounded-full border border-[#F1582B] hover:bg-white hover:text-[#F1582B] transition-colors duration-300"

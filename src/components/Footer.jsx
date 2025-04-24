@@ -119,7 +119,7 @@
 
 // export default Footer;
 import React from "react";
-import { FaLinkedin, FaFacebookF, FaInstagram } from "react-icons/fa";
+
 import img from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
@@ -131,7 +131,7 @@ const Footer = () => {
         {/* Logo and Social Icons */}
         <div className="flex flex-col items-center md:items-start space-x-4">
           <div className="font-bold text-lg">
-            <img src={img} alt="Logo"  />
+            <img src={img} alt="Logo" className="h-40"  />
           </div>
         </div>
 

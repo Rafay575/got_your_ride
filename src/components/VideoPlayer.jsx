@@ -25,7 +25,7 @@ export default function VideoPlayer({ image, video, css = "" }) {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-  <ReactPlayer url={video} autoplay playing  width="100%" height="100%" />
+  <ReactPlayer url={video} autoPlay playing  width="100%" height="100%" />
         </motion.div>
 
     

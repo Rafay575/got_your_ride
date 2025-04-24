@@ -240,7 +240,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
           
           "Tour Guide",
           
-          "Ropeway or Motorboat Ticket",
+       
           
           "Any Sort of Entry Ticket"],
       },

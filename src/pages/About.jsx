@@ -41,7 +41,7 @@ const About = () => {
       <span className="mt-1 lg:block"> Enjoyable</span>
     </h1>
     <p className=" mx-auto mt-4  sm:text-lg  leading-[32px] mb-4">
-    At GetYourRide, we are dedicated to providing affordable and comfortable transportation services across Japan. Our goal is to offer you the freedom and flexibility to explore the country at your own pace. Whether you're experiencing the vibrant energy of the cities or enjoying the tranquility of the countryside, our private charter service ensures a relaxing and enjoyable journey.
+    At GotYourRide, we are dedicated to providing affordable and comfortable transportation services across Japan. Our goal is to offer you the freedom and flexibility to explore the country at your own pace. Whether you're experiencing the vibrant energy of the cities or enjoying the tranquility of the countryside, our private charter service ensures a relaxing and enjoyable journey.
     </p>
     <p className=" mx-auto mt-4  sm:text-lg  leading-[32px] mb-4">
     With a focus on comfort, convenience, and personalized service, we allow you to choose your destinations and the duration of your ride, ensuring that your travel experience is tailored to your needs. Let us be a part of your journey through Japan, where relaxation and adventure meet.
