@@ -51,7 +51,7 @@ const Hero = () => {
   const slideTexts = [
     {
       h1: "A MESMERIZING SUNSET OVER MT.FUJI, JAPAN",
-      p: "A Mesmerizing Sunset Over Mt. Fuji, Japan, bathes the iconic peak in a golden glow, creating a serene and breathtaking view."
+      p: "As the sky transitions from vibrant orange to soft pink, the majestic mountain stands proud, reflecting the colors of the fading day."
     },
     {
       h1: "An ancient hush settles over Zenko‑ji as dusk descends",
@@ -62,12 +62,12 @@ const Hero = () => {
       p: "Towering skyscrapers, age‑old temples and bustling streets weave together in a vibrant tapestry that pulses with energy and wonder"
     },
     {
-      h1: "Beneath towering cedars, Nikkō Tōshogū shimmers with gilded carvings and vivid lacquers",
-      p: "Each ornate beam and mythic motif catching the slanting rays of late afternoon, as incense swirls and chants drift through the sacred forest, celebrating a majesty both opulent and deeply spiritual."
+      h1: "Nikkō Tōshogū shines with gilded carvings beneath towering cedars",
+      p: "Ornate beams and mythical motifs catch afternoon light, while incense swirls and chants fill the sacred forest, celebrating both opulence and deep spirituality."
     },
     {
-      h1: "Under the fading light, Matsumoto‑jō’s black‑lacquered keeps and white‑plaster walls mirror perfectly in the still moat",
-      p: "Its soaring gables and moon‑viewing tower standing guard against the Alps beyond, a poetic fusion of strength and elegance frozen in twilight."
+      h1: "Matsumoto-jō’s black lacquer and white walls mirror in the moat.",
+      p: "Soaring gables and moon-viewing tower stand guard over the Alps, a poetic blend of strength and elegance frozen in twilight."
     },
   ];
 
