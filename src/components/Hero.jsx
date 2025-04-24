@@ -10,10 +10,8 @@ import "slick-carousel/slick/slick-theme.css";
 // Import images (they are fetched in this component)
 import image1 from "../assets/hero/1.png";
 import image2 from "../assets/hero/2.png";
-import image3 from "../assets/hero/3.jpg";
-import image4 from "../assets/hero/4.jpg";
 import image5 from "../assets/hero/5.jpg";
-import image6 from "../assets/hero/6.jpg";
+import image6 from "../assets/hero/5.png";
 import image7 from "../assets/hero/7.jpg";
 
 // Custom arrow components for navigation
@@ -47,7 +45,7 @@ const PrevArrow = (props) => {
 
 const Hero = () => {
   // Array of slide images
-  const slides = [image1, image2, image5,image7];
+  const slides = [image1, image2, image5,image7,image6];
 
   // Keep track of the current slide to trigger text animation
   const [currentSlide, setCurrentSlide] = useState(0);
