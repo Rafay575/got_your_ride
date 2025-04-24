@@ -17,6 +17,7 @@ const Main = () => {
           tripData={selectedPlace.tripData}
           itineraryData={selectedPlace.itineraryData}
           options={selectedPlace.options}
+          place={selectedPlace.id}
         />
       ) : (
         <p>Place not found.</p>

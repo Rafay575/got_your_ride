@@ -22,10 +22,10 @@ import ProgressBar from "../components/ProgressBar";
 import Feedback from "../components/Feedback";
 import GoBackButton from "../components/GoBackButton";
 import ItineraryTimeline from "../components/ItineraryTimeline";
-import img from "../assets/image_1.png"
+import img from "../assets/image_1.png";
 import CustomDatePicker from "../components/CustomDatePicker";
 import DatePickerInput from "../components/DatePickerInput";
-const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
+const Booking = ({ tripData, bookingData, itineraryData, place, options }) => {
   const [date, setDate] = useState("");
   const [adults, setAdults] = useState(1);
   const [placeNumber, setPlaceNumber] = useState(place);
@@ -42,7 +42,28 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
   };
 
   const navigate = useNavigate();
-
+  const [selectedLocation, setSelectedLocation] = useState(place); // Default to Tokyo
+  useEffect(() => {
+    setSelectedLocation(place)
+  },[place])
+  const handleSelection = (id) => {
+    setSelectedLocation(id);
+  };
+ 
+  const getMapUrl = () => {
+    switch (selectedLocation) {
+      case 1:
+        return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984689.1029864792!2d138.71295978603672!3d35.21629737213794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2sTokyo%2C%20Japan!5e0!3m2!1sen!2s!4v1745527117502!5m2!1sen!2s";
+        case 2:
+        return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13015.197565360599!2d138.71706365707902!3d35.36062456307496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019629a42fdc899%3A0xa6a1fcc916f3a4df!2sMount%20Fuji!5e0!3m2!1sen!2s!4v1745527847485!5m2!1sen!2s";
+      case 3:
+        return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d204870.17109620935!2d137.94970370337836!3d36.64813088261142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d805de6344499%3A0xf128a974072892c8!2sNagano%2C%20Japan!5e0!3m2!1sen!2s!4v1745528014403!5m2!1sen!2s";
+      case 4:
+        return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408685.21158785094!2d139.26058128337553!3d36.84599131435045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601fa4b7c69ac8d1%3A0x6f526b42961dd1c0!2sNikko%2C%20Tochigi%2C%20Japan!5e0!3m2!1sen!2s!4v1745528061632!5m2!1sen!2s";
+      default:
+        return ;
+    }
+  };
   const handleProceedToPayment = () => {
     // Construct the payload from form states
     const bookingInfo = {
@@ -75,7 +96,6 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
   return (
     <>
       <div className="mt-35">
-  
         <div className="w-4/5 mx-auto">
           {/* Title Section */}
           <div className="mb-5">
@@ -181,8 +201,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
                 {tripData.includeExclude.includedItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-2 mb-3">
                     <div>
-
-                    <FaCheckCircle className="w-5 h-5 bg-white text-[#F1582B]" />
+                      <FaCheckCircle className="w-5 h-5 bg-white text-[#F1582B]" />
                     </div>
                     <p className="text-sm">{item}</p>
                   </div>
@@ -193,8 +212,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
                 {tripData.includeExclude.excludedItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-2 mb-3">
                     <div>
-
-                    <FaTimesCircle className="w-5 h-5 text-gray-200 bg-gray-400 rounded-full" />
+                      <FaTimesCircle className="w-5 h-5 text-gray-200 bg-gray-400 rounded-full" />
                     </div>
                     <p className="text-sm">{item}</p>
                   </div>
@@ -210,9 +228,9 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
 
           {/* Date Dropdown */}
           <div className="mt-5 flex flex-col md:flex-row gap-2">
-            <Dropdown  />
-         
-            <DatePickerInput selectedDate={date} setSelectedDate={setDate}/>
+            <Dropdown />
+
+            <DatePickerInput selectedDate={date} setSelectedDate={setDate} />
             {/* <div className="w-2/5">
                   <div className="flex items-center border border-none">
                     <span
@@ -247,14 +265,10 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
               </p>
               <div className="flex w-full justify-between items-center">
                 <div>
-
                   <p className="text-gray-500 text-sm font-semibold">
-                  
-                   1 - 6 {tripData.booking.people.category}  per car
+                    1 - 6 {tripData.booking.people.category} per car
                   </p>
-               
                 </div>
-               
               </div>
               <div className="w-full flex items-center mt-5 justify-between">
                 <p className="text-sm text-gray-600">{`Total Price: $${totalPrice}`}</p>
@@ -291,29 +305,32 @@ const Booking = ({ tripData, bookingData, itineraryData, place ,options}) => {
           </div>
         </div>
       </div>
-     
 
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
         <div className="flex flex-col md:flex-row">
-          <div className="h-full flex-grow">
+          <div className="h-fit ">
             <ItineraryTimeline dummyItems={itineraryData} />
           </div>
-          <div className="max-h-[700px] flex-grow">
-            <img src={img} alt="" className="object-cover w-full h-full" />
+          <div className=" flex-grow">
+        
+        <iframe  src={getMapUrl()}   width="100%"
+          height="100%"
+          frameBorder="0"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          aria-hidden="false"
+          tabIndex="0"></iframe>
           </div>
         </div>
-
       </div>
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
-        
       </div>
       <ProgressBar />
       <div className="w-4/5 mx-auto">
         <Feedback />
       </div>
-      
     </>
   );
 };
