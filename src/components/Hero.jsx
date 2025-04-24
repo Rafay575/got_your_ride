@@ -47,7 +47,7 @@ const PrevArrow = (props) => {
 
 const Hero = () => {
   // Array of slide images
-  const slides = [image1, image2, image3,image4, image5, image6,image7];
+  const slides = [image1, image2, image5,image7];
 
   // Keep track of the current slide to trigger text animation
   const [currentSlide, setCurrentSlide] = useState(0);
