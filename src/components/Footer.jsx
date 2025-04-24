@@ -120,7 +120,7 @@
 // export default Footer;
 import React from "react";
 import { FaLinkedin, FaFacebookF, FaInstagram } from "react-icons/fa";
-import img from "../assets/got-your-ride-logo-variation-01-1.png";
+import img from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
 

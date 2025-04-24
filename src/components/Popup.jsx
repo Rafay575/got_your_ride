@@ -44,7 +44,7 @@ const Popup = () => {
     
     
       <div className="text-center my-14">
-        <h1 className="font-bold text-2xl mb-6 lg:text-4xl">View Famous Site</h1>
+        <h1 className="font-bold text-2xl mb-6 lg:text-4xl">More About Us</h1>
       <VideoPlayer image={image} video={video} />
       </div>
      
