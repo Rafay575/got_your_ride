@@ -140,7 +140,7 @@ const Hero = () => {
       >
         <motion.h1
           variants={itemVariants1}
-          className="text-4xl capitalize md:text-5xl font-bold"
+          className="text-4xl capitalize md:text-4xl font-bold"
         >
           {slideTexts[currentSlide].h1}
         </motion.h1>
