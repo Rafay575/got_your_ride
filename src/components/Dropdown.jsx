@@ -42,12 +42,12 @@ const Dropdown = () => {
             <div className="flex items-center justify-between space-x-2">
               <span
                 onClick={handleDecrease}
-                className="cursor-pointer rounded-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
+                className="cursor-pointer rounded-full bg-gray-200 flex items-center justify-center h-6 w-6 duration-100 hover:bg-orange-500 hover:text-white"
               >
                 -
               </span>
               <input
-                className="h-10 w-12 pl-4 text-center border-none bg-gray-100  text-gray-700"
+                className="h-6 w-10 pl-4 text-center border-none bg-gray-100  text-gray-700"
                 type="number"
                 value={adults}
                 min="1"
@@ -55,7 +55,7 @@ const Dropdown = () => {
               />
               <span
                 onClick={handleIncrease}
-                className="cursor-pointer rounded-full border-gray-500 bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
+                className="cursor-pointer rounded-full border-gray-500 bg-gray-200 flex items-center justify-center h-6 w-6 duration-100 hover:bg-orange-500 hover:text-white"
               >
                 +
               </span>
