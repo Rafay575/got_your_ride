@@ -42,7 +42,7 @@ const HomeNavbar = () => {
         {/* Top bar (visible on md and larger) */}
         <div
           className={`hidden md:flex px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] justify-between transition-all duration-700 py-3 items-center border-b w-full ${
-            scrolled ? "bg-[#f1582b] text-white" : "bg-black/30 text-white"
+            scrolled ? "bg-[#f1582b] text-white" : "bg-black/70 text-white"
           }`}
         >
           <div className="flex gap-8">
@@ -63,7 +63,7 @@ const HomeNavbar = () => {
           className={`px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] transition-all duration-700 flex justify-between items-center w-full ${
             scrolled
               ? "bg-white text-black shadow-md"
-              : "bg-black/30 text-white shadow-2xl"
+              : "bg-black/70 text-white shadow-2xl"
           }`}
         >
           {/* Logo */}

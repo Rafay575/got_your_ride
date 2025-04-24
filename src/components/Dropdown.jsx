@@ -25,7 +25,7 @@ const Dropdown = () => {
           className="flex items-center w-full space-x-2 bg-white border border-gray-300 text-gray-900 rounded-full py-2 px-4 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
           <HiUser className="text-gray-500" />
-          <span className="flex items-center justify-between w-full"> <span> Adult x {adults} </span>  <svg
+          <span className="flex items-center justify-between text-xs w-full"> <span> Adult x {adults} </span>  <svg
           className="w-4 h-4 text-gray-500"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"

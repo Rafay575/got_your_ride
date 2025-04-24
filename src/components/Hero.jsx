@@ -45,7 +45,31 @@ const PrevArrow = (props) => {
 
 const Hero = () => {
   // Array of slide images
-  const slides = [image1, image2, image5,image7,image6];
+  const slides = [image1, image2, image5, image7, image6];
+
+  // Array of slide texts corresponding to each image
+  const slideTexts = [
+    {
+      h1: "A MESMERIZING SUNSET OVER MT.FUJI, JAPAN",
+      p: "A Mesmerizing Sunset Over Mt. Fuji, Japan, bathes the iconic peak in a golden glow, creating a serene and breathtaking view."
+    },
+    {
+      h1: "An ancient hush settles over Zenko‑ji as dusk descends",
+      p: "The timbered halls glow softly in lantern light echoing with centuries of prayer while pilgrims tread the stone approach in quiet reverence, wrapped in the temple’s timeless serenity."
+    },
+    {
+      h1: "A dazzling evening in Tokyo paints the skyline with neon brilliance",
+      p: "Towering skyscrapers, age‑old temples and bustling streets weave together in a vibrant tapestry that pulses with energy and wonder"
+    },
+    {
+      h1: "Beneath towering cedars, Nikkō Tōshogū shimmers with gilded carvings and vivid lacquers",
+      p: "Each ornate beam and mythic motif catching the slanting rays of late afternoon, as incense swirls and chants drift through the sacred forest, celebrating a majesty both opulent and deeply spiritual."
+    },
+    {
+      h1: "Under the fading light, Matsumoto‑jō’s black‑lacquered keeps and white‑plaster walls mirror perfectly in the still moat",
+      p: "Its soaring gables and moon‑viewing tower standing guard against the Alps beyond, a poetic fusion of strength and elegance frozen in twilight."
+    },
+  ];
 
   // Keep track of the current slide to trigger text animation
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,9 +78,9 @@ const Hero = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 600,
+    speed: 1000,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
     fade: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -97,7 +121,7 @@ const Hero = () => {
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide})` }}
               variants={itemVariants1}
-              transition={{ duration: 1 }} // Duration for background transition
+              transition={{ duration: 1 ,delay: 0.4}} // Duration for background transition
             ></motion.div>
           </div>
         ))}
@@ -116,16 +140,15 @@ const Hero = () => {
       >
         <motion.h1
           variants={itemVariants1}
-          className="text-4xl md:text-5xl font-bold"
+          className="text-4xl capitalize md:text-5xl font-bold"
         >
-          A MESMERIZING SUNSET OVER MT.FUJI, JAPAN
+          {slideTexts[currentSlide].h1}
         </motion.h1>
         <motion.p
           variants={itemVariants2}
           className="mt-4 text-sm md:text-lg"
         >
-          A Mesmerizing Sunset Over Mt. Fuji, Japan, bathes the iconic peak in a
-          golden glow, creating a serene and breathtaking view.
+          {slideTexts[currentSlide].p}
         </motion.p>
         <motion.div
           variants={itemVariants3}
@@ -137,7 +160,6 @@ const Hero = () => {
           >
             BOOK NOW
           </NavLink>
-        
         </motion.div>
       </motion.div>
     </div>
