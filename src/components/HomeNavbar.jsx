@@ -41,7 +41,7 @@ const HomeNavbar = () => {
       <div className="top-0 zee-index w-screen">
         {/* Top bar (visible on md and larger) */}
         <div
-          className={`hidden md:flex px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] justify-between transition-all duration-700 py-3 items-center border-b w-full ${
+          className={`flex px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] justify-between transition-all duration-700 py-3 items-center border-b w-full ${
             scrolled ? "bg-[#f1582b] text-white" : "bg-black/70 text-white"
           }`}
         >
@@ -55,7 +55,10 @@ const HomeNavbar = () => {
               <p className="text-xs font-normal">info@gotyourride.com</p>
             </div>
           </div>
+          <div className="hidden md:block">
+
           <SocialIcons />
+          </div>
         </div>
 
         {/* Bottom bar */}

@@ -73,7 +73,7 @@ const Contact = () => {
       >
         <img src={i1} alt="Contact Banner" className="w-full h-[200px] md:h-[250px]" />
         <GoBackButtonWhite className="absolute top-6 left-6" />
-        <h1 className="absolute text-white top-2/5 left-1/2 transform -translate-x-1/2 text-4xl sm:text-5xl font-bold">
+        <h1 className="absolute text-white top-2/5 left-1/2 transform -translate-x-1/2 text-3xl sm:text-5xl font-bold">
           Contact Us
         </h1>
         <p className="absolute text-white top-3/5 left-1/2 transform -translate-x-1/2 flex text-lg sm:text-xl">

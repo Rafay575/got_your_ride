@@ -43,18 +43,18 @@ const BookingForm = ({ bookingInfo }) => {
       placeNumber: bookingInfo.placeNumber,
       totalPrice: bookingInfo.price,
     };
-
     try {
       const response = await fetch("http://localhost:5000/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
+    
       if (response.ok) {
         const data = await response.json();
         console.log("Booking saved", data);
-
+    
+        // Handle success toast
         toast.success("Booking saved successfully!", {
           onClose: () => {
             // Start the car animation after a 2s delay
@@ -64,6 +64,14 @@ const BookingForm = ({ bookingInfo }) => {
             }, 2000);
           },
         });
+    
+        // Redirect to PayPal after 3s delay
+        setTimeout(() => {
+          if (data.approvalUrl) {
+            window.location.href = data.approvalUrl; // Redirect to PayPal approval URL
+          }
+        }, 3000);
+        
       } else {
         const errorData = await response.json();
         console.error("Error saving booking", errorData);
@@ -87,7 +95,7 @@ const BookingForm = ({ bookingInfo }) => {
         },
       });
     }
-  };
+  };    
 
   // On successful animation, redirect to PayPal after 3 seconds
   useEffect(() => {
@@ -102,7 +110,7 @@ const BookingForm = ({ bookingInfo }) => {
   return (
     <>
      {!showAnimation && (
-         <div className="bg-gray-50 flex max-w-5xl mx-auto justify-center min-h-screen mt-28 w-full py-10 relative">
+         <div className="bg-gray-50 flex max-w-5xl mx-auto justify-center  mt-28 w-full py-10 relative">
          {/* Toast container for notifications */}
          <ToastContainer />
    
@@ -157,23 +165,16 @@ const BookingForm = ({ bookingInfo }) => {
                <input
                  type="text"
                  placeholder="City"
-                 className="input"
+                className="input col-span-1 "
+
                  value={city}
                  onChange={(e) => setCity(e.target.value)}
                />
-               <select
-                 className="input"
-                 value={stateName}
-                 onChange={(e) => setStateName(e.target.value)}
-               >
-                 <option value="">State</option>
-                 <option value="NY">NY</option>
-                 <option value="CA">CA</option>
-               </select>
+              
                <input
                  type="text"
                  placeholder="Zip Code"
-                 className="input col-span-1 sm:col-span-2"
+                 className="input col-span-1 "
                  value={zipCode}
                  onChange={(e) => setZipCode(e.target.value)}
                />
