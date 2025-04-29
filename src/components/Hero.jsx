@@ -109,7 +109,7 @@ const Hero = () => {
 
   // Array of slide images
   const slides = isMobile
-  ? [imagem1, imagem2, imagem3, imagem4,imagem5] // Desktop images
+  ? [imagem2,imagem1, imagem4, imagem3, imagem5] // Desktop images
   : [image1, image2, image5, image6,image7] // Mobile images
 
   // Framer Motion variants for staggered text animation

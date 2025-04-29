@@ -6,7 +6,7 @@ import "swiper/css"; // Core Swiper styles
 import "swiper/css/navigation"; // Navigation styles
 import "swiper/css/pagination"; // Pagination styles
 
-import image from "../assets/image.png";
+import image from "../assets/about-image.png";;
 import video from "../assets/video1.mp4";
 
 import VideoPlayer from "./VideoPlayer";
