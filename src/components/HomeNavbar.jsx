@@ -7,6 +7,7 @@ import { FaEnvelope } from "react-icons/fa6";
 import { IoCaretDownSharp } from "react-icons/io5";
 import SocialIcons from "./SocialIcons";
 import { Link } from "react-router-dom";
+import { pre } from "framer-motion/client";
 const HomeNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -135,7 +136,7 @@ const HomeNavbar = () => {
                 className={
                   " hover:bg-[#f1582b] font-semibold hover:text-white rounded-sm px-3 py-1.5"
                 }
-                onClick={() => setIsSideMenuOpen(false)}
+                onClick={() => setIsSideMenuOpen((prev) => !prev)}
               >
                 <h1>CONTACT</h1>
               </NavLink>
