@@ -18,7 +18,7 @@ const DatePickerInput = ({ selectedDate, setSelectedDate }) => {
     >
       {/* Date input field */}
       <div className="relative ">
-        {/* Calendar Icon at the start */}
+      
         <div className="absolute inset-y-0 z-1 left-0 flex items-center pl-3 pointer-events-none">
           <svg
             className="w-3 h-3 text-gray-500"
@@ -31,13 +31,12 @@ const DatePickerInput = ({ selectedDate, setSelectedDate }) => {
           </svg>
         </div>
 
-        {/* Custom DatePicker component */}
         <DatePicker
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)} // Handle date selection
           open={openDatePicker} // Control whether the calendar is open
           onClickOutside={() => setOpenDatePicker(false)} // Close on clicking outside
-          className="bg-gray-50 border text-xs border-gray-300 text-gray-900 outline-none focus:ring-2 focus:ring-orange-500 text-sm rounded-full block w-full pl-10 pr-10 py-2.5 shadow-sm"
+          className="text-xs w-full pl-10 bg-white border border-gray-300 text-gray-900 rounded-full h-10 px-4 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
           placeholderText="Select date"
         />
 

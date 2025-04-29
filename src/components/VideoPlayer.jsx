@@ -25,11 +25,16 @@ export default function VideoPlayer({ image, video, css = "" }) {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-  <ReactPlayer url={video} autoPlay playing  width="100%" height="100%" />
-        </motion.div>
-
-    
-     
+        {/* Ensure muted autoplay */}
+        <ReactPlayer
+          url={video}
+          playing={true}
+          muted={true} // Muted is often required for autoplay to work
+          autoPlay={true}
+          width="100%"
+          height="100%"
+        />
+      </motion.div>
     </div>
   );
 }

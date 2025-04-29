@@ -4,7 +4,7 @@ import { FaInfoCircle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import waveBG from "../assets/animation.png"; // Example wave BG image
-
+import { baseUrl } from "../api/baseUrl";
 const BookingForm = ({ bookingInfo }) => {
   // Billing form state
   const [firstName, setFirstName] = useState("");
@@ -20,13 +20,10 @@ const BookingForm = ({ bookingInfo }) => {
   // State for controlling the animation and its type ("success" or "error")
   const [showAnimation, setShowAnimation] = useState(false);
   const [animationType, setAnimationType] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
- 
-
-    // Prepare the payload including bookingInfo data (including placeNumber)
     const payload = {
       firstName,
       lastName,
@@ -44,7 +41,8 @@ const BookingForm = ({ bookingInfo }) => {
       totalPrice: bookingInfo.price,
     };
     try {
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      setIsLoading(true);
+      const response = await fetch(`${baseUrl}/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -56,13 +54,13 @@ const BookingForm = ({ bookingInfo }) => {
     
         // Handle success toast
         toast.success("Booking saved successfully!", {
-          onClose: () => {
-            // Start the car animation after a 2s delay
-            setTimeout(() => {
-              setAnimationType("success");
-              setShowAnimation(true);
-            }, 2000);
-          },
+          // onClose: () => {
+          //   // Start the car animation after a 2s delay
+          //   setTimeout(() => {
+          //     setAnimationType("success");
+          //     setShowAnimation(true);
+          //   }, 2000);
+          // },
         });
     
         // Redirect to PayPal after 3s delay
@@ -76,33 +74,32 @@ const BookingForm = ({ bookingInfo }) => {
         const errorData = await response.json();
         console.error("Error saving booking", errorData);
         toast.error("Error saving booking. Please try again.", {
-          onClose: () => {
-            setTimeout(() => {
-              setAnimationType("error");
-              setShowAnimation(true);
-            }, 2000);
-          },
+          // onClose: () => {
+          //   setTimeout(() => {
+          //     setAnimationType("error");
+          //     setShowAnimation(true);
+          //   }, 2000);
+          // },
         });
       }
+      setIsLoading(false);
     } catch (error) {
       console.error("Error connecting to the server", error);
+      setIsLoading(false);
       toast.error("Error connecting to the server", {
-        onClose: () => {
-          setTimeout(() => {
-            setAnimationType("error");
-            setShowAnimation(true);
-          }, 2000);
-        },
+        // onClose: () => {
+          //   setTimeout(() => {
+            //     setAnimationType("error");
+            //     setShowAnimation(true);
+            //   }, 2000);
+            // },
       });
     }
   };    
 
-  // On successful animation, redirect to PayPal after 3 seconds
   useEffect(() => {
     if (showAnimation && animationType === "success") {
-      const timer = setTimeout(() => {
-        window.location.href = "https://www.paypal.com";
-      }, 3000); // Redirect after animation (3s)
+    
       return () => clearTimeout(timer);
     }
   }, [showAnimation, animationType]);
@@ -110,7 +107,7 @@ const BookingForm = ({ bookingInfo }) => {
   return (
     <>
      {!showAnimation && (
-         <div className="bg-gray-50 flex max-w-5xl mx-auto justify-center  mt-28 w-full py-10 relative">
+         <div className=" flex max-w-5xl mx-auto justify-center  mt-28 w-full py-10 px-5 xl:px-0 relative">
          {/* Toast container for notifications */}
          <ToastContainer />
    
@@ -126,18 +123,21 @@ const BookingForm = ({ bookingInfo }) => {
                  type="text"
                  placeholder="First Name"
                  className="input"
+                 required
                  value={firstName}
                  onChange={(e) => setFirstName(e.target.value)}
                />
                <input
                  type="text"
                  placeholder="Last Name"
+                 required
                  className="input"
                  value={lastName}
                  onChange={(e) => setLastName(e.target.value)}
                />
                <input
                  type="email"
+                 required
                  placeholder="Email Address"
                  className="input col-span-1 sm:col-span-2"
                  value={email}
@@ -145,10 +145,11 @@ const BookingForm = ({ bookingInfo }) => {
                />
                <div className="flex col-span-1 sm:col-span-2 gap-2">
                  <select className="input w-24">
-                   <option value="+2">+2</option>
+                   <option value="+81">+81</option>
                  </select>
                  <input
-                   type="text"
+                   type="number"
+                   required
                    placeholder="Phone Number"
                    className="input flex-1"
                    value={phone}
@@ -158,12 +159,14 @@ const BookingForm = ({ bookingInfo }) => {
                <input
                  type="text"
                  placeholder="Street Address"
+                 required
                  className="input col-span-1 sm:col-span-2"
                  value={street}
                  onChange={(e) => setStreet(e.target.value)}
                />
                <input
                  type="text"
+                 required
                  placeholder="City"
                 className="input col-span-1 "
 
@@ -172,35 +175,26 @@ const BookingForm = ({ bookingInfo }) => {
                />
               
                <input
-                 type="text"
+                 type="number"
+                 required
                  placeholder="Zip Code"
                  className="input col-span-1 "
                  value={zipCode}
                  onChange={(e) => setZipCode(e.target.value)}
                />
              </div>
-             <div className="flex items-center mt-4">
-               <input
-                 type="checkbox"
-                 id="terms"
-                 checked={termsAccepted}
-                 onChange={(e) => setTermsAccepted(e.target.checked)}
-               />
-               <label htmlFor="terms" className="ml-2 text-sm text-gray-700">
-                 I accept Terms and Conditions
-               </label>
-             </div>
+            
              <button
                type="submit"
-               className="mt-6 w-full bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700 transition"
+               className="mt-6 w-full bg-orange-600 text-white cursor-pointer px-6 py-2 rounded-md hover:bg-orange-700 transition"
              >
-               BOOK NOW
+               {isLoading ? "Submitting..." : "Submit"}
              </button>
            </div>
    
            {/* Right Column – Booking Summary */}
            <div className="w-full lg:w-1/3 space-y-6">
-             <div className="space-y-6 max-w-xs">
+             <div className="space-y-6 max-w-full">
                <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm text-xs text-gray-700">
                  <h4 className="text-lg mb-6 font-semibold">Book With Confidence</h4>
                  <ul className="space-y-3">

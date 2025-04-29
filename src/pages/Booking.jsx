@@ -228,32 +228,10 @@ const Booking = ({ tripData, bookingData, itineraryData, place, options }) => {
 
           {/* Date Dropdown */}
           <div className="mt-5 flex flex-col md:flex-row gap-2">
-            <Dropdown />
+            <Dropdown  setAdults={setAdults} adults={adults} handleDecrease={handleDecrease} handleIncrease={handleIncrease} />
 
             <DatePickerInput selectedDate={date} setSelectedDate={setDate} />
-            {/* <div className="w-2/5">
-                  <div className="flex items-center border border-none">
-                    <span
-                      onClick={handleDecrease}
-                      className="cursor-pointer rounded-l-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
-                    >
-                      -
-                    </span>
-                    <input
-                      className="h-10 w-20 border-x pl-3 flex items-center justify-center p-0 border-gray-300 bg-gray-200 text-xs text-center outline-none"
-                      type="number"
-                      value={adults}
-                      min="1"
-                      readOnly
-                    />
-                    <span
-                      onClick={handleIncrease}
-                      className="cursor-pointer rounded-r-full bg-gray-200 flex items-center justify-center h-10 w-10 duration-100 hover:bg-orange-500 hover:text-white"
-                    >
-                      +
-                    </span>
-                  </div>
-                </div> */}
+         
           </div>
           <hr className="opacity-20 mt-8 mb-8" />
 
@@ -298,7 +276,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place, options }) => {
 
           {/* Add to Cart Button */}
           <div
-            className="bg-[#F1582B] px-6 py-2 rounded-full w-full mt-10 text-white"
+            className="bg-[#F1582B] px-6 py-2 rounded-full cursor-pointer w-full mt-10 text-white"
             onClick={handleProceedToPayment}
           >
             <h1 className="text-center">{tripData.booking.buttonText}</h1>

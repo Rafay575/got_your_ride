@@ -3,7 +3,7 @@ import { InputPhoneCountryCode } from "./InputPhoneCountryCode";
 import AddRating from "../components/AddRating";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { baseUrl } from "../api/baseUrl";
 const Feedback = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -47,7 +47,7 @@ const Feedback = () => {
 
     // Send form data to the backend API
     try {
-      const response = await fetch("http://localhost:5000/api/feedback", {
+      const response = await fetch(`${baseUrl}/feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -154,7 +154,7 @@ const Feedback = () => {
             <div className="text-center mt-5 sm:col-span-2">
               <button
                 onClick={handleSubmit}
-                className="text-white px-6 py-2 rounded-full bg-[#F1582B]"
+                className="text-white px-6 py-2 rounded-full cursor-pointer bg-[#F1582B]"
                 disabled={isLoading}
               >
                 {isLoading ? "Submitting..." : "Submit"}

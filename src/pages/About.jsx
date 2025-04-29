@@ -8,7 +8,7 @@ import i4 from "../assets/china-1.png";
 import i5 from "../assets/about-2.png";
 import VideoPlayer from "../components/VideoPlayer";
 import image from "../assets/about-image.png";
-import video from "../assets/video.mp4";
+import video from "../assets/video1.mp4";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Core Swiper styles
@@ -23,15 +23,16 @@ const About = () => {
     <>
       {/* image section */}
       
-      <div className="relative mt-6 sm:mt-12">
-        <img src={i1} alt="Contact Banner" className="w-full h-[200px] md:h-[250px]" />
-        <GoBackButtonWhite className="absolute top-6 left-6" />
-        <h1 className="absolute text-white top-2/5 left-1/2 transform -translate-x-1/2 text-4xl sm:text-5xl font-bold">
-        About Us
-        </h1>
-        <p className="absolute  text-white top-3/5 left-1/2 transform -translate-x-1/2 flex text-lg sm:text-xl">
-          Home <IoChevronForwardSharp className="mt-1" /> About
-        </p>
+      <div className="relative mb-6 mt-6 sm:mt-12">
+        <img src={i1} alt="Contact Banner" className="w-full h-[300px] md:h-[250px]" />
+       <div className="absolute left-1/2 flex justify-center items-center flex-col transform -translate-x-1/2 top-2/4">
+                 <h1 className=" text-white text-3xl sm:text-5xl font-bold">
+                   About Us
+                 </h1>
+                 <p className=" text-white text-center mt-2 flex text-lg sm:text-xl">
+                   Home <IoChevronForwardSharp className="mt-1" /> About
+                 </p>
+               </div>
       </div>
       <div className="w-4/5 mx-auto flex flex-col-reverse lg:flex-row gap-4 lg:gap-20">
   {/* Main Section */}
