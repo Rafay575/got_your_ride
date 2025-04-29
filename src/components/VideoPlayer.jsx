@@ -14,6 +14,11 @@ export default function VideoPlayer({ image, video, css = "" }) {
     return () => (document.body.style.overflow = "auto");
   }, [open]);
 
+  const handleVideoReady = () => {
+    // Video is ready to play
+    console.log("Video is ready");
+  };
+
   return (
     <div className={`relative ${css}`}>
       <motion.div
@@ -25,14 +30,15 @@ export default function VideoPlayer({ image, video, css = "" }) {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Ensure muted autoplay */}
         <ReactPlayer
           url={video}
           playing={true}
-          muted={true} // Muted is often required for autoplay to work
+          muted={true}
           autoPlay={true}
+          playsInline={true} 
           width="100%"
           height="100%"
+          onReady={handleVideoReady} // Ensure video is ready
         />
       </motion.div>
     </div>
