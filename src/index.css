@@ -64,3 +64,7 @@ body {
 }
 .ripple-area > .ripple-ring:nth-child(2) { animation-delay: 0.8s; }
 .ripple-area > .ripple-ring:nth-child(3) { animation-delay: 1.6s; }
+/* Enable smooth scrolling for the whole document */
+html {
+  scroll-behavior: smooth;
+}

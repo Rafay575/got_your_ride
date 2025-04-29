@@ -28,7 +28,7 @@ const Popup = () => {
       {/* next part */}
       {/* ///////// */}
       {/* title */}
-      <div className="text-center  my-14">
+      <div className="text-center  my-14" id="bookings">
         <p className="text-[#F1582B] ">Let’s Explore the World</p>
         <h1 className="font-bold text-2xl lg:text-4xl">
           Top Experiences on the <br />

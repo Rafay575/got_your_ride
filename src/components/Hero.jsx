@@ -170,12 +170,11 @@ const Hero = () => {
           {slideTexts[currentSlide].p}
         </motion.p>
         <motion.div variants={itemVariants3} className="mt-10 flex gap-4">
-          <NavLink
-            to="#"
+        <a href="#bookings"
             className="bg-[#F1582B] text-white text-xs md:text-base px-6 py-2 rounded-full border border-[#F1582B] hover:bg-white hover:text-[#F1582B] transition-colors duration-300"
           >
             BOOK NOW
-          </NavLink>
+          </a>
         </motion.div>
       </motion.div>
     </div>
