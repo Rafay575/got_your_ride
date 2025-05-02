@@ -113,7 +113,7 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <Link to="https://wa.me/818040614722">
+          <a href="https://wa.me/818040614722" target="_blank">
             <motion.div
               className="border-2 rounded-xl border-gray-200 h-[250px] pt-8 flex flex-col items-center"
               initial={{ opacity: 0, x: 50 }}
@@ -124,8 +124,9 @@ const Contact = () => {
               <p className="text-center font-semibold">Phone Number</p>
               <p className="text-center text-sm">+81 80-4061-4722</p>
             </motion.div>
-          </Link>
-          <Link to={"mailto:info@gotyourride.com"}>
+          </a>
+          <a href={"mailto:info@gotyourride.com"}  target="_blank"
+  rel="noopener noreferrer" >
             <motion.div
               className="border-2 rounded-xl border-gray-200 h-[250px] pt-8 flex flex-col items-center"
               initial={{ opacity: 0, x: -50 }}
@@ -136,7 +137,7 @@ const Contact = () => {
               <p className="text-center font-semibold">Email Address</p>
               <p className="text-center text-sm">info@gotyourride.com</p>
             </motion.div>
-          </Link>
+          </a>
         </div>
       </motion.div>
 

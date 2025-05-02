@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
-import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
-
-// Import slick styles
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-// Import images (they are fetched in this component)
+import { motion } from "framer-motion"; // Import Framer Motion for animation
+// Import images
 import image1 from "../assets/hero/1.png";
 import image2 from "../assets/hero/2.png";
 import image5 from "../assets/hero/5.jpg";
@@ -20,42 +13,13 @@ import imagem3 from "../assets/hero/m3.png";
 import imagem4 from "../assets/hero/m4.png";
 import imagem5 from "../assets/hero/m5.png";
 
-// Custom arrow components for navigation
-const NextArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <button
-      className="absolute hidden md:block right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow"
-      onClick={onClick}
-    >
-      <svg width="20" height="20" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M10 17l5-5l-5-5v10z" />
-      </svg>
-    </button>
-  );
-};
-
-const PrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <button
-      className="absolute hidden md:block left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow"
-      onClick={onClick}
-    >
-      <svg width="20" height="20" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M14 7l-5 5l5 5V7z" />
-      </svg>
-    </button>
-  );
-};
-
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false); // State to track screen size
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Array of slide texts corresponding to each image
   const slideTexts = [
     {
-      h1: "A MESMERIZING SUNSET OVER MT.FUJI, JAPAN",
+      h1: "A MESMERIZING SUNSET OVER Mount Fuji, JAPAN",
       p: "As the sky transitions from vibrant orange to soft pink, the majestic mountain stands proud, reflecting the colors of the fading day.",
     },
     {
@@ -76,107 +40,103 @@ const Hero = () => {
     },
   ];
 
-  // Keep track of the current slide to trigger text animation
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = isMobile
+  ? [imagem2, imagem1, imagem4, imagem3, imagem5]
+  : [image1, image2, image5, image6, image7];
 
-  // react-slick settings with fade effect and auto-play
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 1000,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    fade: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    afterChange: (index) => setCurrentSlide(index), // Set current slide after change
-  };
-
-  // Use effect to detect screen size
   useEffect(() => {
-    // Function to check if the screen width is mobile
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Set to true if width is less than 768px (mobile size)
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Check size on mount
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // Array of slide images
-  const slides = isMobile
-  ? [imagem2,imagem1, imagem4, imagem3, imagem5] // Desktop images
-  : [image1, image2, image5, image6,image7] // Mobile images
+  // Change slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
-  // Framer Motion variants for staggered text animation
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.3, // Stagger the child animations (text)
-      },
-    },
+  // Manually navigate to the previous slide
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const itemVariants1 = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
-  };
-  const itemVariants2 = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 1.2 } },
-  };
-  const itemVariants3 = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 1.9 } },
+  // Manually navigate to the next slide
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   return (
-    <div className="relative w-full h-screen">
-      {/* React-Slick Slider */}
-      <Slider {...settings} className="w-full h-full">
-        {slides.map((slide, index) => (
-          <div key={index} className="w-full h-screen">
-            {/* Set background image for each slide */}
-            <motion.div
-              className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide})` }}
-              variants={itemVariants1}
-              transition={{ duration: 1, delay: 0.4 }} // Duration for background transition
-            ></motion.div>
-          </div>
-        ))}
-      </Slider>
-
-      {/* Dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-
-      {/* Overlay text content */}
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Background Image with Smooth Transition */}
       <motion.div
-        key={currentSlide} // Forces remount of text on slide change
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="absolute top-[40%] transform px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] md:w-4/5 text-white"
+        className="relative w-full h-full"
+        key={currentSlide}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
-        <motion.h1 variants={itemVariants1} className="text-2xl capitalize md:text-3xl font-bold">
+        <div
+          className="w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${slides[currentSlide]})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+      </motion.div>
+
+      {/* Text and Button Content with Smooth Animation */}
+      <motion.div
+        className="absolute top-[40%] px-5 sm:px-[7vw] md:px-[8vw] lg:px-[11vw] md:w-4/5 text-white z-10"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 1.5,
+          delay: 0.5,
+          ease: "easeOut",
+        }}
+      >
+        <h1 className="text-2xl capitalize md:text-3xl font-bold">
           {slideTexts[currentSlide].h1}
-        </motion.h1>
-        <motion.p variants={itemVariants2} className="mt-4 text-sm md:text-lg">
-          {slideTexts[currentSlide].p}
-        </motion.p>
-        <motion.div variants={itemVariants3} className="mt-10 flex gap-4">
-        <a href="#bookings"
+        </h1>
+        <p className="mt-4 text-sm md:text-lg">{slideTexts[currentSlide].p}</p>
+        <div className="mt-10 flex gap-4">
+          <a
+            href="#bookings"
             className="bg-[#F1582B] text-white text-xs md:text-base px-6 py-2 rounded-full border border-[#F1582B] hover:bg-white hover:text-[#F1582B] transition-colors duration-300"
           >
             BOOK NOW
           </a>
-        </motion.div>
+        </div>
       </motion.div>
+
+      {/* Left Arrow for Manual Navigation */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl z-20"
+      >
+        &#10094;
+      </button>
+
+      {/* Right Arrow for Manual Navigation */}
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl z-20"
+      >
+        &#10095;
+      </button>
     </div>
   );
 };

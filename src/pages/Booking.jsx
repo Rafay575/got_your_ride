@@ -286,7 +286,7 @@ const Booking = ({ tripData, bookingData, itineraryData, place, options }) => {
 
       <div className="mx-auto w-4/5">
         <hr className="mt-8 mb-8 opacity-20" />
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col gap-4 md:flex-row">
           <div className="h-fit ">
             <ItineraryTimeline dummyItems={itineraryData} />
           </div>

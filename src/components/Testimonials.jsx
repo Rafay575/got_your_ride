@@ -93,7 +93,7 @@ export default function Testimonials() {
         modules={[Pagination, Autoplay]}
         className="w-4/5"
         autoplay={{ delay: 4500, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
+      
         breakpoints={{
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
@@ -109,7 +109,8 @@ export default function Testimonials() {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={{ scale: 1.04, y: -4 }}
-              className={`${t.bg} w-[95%] px-3 py-5 rounded-2xl mx-auto shadow-md`}
+              className={`${t.bg} w-[95%] h-[330px] px-3 py-5 rounded-2xl mx-auto shadow-md flex flex-col justify-between`}
+
             >
               <img src={t.photo} alt={t.name} className="mx-auto w-50" />
               <p className="text-sm font-bold mt-2">{t.name}</p>

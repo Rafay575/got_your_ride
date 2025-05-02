@@ -30,18 +30,19 @@ const NavbarNotForHome = () => {
           className={`flex px-5 sm:px-[7vw] md:px-[8vw] bg-[#f1582b] text-white lg:px-[11vw] justify-between transition-all duration-700 py-3 items-center border-b `}
         >
           <div className="flex gap-2 flex-col md:flex-row text-xs">
-            <div className="flex gap-2 items-center">
+            {/* <div className="flex gap-2 items-center">
               <IoLocation />
               <p className="font-normal">
                 2-chrome-3-5 Wakaba Shinjuku City, Tokyo 160-0011
               </p>
-            </div>
+            </div> */}
             <div className="flex gap-2 items-center">
               <FaEnvelope />
-              <p className=" font-normal">info@gotyourride.com</p>
+              <a href={"mailto:info@gotyourride.com"}  target="_blank"
+  rel="noopener noreferrer" className=" font-normal">info@gotyourride.com</a>
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="block">
             <SocialIcons />
           </div>
         </div>
@@ -93,7 +94,7 @@ const NavbarNotForHome = () => {
                       to="/booking/2"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     >
-                      Mt. Fuji 5th Station
+                      Mount Fuji
                     </Link>
                     <Link
                       to="/booking/3"
@@ -206,7 +207,7 @@ const NavbarNotForHome = () => {
                       to="/booking/2"
                       className="block px-4 py-2 text-gray-700 hover:bg-[#f1582b] hover:text-white transition-colors duration-200 rounded-md"
                     >
-                      Mt. Fuji 5th Station
+                      Mount Fuji
                     </NavLink>
                     <NavLink
                       onClick={() => setIsMenuOpen(false)}

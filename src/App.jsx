@@ -12,7 +12,9 @@ import ScrollToTop  from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import PaymentPage from "./pages/PaymentPage";
 import CartPage from "./pages/CartPage";
-
+import SuccessPage from "./pages/SuccessPage";
+import FailurePage from "./pages/FailurePage";
+import PaymentRedirectHandler from "./components/PaymentRedirectHandler"
 
 const App = () => {
   const location = useLocation();
@@ -29,6 +31,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/booking/:placeId" element={<Main />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/booking/success" element={<SuccessPage />} />
+        <Route path="/booking/failed" element={<FailurePage />} />
+        <Route path="/payment/redirect" element={<PaymentRedirectHandler />} />
       </Routes>
       <Footer />
     </div>

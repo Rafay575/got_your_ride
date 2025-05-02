@@ -10,11 +10,11 @@ const slides = [image1, image2, image3];
 const Home = () => {
   return (
     <div className="max-w-screen">
-      <Hero>
-        {slides.map((s, index) => (
+      <Hero />
+        {/* {/* {slides.map((s, index) => (
           <img key={index} src={s} alt={`Slide ${index}`} />
-        ))}
-      </Hero>
+        ))} 
+      </Hero> */}
       <Popup />
     </div>
   );

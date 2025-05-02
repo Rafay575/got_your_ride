@@ -23,86 +23,61 @@ const BookingForm = ({ bookingInfo }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      street,
-      city,
-      state: stateName,
-      zipCode,
-      termsAccepted,
-      bookingTitle: bookingInfo.title,
-      bookingDate: bookingInfo.date, // Ensure this is a valid date string/ISO
-      adults: bookingInfo.adults,
-      placeNumber: bookingInfo.placeNumber,
-      totalPrice: bookingInfo.price,
-    };
-    try {
-      setIsLoading(true);
-      const response = await fetch(`${baseUrl}/bookings`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+        e.preventDefault();
     
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Booking saved", data);
+        const payload = {
+          firstName,
+          lastName,
+          email,
+          phone,
+          street,
+          city,
+          state: stateName,
+          zipCode,
+          termsAccepted,
+          bookingTitle: bookingInfo.title,
+          bookingDate: bookingInfo.date,
+          adults: bookingInfo.adults,
+          placeNumber: bookingInfo.placeNumber,
+          totalPrice: bookingInfo.price,
+        };
     
-        // Handle success toast
-        toast.success("Booking saved successfully!", {
-          // onClose: () => {
-          //   // Start the car animation after a 2s delay
-          //   setTimeout(() => {
-          //     setAnimationType("success");
-          //     setShowAnimation(true);
-          //   }, 2000);
-          // },
-        });
+        try {
+          setIsLoading(true);
+          const response = await fetch(`${baseUrl}/bookings`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
     
-        // Redirect to PayPal after 3s delay
-        setTimeout(() => {
-          if (data.approvalUrl) {
-            window.location.href = data.approvalUrl; // Redirect to PayPal approval URL
+          if (response.ok) {
+            const data = await response.json();
+            toast.success("Booking saved successfully!");
+    
+            // Redirect to PayPal
+            setTimeout(() => {
+              if (data.approvalUrl) {
+                window.location.href = data.approvalUrl; // Redirect to PayPal approval URL
+              }
+            }, 3000);
+          } else {
+            const errorData = await response.json();
+            toast.error("Error saving booking. Please try again.");
           }
-        }, 3000);
-        
-      } else {
-        const errorData = await response.json();
-        console.error("Error saving booking", errorData);
-        toast.error("Error saving booking. Please try again.", {
-          // onClose: () => {
-          //   setTimeout(() => {
-          //     setAnimationType("error");
-          //     setShowAnimation(true);
-          //   }, 2000);
-          // },
-        });
-      }
-      setIsLoading(false);
-    } catch (error) {
-      console.error("Error connecting to the server", error);
-      setIsLoading(false);
-      toast.error("Error connecting to the server", {
-        // onClose: () => {
-          //   setTimeout(() => {
-            //     setAnimationType("error");
-            //     setShowAnimation(true);
-            //   }, 2000);
-            // },
-      });
-    }
-  };    
-
-  useEffect(() => {
-    if (showAnimation && animationType === "success") {
     
-      return () => clearTimeout(timer);
-    }
-  }, [showAnimation, animationType]);
+          setIsLoading(false);
+        } catch (error) {
+          console.error("Error connecting to the server", error);
+          toast.error("Error connecting to the server");
+          setIsLoading(false);
+        }
+      };
+  // useEffect(() => {
+  //   if (showAnimation && animationType === "success") {
+    
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [showAnimation, animationType]);
 
   return (
     <>
@@ -279,3 +254,145 @@ const BookingForm = ({ bookingInfo }) => {
 };
 
 export default BookingForm;
+// import React, { useState } from "react";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// import { baseUrl } from "../api/baseUrl"; // Adjust the base URL accordingly
+
+// const BookingForm = ({ bookingInfo }) => {
+//   const [firstName, setFirstName] = useState("");
+//   const [lastName, setLastName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [phone, setPhone] = useState("");
+//   const [street, setStreet] = useState("");
+//   const [city, setCity] = useState("");
+//   const [stateName, setStateName] = useState("");
+//   const [zipCode, setZipCode] = useState("");
+//   const [termsAccepted, setTermsAccepted] = useState(false);
+//   const [isLoading, setIsLoading] = useState(false);
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     const payload = {
+//       firstName,
+//       lastName,
+//       email,
+//       phone,
+//       street,
+//       city,
+//       state: stateName,
+//       zipCode,
+//       termsAccepted,
+//       bookingTitle: bookingInfo.title,
+//       bookingDate: bookingInfo.date,
+//       adults: bookingInfo.adults,
+//       placeNumber: bookingInfo.placeNumber,
+//       totalPrice: bookingInfo.price,
+//     };
+
+//     try {
+//       setIsLoading(true);
+//       const response = await fetch(`${baseUrl}/api/bookings`, {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(payload),
+//       });
+
+//       if (response.ok) {
+//         const data = await response.json();
+//         toast.success("Booking saved successfully!");
+
+//         // Redirect to PayPal
+//         setTimeout(() => {
+//           if (data.approvalUrl) {
+//             window.location.href = data.approvalUrl; // Redirect to PayPal approval URL
+//           }
+//         }, 3000);
+//       } else {
+//         const errorData = await response.json();
+//         toast.error("Error saving booking. Please try again.");
+//       }
+
+//       setIsLoading(false);
+//     } catch (error) {
+//       console.error("Error connecting to the server", error);
+//       toast.error("Error connecting to the server");
+//       setIsLoading(false);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <ToastContainer />
+//       <form onSubmit={handleSubmit}>
+//         {/* Billing Address Form */}
+//         <input
+//           type="text"
+//           placeholder="First Name"
+//           required
+//           value={firstName}
+//           onChange={(e) => setFirstName(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="Last Name"
+//           required
+//           value={lastName}
+//           onChange={(e) => setLastName(e.target.value)}
+//         />
+//         <input
+//           type="email"
+//           placeholder="Email Address"
+//           required
+//           value={email}
+//           onChange={(e) => setEmail(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="Phone Number"
+//           required
+//           value={phone}
+//           onChange={(e) => setPhone(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="Street Address"
+//           required
+//           value={street}
+//           onChange={(e) => setStreet(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="City"
+//           required
+//           value={city}
+//           onChange={(e) => setCity(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="State"
+//           required
+//           value={stateName}
+//           onChange={(e) => setStateName(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="Zip Code"
+//           required
+//           value={zipCode}
+//           onChange={(e) => setZipCode(e.target.value)}
+//         />
+//         <input
+//           type="checkbox"
+//           checked={termsAccepted}
+//           onChange={() => setTermsAccepted(!termsAccepted)}
+//         />
+//         <label>Accept Terms</label>
+//         <button type="submit">{isLoading ? "Submitting..." : "Submit"}</button>
+//       </form>
+//     </>
+//   );
+// };
+
+// export default BookingForm;

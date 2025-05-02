@@ -26,7 +26,7 @@ const data = [
   {
     id: 2,
     image: image3,
-    title: "Mt. Fuji 5th Station",
+    title: "Mt. Fuji",
     subtitle: "Touch the clouds and awaken your spirit",
     price: "$408",
     originalPrice: "$533",

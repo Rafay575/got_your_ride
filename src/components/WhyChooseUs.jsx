@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
           modules={[Autoplay, Pagination]}
           spaceBetween={50}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
+         
           breakpoints={{
             640: { slidesPerView: 1 },
             1024: { slidesPerView: 2 },

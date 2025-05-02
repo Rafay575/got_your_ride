@@ -28,9 +28,9 @@ const placesData = [
   {
     id: 2,
     bookingData: {
-      title: "Mt. Fuji 5th Station",
+      title: "Mount Fuji",
       subtitle: "Tokyo to Mount Fuji with cultural sights and stunning views.",
-      location: "Mt. Fuji 5th Station",
+      location: "Mount Fuji",
       reviews: "(Reviews)",
       images: [
         {
@@ -78,7 +78,7 @@ const placesData = [
           "Guide",
         ],
         excludedItems: [
-          "Mt. Fuji 5th Station entry ticket",
+          "Mount Fuji entry ticket",
           "Food and drinks",
           "Ropeway or motorboat ticket",
         ],
@@ -98,7 +98,7 @@ const placesData = [
           ],
         },
         tripInfo: [
-          { label: "Location", value: "Mt. Fuji 5th Station" },
+          { label: "Location", value: "Mount Fuji" },
           { label: "Service", value: "transport + driver" },
           { label: "Duration", value: "10 Hour" },
           { label: "People", value: "1-6" },
@@ -162,7 +162,7 @@ const placesData = [
     ],
     options: [
       { id: "a", label: "Chureito Pagoda" },
-      { id: "b", label: "Mt. Fuji 5th Station" },
+      { id: "b", label: "Mount Fuji" },
       { id: "c", label: "Oshino Hakkai" },
       { id: "d", label: "Kitaguchi-hongu Fuji Sengen Shrine" },
       { id: "e", label: "Lake Kawaguchi" },
@@ -658,7 +658,7 @@ export default placesData;
 //     subitems: [
 //       {
 //         icon: <FaCar/>,
-//         title: "Mt. Fuji 5th Station",
+//         title: "Mt. Fuji",
 //         subtitle: "Visit, Sightseeing (45 minutes)",
 //         meta: "Optional, Extra fee",
 //       },

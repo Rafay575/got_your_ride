@@ -2,7 +2,7 @@ import { FaMapMarkerAlt, FaBus, FaUndo } from "react-icons/fa";
 import React from "react";
 
 const itinerary = [
-  { title: "Mt. Fuji 5th Station", time: "75 Minutes", icon: <FaMapMarkerAlt /> },
+  { title: "Mount Fuji", time: "75 Minutes", icon: <FaMapMarkerAlt /> },
   { title: "Chureito Pagoda", time: "75 Minutes", icon: <FaBus /> },
   { title: "Lake Kawaguchiko", time: "75 Minutes", icon: <FaMapMarkerAlt /> },
   { title: "Oshino Hakka", time: "75 Minutes", icon: <FaMapMarkerAlt /> },
@@ -16,7 +16,7 @@ const itinerary = [
 const ItineraryTimeline = () => {
   return (
     <div className="bg-white p-6 w-full max-w-xs mx-auto">
-      <h2 className="text-orange-600 font-semibold text-lg mb-4">Mt. Fuji 5th Station</h2>
+      <h2 className="text-orange-600 font-semibold text-lg mb-4">Mount Fuji</h2>
 
       {/* Top section - separate items */}
       <div className="relative mb-8">
@@ -24,7 +24,7 @@ const ItineraryTimeline = () => {
           <FaMapMarkerAlt className="text-white" />
         </div>
         <div className="ml-10">
-          <p className="text-lg font-medium text-orange-600">Mt. Fuji 5th Station</p>
+          <p className="text-lg font-medium text-orange-600">Mount Fuji</p>
           <p className="text-xs text-gray-500 mt-1">75 Minutes</p>
         </div>
       </div>

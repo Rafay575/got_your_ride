@@ -2,9 +2,9 @@
     {
       "id": 1,
       "bookingData": {
-        "title": "Mt. Fuji 5th Station",
+        "title": "Mount Fuji",
         "subtitle": "Japan's Leading GetYourRide Service...Ready In Your One Click",
-        "location": "Mt. Fuji 5th Station",
+        "location": "Mount Fuji",
         "reviews": "(Reviews)",
         "images": [
           { "src": "assets/87.png", "classes": "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
@@ -28,7 +28,7 @@
       "tripData": {
         "description": {
           "title": "Description",
-          "text": "Embark on an unforgettable journey with Getyourride's private Mt. Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
+          "text": "Embark on an unforgettable journey with Getyourride's private Mount Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
         },
         "tripHighlights": {
           "title": "Trip Highlights",
@@ -44,7 +44,7 @@
             "with WiFi when available"
           ],
           "excludedItems": [
-            "Mr. Fuji 5th station entry ticket",
+            "Mr. Fuji entry ticket",
             "Food and drinks",
             "Tour guide",
             "Ropeway or motorboat ticket",
@@ -66,7 +66,7 @@
             ]
           },
           "tripInfo": [
-            { "label": "Location", "value": "Mt. Fuji 5th Station" },
+            { "label": "Location", "value": "Mount Fuji" },
             { "label": "Service", "value": "car + driver" },
             { "label": "Duration", "value": "10 Hours" },
             { "label": "People", "value": "1-6" }
@@ -78,15 +78,15 @@
         "leftColumn": {
           "title": "Itinerary",
           "headerItems": [
-            { "icon": "assets/Group_4.png", "text": "Mt. Fuji 5th Station", "textClass": "text-[#f1582b] pl-4 font-bold" },
+            { "icon": "assets/Group_4.png", "text": "Mount Fuji", "textClass": "text-[#f1582b] pl-4 font-bold" },
             { "icon": "assets/Group_3.png", "text": "starting location", "textClass": "pl-4 font-semibold" }
           ],
           "stopsBackground": "assets/image_2.png",
           "stops": [
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_2.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" }
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_2.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" }
           ]
         },
         "rightImage": "assets/image_1.png"
@@ -95,9 +95,9 @@
     {
       "id": 2,
       "bookingData": {
-        "title": "Mt. Fuji 5th Station",
+        "title": "Mount Fuji",
         "subtitle": "Japan's Leading GetYourRide Service...Ready In Your One Click",
-        "location": "Mt. Fuji 5th Station",
+        "location": "Mount Fuji",
         "reviews": "(Reviews)",
         "images": [
           { "src": "assets/87.png", "classes": "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
@@ -121,7 +121,7 @@
       "tripData": {
         "description": {
           "title": "Description",
-          "text": "Embark on an unforgettable journey with Getyourride's private Mt. Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
+          "text": "Embark on an unforgettable journey with Getyourride's private Mount Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
         },
         "tripHighlights": {
           "title": "Trip Highlights",
@@ -137,7 +137,7 @@
             "with WiFi when available"
           ],
           "excludedItems": [
-            "Mr. Fuji 5th station entry ticket",
+            "Mr. Fuji entry ticket",
             "Food and drinks",
             "Tour guide",
             "Ropeway or motorboat ticket",
@@ -159,7 +159,7 @@
             ]
           },
           "tripInfo": [
-            { "label": "Location", "value": "Mt. Fuji 5th Station" },
+            { "label": "Location", "value": "Mount Fuji" },
             { "label": "Service", "value": "car + driver" },
             { "label": "Duration", "value": "10 Hours" },
             { "label": "People", "value": "1-6" }
@@ -171,15 +171,15 @@
         "leftColumn": {
           "title": "Itinerary",
           "headerItems": [
-            { "icon": "assets/Group_4.png", "text": "Mt. Fuji 5th Station", "textClass": "text-[#f1582b] pl-4 font-bold" },
+            { "icon": "assets/Group_4.png", "text": "Mount Fuji", "textClass": "text-[#f1582b] pl-4 font-bold" },
             { "icon": "assets/Group_3.png", "text": "starting location", "textClass": "pl-4 font-semibold" }
           ],
           "stopsBackground": "assets/image_2.png",
           "stops": [
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_2.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" }
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_2.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" }
           ]
         },
         "rightImage": "assets/image_1.png"
@@ -188,9 +188,9 @@
     {
       "id": 3,
       "bookingData": {
-        "title": "Mt. Fuji 5th Station",
+        "title": "Mount Fuji",
         "subtitle": "Japan's Leading GetYourRide Service...Ready In Your One Click",
-        "location": "Mt. Fuji 5th Station",
+        "location": "Mount Fuji",
         "reviews": "(Reviews)",
         "images": [
           { "src": "assets/87.png", "classes": "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
@@ -214,7 +214,7 @@
       "tripData": {
         "description": {
           "title": "Description",
-          "text": "Embark on an unforgettable journey with Getyourride's private Mt. Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
+          "text": "Embark on an unforgettable journey with Getyourride's private Mount Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
         },
         "tripHighlights": {
           "title": "Trip Highlights",
@@ -230,7 +230,7 @@
             "with WiFi when available"
           ],
           "excludedItems": [
-            "Mr. Fuji 5th station entry ticket",
+            "Mr. Fuji entry ticket",
             "Food and drinks",
             "Tour guide",
             "Ropeway or motorboat ticket",
@@ -252,7 +252,7 @@
             ]
           },
           "tripInfo": [
-            { "label": "Location", "value": "Mt. Fuji 5th Station" },
+            { "label": "Location", "value": "Mount Fuji" },
             { "label": "Service", "value": "car + driver" },
             { "label": "Duration", "value": "10 Hours" },
             { "label": "People", "value": "1-6" }
@@ -264,15 +264,15 @@
         "leftColumn": {
           "title": "Itinerary",
           "headerItems": [
-            { "icon": "assets/Group_4.png", "text": "Mt. Fuji 5th Station", "textClass": "text-[#f1582b] pl-4 font-bold" },
+            { "icon": "assets/Group_4.png", "text": "Mount Fuji", "textClass": "text-[#f1582b] pl-4 font-bold" },
             { "icon": "assets/Group_3.png", "text": "starting location", "textClass": "pl-4 font-semibold" }
           ],
           "stopsBackground": "assets/image_2.png",
           "stops": [
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_2.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" }
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_2.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" }
           ]
         },
         "rightImage": "assets/image_1.png"
@@ -281,9 +281,9 @@
     {
       "id": 4,
       "bookingData": {
-        "title": "Mt. Fuji 5th Station",
+        "title": "Mount Fuji",
         "subtitle": "Japan's Leading GetYourRide Service...Ready In Your One Click",
-        "location": "Mt. Fuji 5th Station",
+        "location": "Mount Fuji",
         "reviews": "(Reviews)",
         "images": [
           { "src": "assets/87.png", "classes": "col-span-1 md:col-span-2 row-span-1 md:row-span-2 w-full h-full" },
@@ -307,7 +307,7 @@
       "tripData": {
         "description": {
           "title": "Description",
-          "text": "Embark on an unforgettable journey with Getyourride's private Mt. Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
+          "text": "Embark on an unforgettable journey with Getyourride's private Mount Fuji tour, accompanied by an expert English-speaking driver. Contact Us at +96896918676"
         },
         "tripHighlights": {
           "title": "Trip Highlights",
@@ -323,7 +323,7 @@
             "with WiFi when available"
           ],
           "excludedItems": [
-            "Mr. Fuji 5th station entry ticket",
+            "Mr. Fuji entry ticket",
             "Food and drinks",
             "Tour guide",
             "Ropeway or motorboat ticket",
@@ -345,7 +345,7 @@
             ]
           },
           "tripInfo": [
-            { "label": "Location", "value": "Mt. Fuji 5th Station" },
+            { "label": "Location", "value": "Mount Fuji" },
             { "label": "Service", "value": "car + driver" },
             { "label": "Duration", "value": "10 Hours" },
             { "label": "People", "value": "1-6" }
@@ -357,15 +357,15 @@
         "leftColumn": {
           "title": "Itinerary",
           "headerItems": [
-            { "icon": "assets/Group_4.png", "text": "Mt. Fuji 5th Station", "textClass": "text-[#f1582b] pl-4 font-bold" },
+            { "icon": "assets/Group_4.png", "text": "Mount Fuji", "textClass": "text-[#f1582b] pl-4 font-bold" },
             { "icon": "assets/Group_3.png", "text": "starting location", "textClass": "pl-4 font-semibold" }
           ],
           "stopsBackground": "assets/image_2.png",
           "stops": [
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_2.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" },
-            { "icon": "assets/Group_1.png", "title": "Mt. Fuji 5th Station", "duration": "(75 minutes)" }
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_2.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" },
+            { "icon": "assets/Group_1.png", "title": "Mount Fuji", "duration": "(75 minutes)" }
           ]
         },
         "rightImage": "assets/image_1.png"

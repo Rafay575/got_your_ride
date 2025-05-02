@@ -51,6 +51,7 @@ export default function VideoPlayer({ image, video, css = "" }) {
           url={video}
           playing={isPlaying} // Play or pause based on state
           muted={true} // Video is muted
+          loop
           autoPlay={false} // Don't autoplay initially
           playsInline={true} // For iOS compatibility
           width="100%"
