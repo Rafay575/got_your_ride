@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router,Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -31,8 +31,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/booking/:placeId" element={<Main />} />
         <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/booking/success" element={<SuccessPage />} />
-        <Route path="/booking/failed" element={<FailurePage />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/failed" element={<FailurePage />} />
         <Route path="/payment/redirect" element={<PaymentRedirectHandler />} />
       </Routes>
       <Footer />

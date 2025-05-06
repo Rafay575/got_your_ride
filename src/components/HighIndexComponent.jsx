@@ -16,7 +16,7 @@ const HighIndexComponent = () => {
     icon: i1,
     title: "MOST POPULAR DESTINATIONS",
     description:
-      "Explore the worldwide destinations which are the most preferred by people, including amazing natural beauties as well as lively urban scenery.Japan’s cities, like Tokyo, Nagano  and Nikko , offer a unique contrast. Tokyo, a global hub of innovation and energy, dazzles with its neon-lit skyline, bustling streets, and world-class shopping. ",
+      "Explore the worldwide destinations which are the most preferred by people, including amazing natural beauties as well as lively urban scenery. Japan’s cities, like Tokyo, Nagano and Nikko, offer a unique contrast. Tokyo, a global hub of innovation and energy, dazzles with its neon-lit skyline, bustling streets, and world-class shopping.",
   
     image: i5,
     buttonText: "Book Now",
@@ -60,7 +60,7 @@ const HighIndexComponent = () => {
         />
         <div className="text-center md:text-left">
           <h3 className="font-bold mt-2 text-[#f1582b] ">{selected.title}</h3>
-          <p className="mb-2 mt-5 break-words  text-sm  hyphens-auto">{selected.description}</p>
+          <p className="mb-2 mt-5 break-words text-start  text-sm  hyphens-auto">{selected.description}</p>
          
         </div>
       </motion.div>

@@ -41,8 +41,8 @@ const Hero = () => {
   ];
 
   const slides = isMobile
-  ? [imagem2, imagem1, imagem4, imagem3, imagem5]
-  : [image1, image2, image5, image6, image7];
+    ? [imagem2, imagem1, imagem4, imagem3, imagem5]
+    : [image1, image2, image5, image6, image7];
 
   useEffect(() => {
     const handleResize = () => {
@@ -113,19 +113,21 @@ const Hero = () => {
         </h1>
         <p className="mt-4 text-sm md:text-lg">{slideTexts[currentSlide].p}</p>
         <div className="mt-10 flex gap-4">
-          <a
-            href="#bookings"
+          <button
+            onClick={() => {
+              const el = document.getElementById("bookings");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
             className="bg-[#F1582B] text-white text-xs md:text-base px-6 py-2 rounded-full border border-[#F1582B] hover:bg-white hover:text-[#F1582B] transition-colors duration-300"
           >
             BOOK NOW
-          </a>
+          </button>
         </div>
       </motion.div>
 
-      {/* Left Arrow for Manual Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl z-20"
+        className="hidden md:absolute top-1/2 left-4 transform  -translate-y-1/2 text-white text-3xl z-20"
       >
         &#10094;
       </button>
@@ -133,7 +135,7 @@ const Hero = () => {
       {/* Right Arrow for Manual Navigation */}
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl z-20"
+        className="hidden md:absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl z-20"
       >
         &#10095;
       </button>

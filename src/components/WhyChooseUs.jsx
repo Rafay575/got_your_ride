@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
       </motion.div>
 
       {/* ─── Hero image ─────────────────────────────────────── */}
-      <motion.div
+      {/* <motion.div
         className="w-4/5 lg:max-w-5xl mx-auto"
         variants={fadeUp}
         custom={1}
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
         viewport={{ once: true }}
       >
         <img src={image17} alt="" className="rounded-2xl shadow-lg" />
-      </motion.div>
+      </motion.div> */}
 
       {/* ─── Slider ──────────────────────────────────────────── */}
       <motion.div
@@ -61,14 +61,16 @@ export default function WhyChooseUs() {
       >
         <Swiper
           modules={[Autoplay, Pagination]}
-          spaceBetween={50}
+          spaceBetween={20}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
          
           breakpoints={{
             640: { slidesPerView: 1 },
             1024: { slidesPerView: 2 },
-            1280: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
+
           }}
+          className="p-4"
         >
           {/* slide helper to avoid repetition */}
           {[
@@ -107,13 +109,13 @@ export default function WhyChooseUs() {
               {/* card with hover pop */}
               <motion.div
                 whileHover={{ scale: 1.04, y: -4 }}
-                className="bg-[#FCE8DF] rounded-2xl pb-7 px-1 flex flex-col items-center shadow-md"
+                className="bg-[#FCE8DF] p-4 rounded-2xl pb-7 px-1 h-[330px] flex flex-col items-center shadow-md"
               >
-                <div className="mt-3 w-1/2 h-[120px] flex items-center justify-center">
-                  <img src={img} alt="" className="max-h-full" />
+                <div className="mt-3 w-1/2  flex items-center justify-center">
+                  <img src={img} alt="" className="h-20" />
                 </div>
                 <h2 className="text-center mt-8 font-bold">{title}</h2>
-                <p className="mx-auto w-4/6 mt-5 text-sm h-[120px]">{text}</p>
+                <p className="mx-auto px-2 text-center mt-5 text-sm ">{text}</p>
               </motion.div>
             </SwiperSlide>
           ))}
