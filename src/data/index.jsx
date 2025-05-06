@@ -46,7 +46,7 @@ const placesData = [
         { src: i4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: "10 Hours" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" },
@@ -61,7 +61,7 @@ const placesData = [
     tripData: {
       description: {
         title: "Description",
-        text: `Embark on a private day trip with Mount Fuji Discoveries, where you’ll explore the breathtaking beauty and cultural richness surrounding Japan’s iconic peak. Begin with panoramic views at Chureito Pagoda, followed by a visit to the serene village of Oshino Hakkai, home to crystal-clear ponds and traditional thatched-roof houses. Continue to the sacred Kitaguchi Hongu Fuji Sengen Shrine nestled in a tranquil cedar forest, and enjoy the stunning reflections of Mount Fuji at Lake Kawaguchiko. For those seeking more adventure, optional activities include the Hakone Ropeway for aerial views of volcanic landscapes or a Lake Ashi cruise to glide across its calm waters. This customizable journey offers a perfect blend of nature, culture, and excitement, tailored to your preferences.`,
+        text: `Embark on a private day trip with Mount Fuji Discoveries, where you’ll explore the breathtaking beauty and cultural richness surrounding Japan’s iconic peak. Begin with panoramic views at Chureito Pagoda, followed by a visit to the serene village of Oshino Hakkai, home to crystal-clear ponds and traditional thatched-roof houses. Continue to the sacred Kitaguchi Hongu Fuji Sengen Shrine nestled in a tranquil cedar forest, and enjoy the stunning reflections of Mount Fuji at Lake Kawaguchi. For those seeking more adventure, optional activities include the Hakone Ropeway for aerial views of volcanic landscapes or a Lake Ashi cruise to glide across its calm waters. This customizable journey offers a perfect blend of nature, culture, and excitement, tailored to your preferences.`,
       },
       tripHighlights: {
         title: "Trip Highlights",
@@ -100,7 +100,7 @@ const placesData = [
         tripInfo: [
           { label: "Location", value: "Mount Fuji" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: "10 Hour" },
+          { label: "Duration", value: "10 Hours" },
           { label: "People", value: "1-6" },
         ],
         buttonText: "Book Now",
@@ -111,7 +111,7 @@ const placesData = [
         type: "in-transit",
         icon: <FaCar />,
         title: "13 Pickup Location Options:",
-        subtitle: "Bunkyo City, Fujikawaguchiko, Itabashi",
+        subtitle: "Bunkyo City, Fujikawaguchi, Itabashi",
       },
 
       {
@@ -199,7 +199,7 @@ const placesData = [
         { src: tokyo4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: "10 Hours" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" },
@@ -261,7 +261,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         tripInfo: [
           { label: "Location", value: "Tokyo City Tour" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: "10 Hour" },
+          { label: "Duration", value: "10 Hours" },
           { label: "People", value: "1-6" },
         ],
         buttonText: "Book Now",
@@ -354,7 +354,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         { src: nagano4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: "10 Hours" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" },
@@ -408,7 +408,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         tripInfo: [
           { label: "Location", value: "Nagano Tour" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: "10 Hour" },
+          { label: "Duration", value: "10 Hours" },
           { label: "People", value: "1-6" },
         ],
         buttonText: "Book Now",
@@ -445,7 +445,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Jegokudani Snow Monkey Park",
+        title: "Jigokudani Snow Monkey Park",
         subtitle: "Visit, Sightseeing",
        
       },
@@ -463,13 +463,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         subtitle: "Visit, Sightseeing",
       
       },
-      {
-        type: "in-activity",
-        icon: <FaCar />,
-        title: "Obuse Onsen Kannon-No-Yu",
-        subtitle: "Visit, Sightseeing",
-       
-      },
+      
       {
         type: "in-transit",
         icon: <FaCar />,
@@ -510,7 +504,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         { src: nikko4, classes: "col-span-1 w-full h-full" },
       ],
       details: [
-        { icon: i5, label: "Duration", value: "10 Hour" },
+        { icon: i5, label: "Duration", value: "10 Hours" },
         { icon: i6, label: "People", value: "1-6" },
         { icon: i7, label: "Language", value: "English" },
         { icon: i8, label: "Type", value: "Adventure" },
@@ -525,7 +519,7 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
     tripData: {
       description: {
         title: "Description",
-        text: `Chat with your driver as you travel, and customize an itinerary focused on the Nikko sights you want to see. Tailor stops to suit your unique interests with this private experience.Start with pickup from your accommodation in the 23 Wards of Tokyo. Relax in a comfortable car as you journey through the picturesque Japanese countryside, with your private driver handling traffic and navigation. Stay connected with onboard Wi-Fi.Travel into the mountains north of Tokyo to the charming city of Nikko in Tochigi Prefecture. Enjoy free time to visit the Toshogu Shrine, exploring its 42 structures, including a stunning five-story pagoda. Experience why this area is considered a national treasure.Stop at a local restaurant where you can purchase a traditional lunch. Get recommendations on where to enjoy authentic yuba gozen (tofu skin set meal). Admire the beauty of Kegon Falls, where water cascades off a cliff into a lush landscape. `,
+        text: `Chat with your driver as you travel, and customize an itinerary focused on the Nikko sights you want to see. Tailor stops to suit your unique interests with this private experience. Start with pickup from your accommodation in the 23 Wards of Tokyo. Relax in a comfortable car as you journey through the picturesque Japanese countryside, with your private driver handling traffic and navigation. Stay connected with onboard Wi-Fi. Travel into the mountains north of Tokyo to the charming city of Nikko in Tochigi Prefecture. Enjoy free time to visit the Toshogu Shrine, exploring its 42 structures, including a stunning five-story pagoda. Experience why this area is considered a national treasure. Stop at a local restaurant where you can purchase a traditional lunch. Get recommendations on where to enjoy authentic yuba gozen (tofu skin set meal). Admire the beauty of Kegon Falls, where water cascades off a cliff into a lush landscape. `,
       },
       tripHighlights: {
         title: "Trip Highlights",
@@ -561,18 +555,19 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
         tripInfo: [
           { label: "Location", value: "Nikko Tour" },
           { label: "Service", value: "transport + driver" },
-          { label: "Duration", value: "10 Hour" },
+          { label: "Duration", value: "10 Hours" },
           { label: "People", value: "1-6" },
         ],
         buttonText: "Book Now",
       },
     },
+  
     itineraryData: [
       {
         type: "in-transit",
         icon: <FaCar />,
-        title: "Starting Location:",
-        subtitle: "You Will Get Picked Up",
+        title: "2 pickup location options:",
+        subtitle: "Tokyo, Kanagawa",
       },
       {
         type: "in-transit",
@@ -583,45 +578,40 @@ Discover the magic of Tokyo with GotYourRide, your ultimate tour partner! Experi
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Zenko Ji Temple",
+        title: "Nikko Toshogu",
         subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Nishimon Yoshinoya",
+        title: "Shinkyo Bridge",
         subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Jegokudani Snow Monkey Park",
+        title: "Kegon Falls",
         subtitle: "Visit, Sightseeing",
       },
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Dazaifo Monzen Machi",
+        title: "Nikko Futarasan jinja",
         subtitle: "Visit, Sightseeing, Walk",
       },
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Obuse Onsen Kannon-No-Yu",
+        title: "Tobu World",
         subtitle: "Visit, Sightseeing, Relaxation",
       },
       {
         type: "in-activity",
         icon: <FaCar />,
-        title: "Obuse Onsen Kannon-No-Yu",
-        subtitle: "Visit, Sightseeing, Relaxation",
+        title: "2 drop-off locations:",
+        subtitle: "Tokyo, Kanagawa",
       },
-      {
-        type: "in-transit",
-        icon: <FaCar />,
-        title: "You Will Return To The Starting Point",
-        subtitle: "End of the tour",
-      },
+     
     ],
     options: [
       { id: "m", label: "Nikko Toshogu" },
