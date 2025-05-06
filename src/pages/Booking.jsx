@@ -31,7 +31,16 @@ const Booking = ({ tripData, bookingData, itineraryData, place, options }) => {
   const [placeNumber, setPlaceNumber] = useState(place);
   const [numOfCars, setNumOfCars] = useState(1); // Cars count
   const [totalPrice, setTotalPrice] = useState(bookingData.price.primary); // Initial price is based on one car
+  useEffect(() => {
+    // Get the current date
+    const currentDate = new Date();
 
+    // Format the date to 'YYYY-MM-DD' (remove time)
+    const formattedDate = currentDate.toISOString().split('T')[0];
+
+    // Set the date in the state
+    setDate(formattedDate);
+  }, []);
   const handleDecrease = () => {
     setAdults((prev) => (prev > 1 ? prev - 1 : prev));
   };

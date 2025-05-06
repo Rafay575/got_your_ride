@@ -152,6 +152,7 @@ const NavbarNotForHome = () => {
         <div
           className="fixed inset-0 bg-black/90 z-50"
           onClick={() => setIsMenuOpen(false)}
+          style={{ zIndex: 101 }}
         >
           <div
             className="absolute top-[100px] left-[2.5%] w-[95%] h-fit bg-white p-5"
